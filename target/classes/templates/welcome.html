@@ -8,7 +8,6 @@
 
     <link rel="stylesheet" th:href="@{webjars/bootstrap/4.2.1/css/bootstrap.min.css}"/>
     <link rel="stylesheet" th:href="@{/css/main.css}"/>
-
 </head>
 
 <body>
@@ -25,9 +24,29 @@
                 <div class="card-body">
                     <h2 class="card-title">Acteurs Américain</h2>
                     <p class="card-text">
-                    <ol>
-                        <li th:each="acteur : ${acteurAmericain}" th:text="${acteur}"></li>
-                    </ol>
+
+                    <table class="table table-dark">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">First</th>
+                            <th scope="col">Last</th>
+                            <th scope="col">More Informations</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="acteur : ${acteurAmericain}">
+                            <th scope="row" th:text="${acteur.id}"></th>
+                            <td th:text="${acteur.prenom}"></td>
+                            <td th:text="${acteur.nom}"></td>
+                            <td>
+                                <button type="button" class="btn btn-secondary"><a
+                                        th:href="@{/details(id=${acteur.id})}">Details</a></button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
                     </p>
                 </div>
             </div>
