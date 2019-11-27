@@ -28,8 +28,15 @@ public class WelcomeController {
 
     @GetMapping("/details")
     @ResponseBody
-    public String details(Model model, @RequestParam String id) {
-        model.addAttribute("acteurAmericain", acteurAmericain);
-        return "details";
+    public String details(@RequestParam String id) {
+        int i = Integer.parseInt(id);
+
+        Star findStarByID(int j){
+            for (Star star : acteurAmericain) {
+                if (star.getId() == i)
+                    return "details";
+            }
+        }
+        return null;
     }
 }
