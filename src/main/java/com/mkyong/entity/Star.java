@@ -13,7 +13,7 @@ public class Star {
     private String filmCulte;
     private boolean actif;
 
-    public Star(){
+    public Star() {
 
     }
 

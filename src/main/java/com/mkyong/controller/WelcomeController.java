@@ -30,16 +30,19 @@ public class WelcomeController {
         return null;
     }
 
-    public Star editStar(Star star, int id, String nom, String prenom, LocalDate dateNaissance,
-                         int age, String filmCulte, boolean actif) {
-        star.setId(id);
-        star.setNom(nom);
-        star.setPrenom(prenom);
-        star.setDateNaissance(dateNaissance);
-        star.setAge(age);
-        star.setFilmCulte(filmCulte);
-        star.setActif(actif);
-        return star;
+    public Star editStar(int i) {
+
+
+        for(Star star : acteurAmericain){
+            star.setId();
+            star.setNom();
+            star.setPrenom();
+            star.setDateNaissance();
+            star.setAge();
+            star.setFilmCulte();
+            star.setActif();
+            return star;
+        }
     }
 
     @GetMapping("/")
@@ -55,12 +58,11 @@ public class WelcomeController {
         return "details";
     }
 
-    /*
-    @PostMapping("/edition")
-    public String edition(Model model, @RequestParam String id){
-    int i = Integer.parseInt(id);
 
-    model.addAttribute("star", editStar());
-     return "details";
-     }*/
+    @PostMapping("/edition")
+    public String edition(Model model, @RequestParam String id) {
+        int i = Integer.parseInt(id);
+        model.addAttribute("star", editStar(i));
+        return "details";
+    }
 }
