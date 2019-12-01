@@ -18,25 +18,27 @@ public class WelcomeController {
         add(new Star(1, "Aaker", "Lee", LocalDate.of(1943, 9, 25), 76, "Rintintin", false));
         add(new Star(2, "Aaron", "Victor", LocalDate.of(1943, 9, 25), 58, "Salt", true));
         add(new Star(3, "Abbey", "John", LocalDate.of(1943, 9, 25), 84, "Mister Freedom", false));
+        add(new Star(4, "Abbey", "John", LocalDate.of(1943, 9, 25), 84, "Mister Freedom", false));
     }};
+
+    public Star findStarByID(int i) {
+        for (Star star : acteurAmericain) {
+            if (star.getId() == i)
+                return star;
+        }
+        return null;
+    }
 
     @GetMapping("/")
     public String main(Model model) {
-        model.addAttribute("acteurAmericain", acteurAmericain);
+        model.addAttribute("acteursAmericains", acteurAmericain);
         return "welcome"; //view
     }
 
     @GetMapping("/details")
-    @ResponseBody
-    public String details(@RequestParam String id) {
+    public String details(Model model, @RequestParam String id) {
         int i = Integer.parseInt(id);
-
-        Star findStarByID(int j){
-            for (Star star : acteurAmericain) {
-                if (star.getId() == i)
-                    return "details";
-            }
-        }
-        return null;
+        model.addAttribute("star", findStarByID(i));
+        return "details";
     }
 }

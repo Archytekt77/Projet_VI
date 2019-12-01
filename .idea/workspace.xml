@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ea0de22-d5b1-418f-b20c-89a4ab52b808" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/template.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mkyong/controller/WelcomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mkyong/controller/WelcomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mkyong/controller/WelcomeController$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/mkyong/controller/WelcomeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/welcome.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/welcome.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +85,8 @@
       <workItem from="1574298013925" duration="51000" />
       <workItem from="1574298138374" duration="92000" />
       <workItem from="1574381741926" duration="6096000" />
-      <workItem from="1574505060942" duration="34242000" />
+      <workItem from="1574505060942" duration="42295000" />
+      <workItem from="1574924745157" duration="6708000" />
     </task>
     <servers />
   </component>
@@ -96,7 +98,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

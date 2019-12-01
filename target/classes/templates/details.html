@@ -25,15 +25,16 @@
     </tr>
     </thead>
     <tbody>
-    <th scope="row" th:text="${acteurAmericain.id}"></th>
-    <!--<tr>
-        <th scope="row" th:text="${acteurAmericain.id}"></th>
-        <td th:text="${acteurAmericain.prenom}"></td>
-        <td th:text="${acteurAmericain.nom}"></td>
-        <td th:text="${acteurAmericain.dateNaissance}"></td>
+    <tr>
+        <th scope="row" th:text="${star.id}"></th>
+        <td th:text="${star.prenom}"></td>
+        <td th:text="${star.nom}"></td>
+        <td th:text="${star.dateNaissance}"></td>
+        <td th:text="${star.age}"></td>
+        <td th:text="${star.filmCulte}"></td>
     </tr>
-
-<p> Voici : <span th:text="${acteurAmericain}"></p>-->
+    </tbody>
+</table>
 
 <script type="text/javascript" th:src="@{webjars/bootstrap/4.2.1/js/bootstrap.min.js}"></script>
 </body>
