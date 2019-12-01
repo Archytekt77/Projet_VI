@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.thymeleaf.templateparser.reader.ParserLevelCommentTextReader;
@@ -29,6 +30,18 @@ public class WelcomeController {
         return null;
     }
 
+    public Star editStar(Star star, int id, String nom, String prenom, LocalDate dateNaissance,
+                         int age, String filmCulte, boolean actif) {
+        star.setId(id);
+        star.setNom(nom);
+        star.setPrenom(prenom);
+        star.setDateNaissance(dateNaissance);
+        star.setAge(age);
+        star.setFilmCulte(filmCulte);
+        star.setActif(actif);
+        return star;
+    }
+
     @GetMapping("/")
     public String main(Model model) {
         model.addAttribute("acteursAmericains", acteurAmericain);
@@ -41,4 +54,13 @@ public class WelcomeController {
         model.addAttribute("star", findStarByID(i));
         return "details";
     }
+
+    /*
+    @PostMapping("/edition")
+    public String edition(Model model, @RequestParam String id){
+    int i = Integer.parseInt(id);
+
+    model.addAttribute("star", editStar());
+     return "details";
+     }*/
 }
