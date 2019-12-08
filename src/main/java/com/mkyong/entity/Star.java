@@ -1,15 +1,29 @@
 package com.mkyong.entity;
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Date;
 
-public class Star {
 
+@Entity
+@Table(name = "Stars")
+
+public class Star implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
     private String nom;
     private String prenom;
+
+    @Column(name = "dateNaissance")
+    @Temporal(TemporalType.DATE)
     private LocalDate dateNaissance;
+
     private int age;
+
+    @Column(name = "filmCulte")
     private String filmCulte;
     private boolean actif;
 

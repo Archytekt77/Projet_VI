@@ -1,6 +1,6 @@
 package com.mkyong;
 
-import com.mkyong.controller.WelcomeController;
+import com.mkyong.controller.StarController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +21,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(controllers = WelcomeController.class)
-public class WelcomeControllerTest {
+@WebMvcTest(controllers = StarController.class)
+public class StarControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
