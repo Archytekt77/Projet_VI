@@ -15,40 +15,49 @@ import java.util.*;
 public class StarController {
 
     public StarRepository starRepository;
-    private List<Star> acteurAmericain = new ArrayList<Star>() {{
-        add(new Star(1, "Aaker", "Lee", LocalDate.of(1943, 9, 25), 76, "Rintintin", false));
-        add(new Star(2, "Aaron", "Victor", LocalDate.of(1943, 9, 25), 58, "Salt", true));
-        add(new Star(3, "Abbey", "John", LocalDate.of(1943, 9, 25), 84, "Mister Freedom", false));
-        add(new Star(4, "Abbey", "John", LocalDate.of(1943, 9, 25), 84, "Mister Freedom", false));
-    }};
 
-    public Star findStarByID(int i) {
-        for (Star star : acteurAmericain) {
-            if (star.getId() == i)
-                return star;
-        }
-        return null;
+    public StarRepository createStar(){
+        starRepository.save(new Star(1, "Aaker", "Lee", new Date(1943, 9, 25), 76, "Rintintin", false));
+        starRepository.save(new Star(2, "Aaron", "Victor", new Date(1943, 9, 25), 58, "Salt", true));
+        starRepository.save(new Star(3, "Abbey", "John", new Date(1943, 9, 25), 84, "Mister Freedom", false));
+        starRepository.save(new Star(4, "Abbey", "John", new Date(1943, 9, 25), 84, "Mister Freedom", false));
+        return starRepository;
     }
 
     @GetMapping("/")
     public String main(Model model) {
-        model.addAttribute("acteursAmericains", starRepository.findAll());
+        createStar();
+        model.addAttribute("acteursAmericains", );
         return "welcome"; //view
     }
 
     @GetMapping("/details")
-    public String details(Model model, @RequestParam String id) {
-        int i = Integer.parseInt(id);
-        model.addAttribute("star", findStarByID(i));
+    public String getStarById(Model model, @PathVariable(value = "id") int id) {
+        model.addAttribute("star", starRepository.findById(id));
         return "details";
     }
 
 
     @GetMapping("/edition")
-    public String edition(Model model, @RequestParam String id) {
-        int i = Integer.parseInt(id);
-        model.addAttribute("star", findStarByID(i));
+    public String edition(Model model, @PathVariable(value = "id") int id) {
+        model.addAttribute("star", starRepository.findById(id));
         return "edition";
+    }
+
+    @PutMapping("/edition")
+    public String updateStar(@PathVariable(value = "id") int id, Model model){
+        Star star = starRepository.findById(id);
+
+        star.setId(star.getId());
+        star.setNom(star.getNom());
+        star.setPrenom(star.getPrenom());
+        star.setDateNaissance(star.getDateNaissance());
+        star.setAge(star.getAge());
+        star.setFilmCulte(star.getFilmCulte());
+        star.setActif(star.isActif());
+
+        Star updatedStar = starRepository.save(star);
+        return "details";
     }
 
     @PostMapping("/edition")

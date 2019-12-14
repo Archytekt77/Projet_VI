@@ -2,43 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ea0de22-d5b1-418f-b20c-89a4ab52b808" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_zaxxer_HikariCP_3_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_persistence_javax_persistence_api_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_transaction_javax_transaction_api_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_dom4j_dom4j_2_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_5_0_4_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_5_3_7_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_23_1_GA.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_2_0_5_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_2_1_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_jpa_2_1_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_2_1_2_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_2_1_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_2_1_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_5_1_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_1_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_5_1_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_1_4_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mkyong/repository/StarRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/img/madeInUsa.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/error.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_13.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mkyong/controller/WelcomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mkyong/controller/StarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mkyong/StartWebApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mkyong/StartWebApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mkyong/controller/StarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mkyong/controller/StarController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mkyong/entity/Star.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mkyong/entity/Star.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mkyong/repository/StarRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mkyong/repository/StarRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/edition.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/edition.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/template.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/welcome.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/mkyong/WelcomeControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/mkyong/StarControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/details.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/edition.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/edition.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mkyong/StartWebApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mkyong/StartWebApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mkyong/controller/StarController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mkyong/controller/StarController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mkyong/controller/StarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mkyong/controller/StarController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/mkyong/entity/Star.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/mkyong/entity/Star.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/madeInUsa.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/template.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/welcome.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/mkyong/WelcomeControllerTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/web-thymeleaf.iml" beforeDir="false" afterPath="$PROJECT_DIR$/web-thymeleaf.iml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -72,6 +50,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="ProjectId" id="1TG6lufTrDkWT1odbjXhbqhrLFN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -139,7 +124,9 @@
       <workItem from="1574298138374" duration="92000" />
       <workItem from="1574381741926" duration="6096000" />
       <workItem from="1574505060942" duration="42295000" />
-      <workItem from="1574924745157" duration="34611000" />
+      <workItem from="1574924745157" duration="38294000" />
+      <workItem from="1575892216254" duration="1547000" />
+      <workItem from="1576321032869" duration="4461000" />
     </task>
     <servers />
   </component>

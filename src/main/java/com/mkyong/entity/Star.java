@@ -3,6 +3,7 @@ package com.mkyong.entity;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Date;
 
 
 @Entity
@@ -18,8 +19,7 @@ public class Star implements Serializable {
     private String prenom;
 
     @Column(name = "dateNaissance")
-    @Temporal(TemporalType.DATE)
-    private LocalDate dateNaissance;
+    private Date dateNaissance;
 
     private int age;
 
@@ -31,7 +31,7 @@ public class Star implements Serializable {
 
     }
 
-    public Star(int id, String nom, String prenom, LocalDate dateNaissance, int age, String filmCulte, boolean actif) {
+    public Star(int id, String nom, String prenom, Date dateNaissance, int age, String filmCulte, boolean actif) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
@@ -65,11 +65,11 @@ public class Star implements Serializable {
         this.prenom = prenom;
     }
 
-    public LocalDate getDateNaissance() {
+    public Date getDateNaissance() {
         return dateNaissance;
     }
 
-    public void setDateNaissance(LocalDate dateNaissance) {
+    public void setDateNaissance(Date dateNaissance) {
         this.dateNaissance = dateNaissance;
     }
 
