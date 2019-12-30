@@ -38,14 +38,14 @@ public class StarController {
 
     @PostMapping("/edition")
     public String updateStar(@PathVariable(value = "id") int id, Model model, Star star) {
-        starRepository.save(star);
-        model.addAttribute("star", this.starRepository.findById(id));
+        model.addAttribute("star", this.starRepository.save(star));
         return "details";
     }
 
 
     @GetMapping("/create")
-    public String createStar() {
+    public String createStar(Model model) {
+        model.addAttribute("star", new Star());
         return "create";
     }
 
@@ -58,7 +58,7 @@ public class StarController {
     @PostMapping("/delete")
     public String deleteStar(@PathVariable(value = "id") int id, Model model, Star star) {
         starRepository.delete(star);
-        model.addAttribute("star", starRepository.findById(id));
+        model.addAttribute("star", this.starRepository.findAll());
         return "welcome";
     }
 
