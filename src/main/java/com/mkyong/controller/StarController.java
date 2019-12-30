@@ -26,7 +26,10 @@ public class StarController {
 
     @GetMapping("/details")
     public String getStarById(@PathVariable(value = "id") int id, Model model) {
+        String id2 = Integer.toString(id);
+        System.out.println(id2);
         model.addAttribute("star", this.starRepository.findById(id));
+
         return "details";
     }
 
