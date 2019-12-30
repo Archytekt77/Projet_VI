@@ -3,17 +3,16 @@
 <head>
     <div th:replace="template :: head"></div>
 
-    <title>Édition</title>
+    <title>Nouvelle Star</title>
 </head>
-
 <body>
 <header>
     <div th:replace="template :: nav"></div>
 </header>
 
-<main role="edition" class="container">
-    <h1>Détails</h1>
-    <form action="details.html" th:action="@{/edition}" th:object="${star}" method="post">
+<main role="create" class="container">
+    <h1>Nouvelle star</h1>
+    <form action="create.html" th:action="@{/create}" th:object="${star}" method="post">
         <div class="form-group row">
             <label for="ID" class="col-sm-2 col-form-label">#</label>
             <div class="col-sm-10">

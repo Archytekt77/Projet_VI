@@ -43,24 +43,23 @@ public class StarController {
         return "details";
     }
 
-    /*
-    @GetMapping("/nouvelleStar")
-    public String createStar(){
-        return "nouvelleStar";
+
+    @GetMapping("/create")
+    public String createStar() {
+        return "create";
     }
 
-    @PostMapping("/nouvelleStar")
-    public String addStar(@ModelAttribute Star star, Model model, Star star){
-        starRepository.save(star);
+    @PostMapping("/create")
+    public String addStar(@ModelAttribute Star star, Model model) {
+        model.addAttribute("star", this.starRepository.save(star));
         return "welcome";
     }
 
-    @PostMapping("")
-    public String deleteStar(@PathVariable(value = "id") int id, Model model, Star star){
-        model.addAttribute("star", starRepository.findById(id));
-
+    @PostMapping("/delete")
+    public String deleteStar(@PathVariable(value = "id") int id, Model model, Star star) {
         starRepository.delete(star);
+        model.addAttribute("star", starRepository.findById(id));
         return "welcome";
-    }*/
+    }
 
 }
