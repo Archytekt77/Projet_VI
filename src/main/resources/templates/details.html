@@ -13,58 +13,61 @@
 
 <main role="details" class="container">
     <h1>Détails</h1>
-   <!-- <form>
+    <form>
         <div class="form-group row">
             <label for="staticID" class="col-sm-2 col-form-label">#</label>
             <div class="col-sm-10">
-                <input type="text" readonly class="form-control-plaintext" id="staticID" th:text="${star.get().getId()}">
+                <input type="text" readonly class="form-control-plaintext" id="staticID"
+                       th:text="${star.id}">
             </div>
         </div>
         <div class="form-group row">
             <label for="staticFirst" class="col-sm-2 col-form-label">First</label>
             <div class="col-sm-10">
-                <input type="text" readonly class="form-control-plaintext" id="staticFirst" th:text="${star.get().prenom}">
+                <input type="text" readonly class="form-control-plaintext" id="staticFirst"
+                       th:text="${star.prenom}">
             </div>
         </div>
         <div class="form-group row">
             <label for="staticLast" class="col-sm-2 col-form-label">Last</label>
             <div class="col-sm-10">
-                <input type="text" readonly class="form-control-plaintext" id="staticLast" th:text="${star.get().nom}">
+                <input type="text" readonly class="form-control-plaintext" id="staticLast" th:text="${star.nom}">
             </div>
         </div>
         <div class="form-group row">
             <label for="staticBirthday" class="col-sm-2 col-form-label">Birthday</label>
             <div class="col-sm-10">
                 <input type="text" readonly class="form-control-plaintext" id="staticBirthday"
-                       th:text="${star.get().dateNaissance}">
+                       th:text="${star.dateNaissance}">
             </div>
         </div>
         <div class="form-group row">
             <label for="staticAge" class="col-sm-2 col-form-label">Age</label>
             <div class="col-sm-10">
-                <input type="text" readonly class="form-control-plaintext" id="staticAge" th:text="${star.get().age}">
+                <input type="text" readonly class="form-control-plaintext" id="staticAge" th:text="${star.age}">
             </div>
         </div>
         <div class="form-group row">
             <label for="staticCultMovie" class="col-sm-2 col-form-label">Cult Movie</label>
             <div class="col-sm-10">
                 <input type="text" readonly class="form-control-plaintext" id="staticCultMovie"
-                       th:text="${star.get().filmCulte}">
+                       th:text="${star.filmCulte}">
             </div>
         </div>
         <div class="form-group row">
             <label for="staticActive" class="col-sm-2 col-form-label">Active</label>
             <div class="col-sm-10">
-                <input type="text" readonly class="form-control-plaintext" id="staticActive" th:text="${star.get().actif}">
+                <input type="text" readonly class="form-control-plaintext" id="staticActive"
+                       th:text="${star.actif}">
             </div>
         </div>
         <button type="button" class="btn btn-secondary"><a
-                th:href="@{/edition(id=${star.get().id})}">Éditer</a></button>
-    </form>-->
+                th:href="@{/edition(id=${star.id})}">Éditer</a></button>
+    </form>
 </main>
 
-<footer>
+
     <div th:replace="template :: footer"></div>
-</footer>
+
 </body>
 </html>

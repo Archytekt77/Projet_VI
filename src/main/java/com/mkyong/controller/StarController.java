@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.thymeleaf.templateparser.reader.ParserLevelCommentTextReader;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.*;
 
@@ -25,23 +27,21 @@ public class StarController {
     }
 
     @GetMapping("/details")
-    public String getStarById(@PathVariable(value = "id") int id, Model model) {
-        String id2 = Integer.toString(id);
-        System.out.println(id2);
-        model.addAttribute("star", this.starRepository.findById(id));
-
+    public String getStarById(@RequestParam(value = "id") int id, Model model) {
+        model.addAttribute("star", this.starRepository.findById(id).get());
         return "details";
     }
 
     @GetMapping("/edition")
-    public String edition(@PathVariable(value = "id") int id, Model model) {
+    public String edition(@RequestParam(value = "id") int id, Model model) {
         model.addAttribute("star", this.starRepository.findById(id));
         return "edition";
     }
 
     @PostMapping("/edition")
-    public String updateStar(@PathVariable(value = "id") int id, Model model, Star star) {
-        model.addAttribute("star", this.starRepository.save(star));
+    public String updateStar(@RequestParam(value = "id") int id, Model model, Star star) {
+        starRepository.save(star);
+        model.addAttribute("star", this.starRepository.findById(id));
         return "details";
     }
 
@@ -54,7 +54,8 @@ public class StarController {
 
     @PostMapping("/create")
     public String addStar(@ModelAttribute Star star, Model model) {
-        model.addAttribute("star", this.starRepository.save(star));
+        starRepository.save(star);
+        model.addAttribute("star", this.starRepository.findAll());
         return "welcome";
     }
 
