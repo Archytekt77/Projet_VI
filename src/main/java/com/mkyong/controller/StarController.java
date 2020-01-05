@@ -22,7 +22,7 @@ public class StarController {
 
     @GetMapping("/")
     public String main(Model model) {
-        model.addAttribute("acteursAmericains", this.starRepository.findAll());
+        model.addAttribute("star", this.starRepository.findAll());
         return "welcome"; //view
     }
 
@@ -59,11 +59,11 @@ public class StarController {
         return "welcome";
     }
 
-    @PostMapping("/delete")
-    public String deleteStar(@PathVariable(value = "id") int id, Model model, Star star) {
+    @GetMapping("/delete")
+    public String DeleteStar(@RequestParam(value = "id") int id, Model model, Star star) {
+        model.addAttribute("star", this.starRepository.findById(id).get());
         starRepository.delete(star);
-        model.addAttribute("star", this.starRepository.findAll());
-        return "welcome";
+        return "delete";
     }
 
 }

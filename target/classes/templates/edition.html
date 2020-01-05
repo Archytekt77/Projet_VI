@@ -6,12 +6,12 @@
     <title>Édition</title>
 </head>
 
-<body>
+<body class="container">
 <header>
     <div th:replace="template :: nav"></div>
 </header>
 
-<main role="edition" class="container">
+<main role="edition">
     <h1>Détails</h1>
     <form action="details.html" th:action="@{/edition}" th:object="${star}" method="post">
         <div class="form-group row">
@@ -60,8 +60,7 @@
     </form>
 </main>
 
-<footer>
     <div th:replace="template :: footer"></div>
-</footer>
+
 </body>
 </html>

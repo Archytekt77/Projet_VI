@@ -7,20 +7,18 @@
     <link rel="stylesheet" th:href="@{/css/main.css}"/>
 </th:block>
 
-<th:block th:fragment="nav">
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" th:fragment="nav">
         <a class="navbar-brand" href="/">
             <!--<img src="../img/madeInUsa.png" width="70" height="70" class="d-inline-block align-top"
                  alt="Accueil" align="center">--> Accueil
         </a>
-        <a href="/create">
+        <a class="navbar-brand" href="/create">
             Ajouter une star
         </a>
-    </nav>
-</th:block>
+</nav>
 
-<th:block th:fragment="footer">
+<footer class="row" th:fragment="footer">
     <script type="text/javascript" th:src="@{webjars/bootstrap/4.2.1/js/bootstrap.min.js}">
     </script>
-</th:block>
+</footer>
 </html>

@@ -6,14 +6,24 @@
     <title>Spring Boot Thymeleaf Hello World Example</title>
 </head>
 
-<body>
-<header>
+<body class="container">
+<header class="row">
     <div th:replace="template :: nav"></div>
 </header>
 
-<main role="main" class="container">
-    <h1>Spring Boot Web Thymeleaf Example</h1>
+<main role="main" class="row">
     <div class="row">
+        <h1>Spring Boot Web Thymeleaf Example</h1>
+        <p>1 baopdjezaifjfahpurzeahfuiharezuijfhajh</p>
+        <p>2 baopdjezaifjfahpurzeahfuiharezuijfhajh</p>
+        <p>3 baopdjezaifjfahpurzeahfuiharezuijfhajh</p>
+        <p>4 baopdjezaifjfahpurzeahfuiharezuijfhajh</p>
+        <p>5 baopdjezaifjfahpurzeahfuiharezuijfhajh</p>
+        <p>6 baopdjezaifjfahpurzeahfuiharezuijfhajh</p>
+        <p>7 baopdjezaifjfahpurzeahfuiharezuijfhajh</p>
+        <p>8 baopdjezaifjfahpurzeahfuiharezuijfhajh</p>
+        <p>9 baopdjezaifjfahpurzeahfuiharezuijfhajh</p>
+
         <div class="col-sm-6">
             <div class="card border-dark mb-3">
                 <div class="card-body">
@@ -30,32 +40,24 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="acteurs : ${acteursAmericains}">
-                            <th scope="row" th:text="${acteurs.id}"></th>
-                            <td th:text="${acteurs.prenom}"></td>
-                            <td th:text="${acteurs.nom}"></td>
+                        <tr th:each="stars : ${star}">
+                            <th scope="row" th:text="${stars.id}"></th>
+                            <td th:text="${stars.prenom}"></td>
+                            <td th:text="${stars.nom}"></td>
                             <td>
                                 <button type="button" class="btn btn-secondary"><a
-                                        th:href="@{/details(id=${acteurs.id})}">Details</a></button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-secondary"><a
-                                        th:href="@{/delete(id=${acteurs.id})}">Supprimer</a></button>
+                                        th:href="@{/details(id=${stars.id})}">Details</a></button>
                             </td>
                         </tr>
                         </tbody>
                     </table>
-
-                    </p>
                 </div>
             </div>
         </div>
     </div>
 </main>
 
-<footer>
-    <div th:replace="template :: footer"></div>
-</footer>
-<!-- /.container -->
+<div th:replace="template :: footer"></div>
+
 </body>
 </html>
