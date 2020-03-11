@@ -9,7 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-public class StarController {
+public class HomeController {
 
     @Autowired
     public UserRepository userRepository;
@@ -61,7 +61,7 @@ public class StarController {
 
     @PostMapping("/user")
     public String addUser(@ModelAttribute User user){
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setUserPassword(passwordEncoder.encode(user.getUserPassword()));
         userRepository.save(user);
         return "home";
     }

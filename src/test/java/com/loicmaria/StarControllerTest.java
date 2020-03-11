@@ -1,6 +1,6 @@
 package com.loicmaria;
 
-import com.loicmaria.web.StarController;
+import com.loicmaria.web.HomeController;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(controllers = StarController.class)
+@WebMvcTest(controllers = HomeController.class)
 public class StarControllerTest {
 
     @Autowired

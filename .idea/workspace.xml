@@ -2,35 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ea0de22-d5b1-418f-b20c-89a4ab52b808" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/ClimbingSite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/Topo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/accueil.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/iconAmisDeEscalade.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/img/iconAmisDeEscalade2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/repositories/ClimbingSiteRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/repositories/TopoRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/TopoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/TopoServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/LoggingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbootsecurity/StartWebApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/StartWebApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbootsecurity/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/config/WebConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbootsecurity/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbootsecurity/entities/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbootsecurity/entities/Star.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbootsecurity/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbootsecurity/repositories/StarRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbootsecurity/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbootsecurity/security/AuthenticatedUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/security/AuthenticatedUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbootsecurity/security/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/security/CustomUserDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/springbootsecurity/web/StarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/StarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/madeInUsa.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/img/madeInUsa2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/springbootsecurity/StarControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/loicmaria/StarControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-thymeleaf.iml" beforeDir="false" afterPath="$PROJECT_DIR$/P6 - LOIC MARIA.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/StarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/loicmaria/StarControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/loicmaria/StarControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,9 +33,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="HTML File" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -106,6 +85,9 @@
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.loicmaria.services" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\workspace\intelliJ\web-thymeleaf\src\main\resources\static\" />
       <recent name="C:\workspace\intelliJ\web-thymeleaf\src\main\resources\img" />
@@ -202,7 +184,7 @@
       <workItem from="1583419372808" duration="600000" />
       <workItem from="1583756652565" duration="4223000" />
       <workItem from="1583880423982" duration="7186000" />
-      <workItem from="1583917385713" duration="2852000" />
+      <workItem from="1583917385713" duration="4483000" />
     </task>
     <servers />
   </component>
@@ -231,6 +213,10 @@
     </state>
     <state x="-1155" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1583886872811" />
     <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1583923752890" />
+    <state x="620" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1583925036010">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="620" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1583925036010" />
     <state x="-1230" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583884645493">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
