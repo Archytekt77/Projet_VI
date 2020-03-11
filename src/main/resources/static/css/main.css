@@ -1,3 +1,14 @@
+body {
+    color:black;
+    background-color:white;
+    background-image:url(../img/accueil.jpg);
+    background-repeat:no-repeat;
+}
+
 header{
     height: 80px;
+}
+
+nav{
+    opacity: 0.3;
 }

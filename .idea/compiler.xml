@@ -6,16 +6,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="web-thymeleaf" />
+        <module name="P6 - LOIC MARIA" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="web-thymeleaf" target="1.8" />
+      <module name="P6 - LOIC MARIA" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="web-thymeleaf" options="-parameters" />
+      <module name="P6 - LOIC MARIA" options="-parameters" />
     </option>
   </component>
 </project>

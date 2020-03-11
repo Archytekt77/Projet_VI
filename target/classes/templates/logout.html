@@ -6,19 +6,20 @@
 
 <head>
     <div th:replace="template :: head"></div>
-    <title>Home</title>
+
+    <title>Log out</title>
 </head>
 
 <body>
-
 <header>
     <div th:replace="template :: nav"></div>
 </header>
 
+<h1 th:inline="text"> Etes vous sur de vouloir vous déconnecter [[${#httpServletRequest.remoteUser}]]?</h1>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
 
-<footer>
-    <div th:replace="template :: footer"></div>
-</footer>
+<div th:replace="template :: footer"></div>
 </body>
-
 </html>
