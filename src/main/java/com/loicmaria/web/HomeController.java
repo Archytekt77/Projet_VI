@@ -12,9 +12,6 @@ import org.springframework.web.bind.annotation.*;
 public class HomeController {
 
     @Autowired
-    public UserRepository userRepository;
-
-    @Autowired
     public PasswordEncoder passwordEncoder;
 
     @GetMapping("/home")
@@ -23,7 +20,8 @@ public class HomeController {
     }
 
     @GetMapping("/details")
-    public String getStarById(@RequestParam(value = "id") int id, Model model) {
+    public String getStarById(@RequestParam(value = "id") int id, Model model)
+
         return "details";
     }
 
@@ -56,7 +54,7 @@ public class HomeController {
     @GetMapping("/user")
     public String createUser(Model model){
         model.addAttribute("user", new User());
-        return "user";
+        return "createUser";
     }
 
     @PostMapping("/user")
