@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <div th:replace="template :: head"></div>
+
+    <title>Édition site</title>
+</head>
+
+<body>
+<header>
+    <div th:replace="template :: nav"></div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card h-auto">
+                <form action="editionClimbingSite.html" th:action="@{/editionClimbingSite.html}" th:object="${climbingSite}" method="post">
+                    <h1>Édition du site</h1>
+                    <div class="form-group row">
+                        <label for="climbingName" class="col-sm-2 col-form-label">Nom du site</label>
+                        <div class="col-sm-10">
+                            <input type="text" readonly class="form-control-plaintext" id="climbingName"
+                                   th:field="*{climbingName}">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="climbingArea" class="col-sm-2 col-form-label">Lieu du site</label>
+                        <div class="col-sm-10">
+                            <input type="text" readonly class="form-control-plaintext" id="climbingArea"
+                                   th:text="*{climbingArea}">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="template :: footer"></div>
+</body>
+</html>

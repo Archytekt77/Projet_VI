@@ -1,8 +1,7 @@
 package com.loicmaria.entities;
 
-import org.hibernate.validator.constraints.Email;
-
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
 import javax.validation.constraints.NotEmpty;
 import java.util.List;
@@ -13,21 +12,21 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int userId;
+    private Integer id;
 
     @Column(nullable = false)
     @NotEmpty
-    private String userName;
+    private String name;
 
     @Column(nullable = false, unique = true)
     @NotEmpty
     @Email(message = "{errors.invalid_email}")
-    private String userEmail;
+    private String email;
 
     @Column(nullable = false)
     @NotEmpty
     @Size(min = 4)
-    private String userPassword;
+    private String password;
 
     @ManyToMany(cascade = CascadeType.MERGE)
     @JoinTable(
@@ -40,52 +39,26 @@ public class User {
     public User() {
     }
 
-    public User(int userId, String userName, String userEmail, String userPassword) {
-        this.userId = userId;
-        this.userName = userName;
-        this.userEmail = userEmail;
-        this.userPassword = userPassword;
-    }
+    // Getters and Setters
+    public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
+    public List<Role> getRoles() { return roles; }
+    public void setRoles(List<Role> roles) { this.roles = roles; }
 
-    //Getters and Setters
-    public int getUserId() {
-        return userId;
-    }
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-    public String getUserName() {
-        return userName;
-    }
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-    public String getUserEmail() {
-        return userEmail;
-    }
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
-    }
-    public String getUserPassword() {
-        return userPassword;
-    }
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
-    }
-    public List<Role> getRoles() {
-        return roles;
-    }
-    public void setRoles(List<Role> roles) {
-        this.roles = roles;
-    }
-
+    //toString
     @Override
     public String toString() {
         return "User{" +
-                "userId=" + userId +
-                ", userName='" + userName + '\'' +
-                ", userEmail='" + userEmail + '\'' +
-                ", userPassword='" + userPassword + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
                 ", roles=" + roles +
                 '}';
     }

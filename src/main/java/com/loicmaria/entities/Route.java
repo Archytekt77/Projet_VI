@@ -2,33 +2,32 @@ package com.loicmaria.entities;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
-import java.util.List;
 
 @Entity
-@Table(name = "roles")
-public class Role {
+@Table(name = "Routes")
+public class Route {
 
-    @Id @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-
-    @ManyToMany(mappedBy = "roles")
-    private List< User > users;
-
-    @Column(nullable = false, unique = true)
+    @Column
     @NotEmpty
     private String name;
+    @Column
+    @NotEmpty
+    private String pitchName;
 
-    //Constructor
-    public Role() {
+    // Constructor
+    public Route() {
     }
 
-    public Role(int id, List<User> users, String name) {
+    public Route(int id, String name, String pitchName) {
         this.id = id;
-        this.users = users;
-        this.name= name;
+        this.name = name;
+        this.pitchName = pitchName;
     }
 
-    //Getters and Setters
+    // Getters and Setters
     public int getId() {
         return id;
     }
@@ -41,20 +40,20 @@ public class Role {
     public void setName(String name) {
         this.name = name;
     }
-    public List < User > getUsers() {
-        return users;
+    public String getPitchName() {
+        return pitchName;
     }
-    public void setUsers(List < User > users) {
-        this.users = users;
+    public void setPitchName(String pitchName) {
+        this.pitchName = pitchName;
     }
 
     //toString
     @Override
     public String toString() {
-        return "Role{" +
+        return "Route{" +
                 "id=" + id +
-                ", users=" + users +
                 ", name='" + name + '\'' +
+                ", pitchName='" + pitchName + '\'' +
                 '}';
     }
 }

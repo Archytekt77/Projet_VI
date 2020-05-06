@@ -2,6 +2,7 @@ package com.loicmaria.entities;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import java.util.Collection;
 
 @Entity
 @Table(name = "topos")
@@ -9,61 +10,69 @@ public class Topo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer topoId;
+    private int id;
+
+    @OneToMany
+    private Collection<ClimbingSite> climbingSites;
+
     @Column(nullable = false)
     @NotEmpty
-    private String topoName;
+    private String name;
     @Column
     @NotEmpty
-    private String topoDescription;
+    private String description;
     @Column
     @NotEmpty
-    private String topoPlace;
+    private String place;
     @Column
     @NotEmpty
-    private String topoPublicationDate;
+    private String publicationDate;
     @Column
-    @NotEmpty
-    private boolean availableTopo;
+    private boolean available;
 
     //Constructor
     public Topo() {
     }
 
-    public Topo(int topoId, String topoName, String topoDescription, String topoPlace,
-                String topoPublicationDate, boolean availableTopo) {
-        this.topoId = topoId;
-        this.topoName = topoName;
-        this.topoDescription = topoDescription;
-        this.topoPlace = topoPlace;
-        this.topoPublicationDate = topoPublicationDate;
-        this.availableTopo = availableTopo;
+    public Topo(int id, Collection<ClimbingSite> climbingSites,
+                String name, String description, String place, String publicationDate,
+                Boolean available){
+        this.id = id;
+        this.climbingSites = climbingSites;
+        this.name = name;
+        this.description = description;
+        this.place = place;
+        this.publicationDate = publicationDate;
+        this.available = available;
     }
 
-    //Getters and Setters
-    public int getTopoId() { return topoId; }
-    public void setTopoId(int topoId) { this.topoId = topoId; }
-    public String getTopoName() { return topoName; }
-    public void setTopoName(String topoName) { this.topoName = topoName; }
-    public String getTopoDescription() { return topoDescription; }
-    public void setTopoDescription(String topoDescription) { this.topoDescription = topoDescription; }
-    public String getTopoPlace() { return topoPlace; }
-    public void setTopoPlace(String topoPlace) { this.topoPlace = topoPlace; }
-    public String getTopoPublicationDate() { return topoPublicationDate; }
-    public void setTopoPublicationDate(String topoPublicationDate) { this.topoPublicationDate = topoPublicationDate; }
-    public boolean isAvailableTopo() { return availableTopo; }
-    public void setAvailableTopo(boolean availableTopo) { this.availableTopo = availableTopo; }
+    // Getters and Setters
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
+    public Collection<ClimbingSite> getClimbingSites() { return climbingSites; }
+    public void setClimbingSites(Collection<ClimbingSite> climbingSites) { this.climbingSites = climbingSites; }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+    public String getDescription() { return description; }
+    public void setDescription(String description) { this.description = description; }
+    public String getPlace() { return place; }
+    public void setPlace(String place) { this.place = place; }
+    public String getPublicationDate() { return publicationDate; }
+    public void setPublicationDate(String publicationDate) { this.publicationDate = publicationDate; }
+    public boolean isAvailable() { return available; }
+    public void setAvailable(boolean available) { this.available = available; }
 
     //toString
     @Override
     public String toString() {
         return "Topo{" +
-                "topoId=" + topoId +
-                ", topoName='" + topoName + '\'' +
-                ", topoDescription='" + topoDescription + '\'' +
-                ", topoPlace='" + topoPlace + '\'' +
-                ", topoPublicationDate='" + topoPublicationDate + '\'' +
-                ", availableTopo=" + availableTopo +
+                "id=" + id +
+                ", climbingSites=" + climbingSites +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", place='" + place + '\'' +
+                ", publicationDate='" + publicationDate + '\'' +
+                ", available=" + available +
                 '}';
     }
 }

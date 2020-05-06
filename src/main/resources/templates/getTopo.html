@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <div th:replace="template :: head"></div>
+
+    <title>Liste Topos</title>
+</head>
+
+<body>
+<header>
+    <div th:replace="template :: nav"></div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-dark mb-3">
+                <div class="card-body">
+                    <h2 class="card-title">Liste des Topos</h2>
+                    <button type="button" class="btn btn-secondary"><a
+                            th:href="@{/topo/create}">Ajouter un Topo</a></button>
+                    <p class="card-text">
+
+                    <table class="table table-dark">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Lieu</th>
+                            <th scope="col">Plus d'informations</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="topo : ${topo}">
+                            <th scope="row" th:text="${topo.id}"></th>
+                            <td th:text="${topo.name}"></td>
+                            <td th:text="${topo.place}"></td>
+                            <td>
+                                <button type="button" class="btn btn-secondary"><a
+                                        th:href="@{/topo/details(id=${topo.id})}">Details</a></button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="template :: footer"></div>
+
+</body>
+</html>

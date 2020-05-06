@@ -1,42 +1,62 @@
 package com.loicmaria.web;
 
+import com.loicmaria.services.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import com.loicmaria.entities.User;
-import com.loicmaria.services.UserService;
 
 @Controller
 @RequestMapping("/user")
 public class UserController {
-    @Autowired
-    UserService userService;
 
-    @GetMapping("/get-user")
-    public String getUser(){
+    @Autowired
+    UserServiceImpl userService;
+
+    @GetMapping("/get")
+    public String getUsers(Model model){
+        model.addAttribute("user", userService.getter());
+        return "getUser";
+    }
+
+    @GetMapping("/details")
+    public String getUserById(@RequestParam(value = "id") int id, Model model){
+        model.addAttribute("user", userService.get(id));
+        return "detailsUser";
+    }
+
+    @GetMapping("/create")
+    public String createUser(Model model){
         model.addAttribute("user", new User());
         return "createUser";
     }
 
-    @PostMapping("/create-user")
-    public String createUser(@ModelAttribute User user){
-        userService.createUser(user);
+    @PostMapping("/create")
+    public String addUser(@ModelAttribute User user, Model model){
+        userService.add(user);
+        model.addAttribute("user", userService.getter());
         return "home";
     }
 
-    @RequestMapping(method = RequestMethod.DELETE)
-    public String deleteUser(@RequestBody User user){
-        userService.deleteUser(user);
-        return "home";
+    @GetMapping("/edition")
+    public String editionUser(@RequestParam(value = "id") int id, Model model){
+        model.addAttribute("user", userService.get(id));
+        return "editionUser";
     }
 
-    @RequestMapping(method = RequestMethod.PUT)
-    public String putUser(@RequestBody User user){
-        userService.updateUser(user);
-        return "home";
+    @PostMapping("/edition")
+    public String updateUser(@RequestParam(value = "id") int id, Model model, User user){
+        userService.update(user);
+        model.addAttribute("user", userService.get(id));
+        return "detailsUser";
+    }
+
+    @GetMapping("/delete")
+    public String deleteUser(@RequestParam(value = "id") int id, Model model){
+        model.addAttribute("user", userService.get(id));
+        userService.delete(id);
+        return "deleteUser";
     }
 }

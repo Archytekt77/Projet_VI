@@ -1,7 +1,6 @@
 body {
     color:black;
     background-color:white;
-    background-image:url(../img/accueil.jpg);
     background-repeat:no-repeat;
 }
 
@@ -10,5 +9,5 @@ header{
 }
 
 nav{
-    opacity: 0.3;
+
 }

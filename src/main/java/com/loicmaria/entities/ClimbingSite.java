@@ -2,6 +2,7 @@ package com.loicmaria.entities;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import java.util.Collection;
 
 @Entity
 @Table(name = "climbingSites")
@@ -9,53 +10,63 @@ public class ClimbingSite {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int climbingSiteId;
+    private int id;
+
+    @OneToMany
+    private Collection< Route > routes;
+
     @Column
     @NotEmpty
-    private String climbingName;
+    private String name;
     @Column
     @NotEmpty
-    private String climbingArea;
-    @Column
-    @NotEmpty
-    private String climbingRoute;
-    @Column
-    @NotEmpty
-    private String climbingPitch;
+    private String area;
 
     //Constructor
     public ClimbingSite() {
     }
 
-    public ClimbingSite(int climbingSiteId, String climbingName, String climbingArea, String climbingRoute, String climbingPitch) {
-        this.climbingSiteId = climbingSiteId;
-        this.climbingName = climbingName;
-        this.climbingArea = climbingArea;
-        this.climbingRoute = climbingRoute;
-        this.climbingPitch = climbingPitch;
+    public ClimbingSite(int id, Collection<Route> routes, String name, String area) {
+        this.id = id;
+        this.routes = routes;
+        this.name = name;
+        this.area = area;
     }
 
     //Getters and Setters
-    public int getClimbingSiteId() { return climbingSiteId; }
-    public void setClimbingSiteId(int climbingSiteId) { this.climbingSiteId = climbingSiteId; }
-    public String getClimbingName() { return climbingName; }
-    public void setClimbingName(String climbingName) { this.climbingName = climbingName; }
-    public String getClimbingArea() { return climbingArea; }
-    public void setClimbingArea(String climbingArea) { this.climbingArea = climbingArea; }
-    public String getClimbingRoute() { return climbingRoute; }
-    public void setClimbingRoute(String climbingRoute) { this.climbingRoute = climbingRoute; }
-    public String getClimbingPitch() { return climbingPitch; }
-    public void setClimbingPitch(String climbingPitch) { this.climbingPitch = climbingPitch; }
+    public int getId() {
+        return id;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+    public Collection<Route> getRoutes() {
+        return routes;
+    }
+    public void setRoutes(Collection<Route> routes) {
+        this.routes = routes;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getArea() {
+        return area;
+    }
+    public void setArea(String area) {
+        this.area = area;
+    }
 
     //toString()
     @Override
     public String toString() {
         return "ClimbingSite{" +
-                "climbingSiteId=" + climbingSiteId +
-                ", climbingName='" + climbingName + '\'' +
-                ", climbingArea='" + climbingArea + '\'' +
-                ", climbingRoute='" + climbingRoute + '\'' +
-                ", climbingPitch='" + climbingPitch + '\'' +
+                "id=" + id +
+                ", routes=" + routes +
+                ", name='" + name + '\'' +
+                ", area='" + area + '\'' +
                 '}';
     }
 }
