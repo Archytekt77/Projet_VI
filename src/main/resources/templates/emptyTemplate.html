@@ -5,16 +5,16 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 <head>
-    <div th:replace="template :: head"></div>
+    <div th:replace="fragments/general :: head"></div>
 
     <title>Title</title>
 </head>
 
 <body>
 <header>
-    <div th:replace="template :: nav"></div>
+    <div th:replace="fragments/general :: nav"></div>
 </header>
 
-<div th:replace="template :: footer"></div>
+<div th:replace="fragments/general :: footer"></div>
 </body>
 </html>

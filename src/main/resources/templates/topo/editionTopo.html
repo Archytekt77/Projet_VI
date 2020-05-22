@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <div th:replace="fragments/general :: head"></div>
+
+    <title>Édition topo</title>
+</head>
+
+<body>
+<header>
+    <div th:replace="fragments/general :: nav"></div>
+</header>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="card border-dark mb-3">
+                <div class="card-body">
+                    <h1 class="card-title">Édition du topo <span th:text="${topo.name}"></span></h1>
+                    <form action="editionTopo.html" th:action="@{/topo/edition/{id}(id=${id})}" th:object="${topo}" method="post">
+                        <div class="form-group row">
+                            <label for="name" class="col-6 col-form-label">Nom</label>
+                            <div class="col">
+                                <input type="text" th:field="*{name}" class="form-control" id="name"
+                                >
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="description" class="col-6 col-form-label">Description</label>
+                            <div class="col">
+                                <input type="text" class="form-control" id="description"
+                                       th:field="*{description}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="place" class="col-6 col-form-label">Lieu</label>
+                            <div class="col">
+                                <input type="text" class="form-control" id="place"
+                                       th:field="*{place}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="publicationDate" class="col-6 col-form-label">Date de publication</label>
+                            <div class="col">
+                                <input type="text" class="form-control" id="publicationDate"
+                                       th:field="*{publicationDate}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="available" class="col-6 col-form-label">Disponibilité</label>
+                            <div class="col">
+                                <input type="text" class="form-control" id="available"
+                                       th:field="*{available}">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Modifier</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div th:replace="fragments/general :: footer"></div>
+</body>
+</html>

@@ -1,10 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <div th:replace="fragments/general :: head"></div>
 
+    <title>Détails utilisateur</title>
+</head>
+
+<body>
+<header>
+    <div th:replace="fragments/general :: nav"></div>
+</header>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <div class="card border-dark mb-3">
+                <div class="card-body">
+                    <h1 class="card-title">Détails de l'utilisateur <span th:text="${user.name}"></span></h1>
+
+                    <table></table>
+
+                    <form th:object="${user}">
+                        <div th:hidden="*{id}"></div>
+                        <div class="form-group row">
+                            <label for="email" class="col-6 col-form-label">Email</label>
+                            <div class="col">
+                                <input type="text" readonly class="form-control-plaintext" id="email" th:value="*{email}">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary"><a
+                                th:href="@{/user/edition(id=*{id})}">Éditer</a></button>
+                        <button type="button" class="btn btn-primary"><a
+                                th:href="@{/user/delete(id=*{id})}">Supprimer</a></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="fragments/general :: footer"></div>
 </body>
 </html>

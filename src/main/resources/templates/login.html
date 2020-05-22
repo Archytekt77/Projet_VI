@@ -5,48 +5,50 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 <head>
-    <div th:replace="template :: head"></div>
+    <div th:replace="fragments/general :: head"></div>
     <title>Log in</title>
 </head>
 
 <body>
 <header>
-    <div th:replace="template :: nav"></div>
+    <div th:replace="fragments/general :: nav"></div>
 </header>
 
-<main class="container">
-    <div class="panel col-md-5">
-        <div class="panel panel-primary">
-            <div class="panel-heading">Login Form</div>
-            <div class="panel-body">
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-dark mb-3">
+                <div class="card-body">
+                    <h1 class="card-title">Login</h1>
+                    <div th:if="${param.error}">
+                        Email et mot de passe invalides.
+                    </div>
 
-                <div th:if="${param.error}">
-                    Invalid username and password.
-                </div>
-                <div th:if="${param.logout}">
-                    You have been logged out.
-                </div>
-
-                <form th:action="@{/login}" method="post">
-                    <div class="form-group row">
-                        <label for="Email" class="col-sm-2 col-form-label">Email</label>
-                        <div class="col-sm-10">
-                            <input type="email" class="form-control" name="username" id="Email" placeholder="Email"/>
+                    <form action="login.html" th:action="@{/login}" method="post">
+                        <div class="form-group row">
+                            <label for="Email" class="col-sm-2 col-form-label">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" name="username" id="Email"
+                                       placeholder="Votre Email"/>
+                            </div>
                         </div>
                         <div class="form-group row">
-                            <label for="Password" class="col-sm-2 col-form-label">Password</label>
-                            <input type="password" class="form-control" name="password" id="Password" placeholder="Password"/>
+                            <label for="Password" class="col-sm-2 col-form-label">Mot de passe</label>
+                            <div class="col-sm-10">
+                                <input type="password" class="form-control" name="password" id="Password"
+                                       placeholder="Votre mot de passe"/>
+                            </div>
                         </div>
-                    </div>
-                    <button type="submit" value="Sign In" class="btn btn-primary">Submit</button>
-                </form>
+                        <button type="submit" value="Sign In" class="btn btn-primary">Se connecter</button>
+                        <button type="button" class="btn btn-primary"><a
+                                th:href="@{/user/create}">Pas encore inscrit ?</a></button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
+</div>
 
-    <p><a class="navbar-brand" th:href="@{/user/create}">Pas encore inscrit ?</a></p>
-</main>
-
-<div th:replace="template :: footer"></div>
+<div th:replace="fragments/general :: footer"></div>
 </body>
 </html>

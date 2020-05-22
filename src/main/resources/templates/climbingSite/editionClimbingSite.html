@@ -3,44 +3,47 @@
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
 <head>
-    <div th:replace="template :: head"></div>
+    <div th:replace="fragments/general :: head"></div>
 
     <title>Édition site</title>
 </head>
 
 <body>
 <header>
-    <div th:replace="template :: nav"></div>
+    <div th:replace="fragments/general :: nav"></div>
 </header>
 
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <div class="card h-auto">
-                <form action="editionClimbingSite.html" th:action="@{/editionClimbingSite.html}" th:object="${climbingSite}" method="post">
-                    <h1>Édition du site</h1>
-                    <div class="form-group row">
-                        <label for="climbingName" class="col-sm-2 col-form-label">Nom du site</label>
-                        <div class="col-sm-10">
-                            <input type="text" readonly class="form-control-plaintext" id="climbingName"
-                                   th:field="*{climbingName}">
+            <div class="card border-dark mb-3">
+                <div class="card-body">
+                    <h1 class="card-title">Édition du site d'escalade</h1>
+                    <form action="editionClimbingSite.html" th:action="@{/climbing-site/edition}" th:object="${climbingSite}" method="post">
+                        <div class="form-group row">
+                            <label for="name" class="col-sm-2 col-form-label">Nom du topo</label>
+                            <div class="col-sm-10">
+                                <input type="text" th:field="*{name}" class="form-control" id="name"
+                                >
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="climbingArea" class="col-sm-2 col-form-label">Lieu du site</label>
-                        <div class="col-sm-10">
-                            <input type="text" readonly class="form-control-plaintext" id="climbingArea"
-                                   th:text="*{climbingArea}">
+                        <div class="form-group row">
+                            <label for="secteur" class="col-sm-2 col-form-label">Description du topo</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="secteur"
+                                       th:field="*{area}">
+                            </div>
                         </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                        <button type="submit" class="btn btn-primary">Modifier</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<div th:replace="template :: footer"></div>
+<div th:replace="fragments/general :: footer"></div>
 </body>
 </html>

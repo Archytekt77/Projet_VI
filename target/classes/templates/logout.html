@@ -5,14 +5,14 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 <head>
-    <div th:replace="template :: head"></div>
+    <div th:replace="fragments/general :: head"></div>
 
     <title>Log out</title>
 </head>
 
 <body>
 <header>
-    <div th:replace="template :: nav"></div>
+    <div th:replace="fragments/general :: nav"></div>
 </header>
 
 <h1 th:inline="text"> Etes vous sur de vouloir vous déconnecter [[${#httpServletRequest.remoteUser}]]?</h1>
@@ -20,6 +20,6 @@
     <input type="submit" value="Sign Out"/>
 </form>
 
-<div th:replace="template :: footer"></div>
+<div th:replace="fragments/general :: footer"></div>
 </body>
 </html>

@@ -9,18 +9,7 @@ import org.springframework.web.bind.annotation.*;
 public class HomeController {
 
     @GetMapping("/home")
-    public String main(Model model) {
-        return "home";
-    }
-
-    @GetMapping("/user")
-    public String createUser(Model model){
-        model.addAttribute("user", new User());
-        return "createUser";
-    }
-
-    @PostMapping("/user")
-    public String addUser(@ModelAttribute User user){
+    public String main() {
         return "home";
     }
 }

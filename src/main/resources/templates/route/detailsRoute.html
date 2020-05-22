@@ -4,46 +4,49 @@
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
-    <div th:replace="template :: head"></div>
+    <div th:replace="fragments/general :: head"></div>
 
-    <title>Détails voie</title>
+    <title>Détails Voie</title>
 </head>
 
 <body>
 <header>
-    <div th:replace="template :: nav"></div>
+    <div th:replace="fragments/general :: nav"></div>
 </header>
 
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <div class="card h-auto">
-                <form th:object="${route}">
-                    <h1>Détails de la voie</h1>
-                    <div class="form-group row">
-                        <label for="routeName" class="col-sm-2 col-form-label">Nom de la voie</label>
-                        <div class="col-sm-10">
-                            <input type="text" readonly class="form-control-plaintext" id="routeName"
-                                   th:text="*{routeName}">
+            <div class="card border-dark mb-3">
+                <div class="card-body">
+                    <h1 class="card-title">Détails de la voie</h1>
+                    <form th:object="${route}">
+                        <div class="form-group row">
+                            <label for="name" class="col-sm-2 col-form-label">Nom de la voie</label>
+                            <div class="col-sm-10">
+                                <input type="text" readonly class="form-control-plaintext" id="name"
+                                       th:text="*{name}">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="pitchName" class="col-sm-2 col-form-label">Nom de la longueur</label>
-                        <div class="col-sm-10">
-                            <input type="text" readonly class="form-control-plaintext" id="pitchName"
-                                   th:text="*{pitchName}">
+                        <div class="form-group row">
+                            <label for="pitchname" class="col-sm-2 col-form-label">Nom de la voie</label>
+                            <div class="col-sm-10">
+                                <input type="text" readonly class="form-control-plaintext" id="pitchname"
+                                       th:text="*{pitchname}">
+                            </div>
                         </div>
-                    </div>
-                    <button type="button" class="btn btn-secondary"><a
-                            th:href="@{/editionRoute(id=*{id})}">Éditer</a></button>
-                    <button type="button" class="btn btn-secondary"><a
-                            th:href="@{/deleteRoute(id=*{id})}">Supprimer</a></button>
-                </form>
+
+                        <button type="button" class="btn btn-secondary"><a
+                                th:href="@{/route/edition(id=*{id})}">Éditer</a></button>
+                        <button type="button" class="btn btn-secondary"><a
+                                th:href="@{/route/delete(id=*{id})}">Supprimer</a></button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<div th:replace="template :: footer"></div>
+<div th:replace="fragments/general :: footer"></div>
 </body>
 </html>

@@ -17,46 +17,47 @@ public class UserController {
 
     @GetMapping("/get")
     public String getUsers(Model model){
-        model.addAttribute("user", userService.getter());
-        return "getUser";
+        model.addAttribute("users", userService.getter());
+        return "user/getUser";
     }
 
     @GetMapping("/details")
     public String getUserById(@RequestParam(value = "id") int id, Model model){
         model.addAttribute("user", userService.get(id));
-        return "detailsUser";
+        return "user/detailsUser";
     }
 
     @GetMapping("/create")
     public String createUser(Model model){
         model.addAttribute("user", new User());
-        return "createUser";
+        return "user/createUser";
     }
 
     @PostMapping("/create")
     public String addUser(@ModelAttribute User user, Model model){
         userService.add(user);
-        model.addAttribute("user", userService.getter());
+        model.addAttribute("users", userService.getter());
         return "home";
     }
 
     @GetMapping("/edition")
     public String editionUser(@RequestParam(value = "id") int id, Model model){
         model.addAttribute("user", userService.get(id));
-        return "editionUser";
+        model.addAttribute("id", id);
+        return "user/editionUser";
     }
 
-    @PostMapping("/edition")
-    public String updateUser(@RequestParam(value = "id") int id, Model model, User user){
+    @PostMapping("/edition/{id}")
+    public String updateUser(@PathVariable(value = "id") int id, Model model, User user){
         userService.update(user);
         model.addAttribute("user", userService.get(id));
-        return "detailsUser";
+        return "user/detailsUser";
     }
 
     @GetMapping("/delete")
     public String deleteUser(@RequestParam(value = "id") int id, Model model){
         model.addAttribute("user", userService.get(id));
         userService.delete(id);
-        return "deleteUser";
+        return "user/deleteUser";
     }
 }

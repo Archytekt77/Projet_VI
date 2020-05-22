@@ -11,6 +11,8 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl extends Services<User, UserRepository> {
     @Autowired
     PasswordEncoder passwordEncoder;
+    @Autowired
+    RoleServiceImpl roleService;
 
     @Override
     public void add(User val) {

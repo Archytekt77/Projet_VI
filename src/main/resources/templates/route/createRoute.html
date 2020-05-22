@@ -5,42 +5,44 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 <head>
-    <div th:replace="template :: head"></div>
+    <div th:replace="fragments/general :: head"></div>
 
     <title>Nouvelle Voie</title>
 </head>
 
 <body>
 <header>
-    <div th:replace="template :: nav"></div>
+    <div th:replace="fragments/general :: nav"></div>
 </header>
 
-<!-- Page Content -->
 <div class="container">
     <div class="row">
-        <div class="col-lg-12">
-            <div class="card h-auto">
-                <h1>Nouvelle Voie</h1>
-                <form action="create.html" th:action="@{/create}" th:object="${route}" method="post">
-                    <div class="form-group row">
-                        <label for="routeName" class="col-sm-2 col-form-label">Nom de la voie</label>
-                        <div class="col-sm-10">
-                            <input type="text" th:field="*{routeName}" class="form-control" id="routeName" placeholder="">
+        <div class="col-12">
+            <div class="card border-dark mb-3">
+                <div class="card-body">
+                    <h1 class="card-title">Nouvelle voie</h1>
+                    <form action="createRoute.html" th:action="@{/route/create}" th:object="${route}" method="post">
+                        <div class="form-group row">
+                            <label for="name" class="col-sm-2 col-form-label">Nom de la voie</label>
+                            <div class="col-sm-10">
+                                <input type="text" th:field="*{name}" class="form-control" id="name" placeholder="">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="pitchName" class="col-sm-2 col-form-label">Nom de la longueur</label>
-                        <div class="col-sm-10">
-                            <input type="text" th:field="*{pitchName}" class="form-control" id="pitchName" placeholder="">
+                        <div class="form-group row">
+                            <label for="pitchname" class="col-sm-2 col-form-label">Nom de la longueur</label>
+                            <div class="col-sm-10">
+                                <input type="text" th:field="*{pitchname}" class="form-control" id="pitchname"
+                                       placeholder="">
+                            </div>
                         </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                        <button type="submit" class="btn btn-primary">Ajouter</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<div th:replace="template :: footer"></div>
+<div th:replace="fragments/general :: footer"></div>
 </body>
 </html>

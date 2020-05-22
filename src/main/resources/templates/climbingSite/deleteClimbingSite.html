@@ -4,27 +4,29 @@
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
-    <div th:replace="template :: head"></div>
+    <div th:replace="fragments/general :: head"></div>
 
-    <title>Supprimer site</title>
+    <title>Supprimer Site</title>
 </head>
 
 <body>
 <header>
-    <div th:replace="template :: nav"></div>
+    <div th:replace="fragments/general :: nav"></div>
 </header>
 
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <div class="card h-auto">
-                <h1>Suppression du site</h1>
-                <p> Le site a bien été supprimé.</p>
+            <div class="card border-dark mb-3">
+                <div class="card-body">
+                    <h1 class="card-title">>Suppression du site d'escalade</h1>
+                    <p> Le site d'escalade a bien été supprimé.</p>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<div th:replace="template :: footer"></div>
+<div th:replace="fragments/general :: footer"></div>
 </body>
 </html>

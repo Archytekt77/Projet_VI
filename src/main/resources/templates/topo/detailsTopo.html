@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <div th:replace="fragments/general :: head"></div>
+
+    <title>Détails topo</title>
+</head>
+
+<body>
+<header>
+    <div th:replace="fragments/general :: nav"></div>
+</header>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="card border-dark mb-3">
+                <div class="card-body">
+                    <h1 class="card-title">Détails du topo <span th:text="${topo.name}"></span></h1>
+
+                    <table></table>
+
+                    <form th:object="${topo}">
+                        <div th:hidden="*{id}"></div>
+                        <div class="form-group row">
+                            <label for="description" class="col-6 col-form-label">Description</label>
+                            <div class="col">
+                                <input type="text" readonly class="form-control-plaintext" id="description" th:value="*{description}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="place" class="col-6 col-form-label">Lieu</label>
+                            <div class="col">
+                                <input type="text" readonly class="form-control-plaintext" id="place"
+                                       th:value="*{place}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="publicationDate" class="col-6 col-form-label">Date de publication</label>
+                            <div class="col">
+                                <input type="text" readonly class="form-control-plaintext" id="publicationDate"
+                                       th:value="*{publicationDate}">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="available" class="col-6 col-form-label">Disponibilité</label>
+                            <div class="col">
+                                <input type="text" readonly class="form-control-plaintext" id="available"
+                                       th:value="*{available}">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary"><a
+                                th:href="@{/topo/edition(id=*{id})}">Éditer</a></button>
+                        <button type="button" class="btn btn-primary"><a
+                                th:href="@{/topo/delete(id=*{id})}">Supprimer</a></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div th:replace="fragments/general :: footer"></div>
+</body>
+</html>
