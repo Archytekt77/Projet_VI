@@ -21,41 +21,23 @@
             <div class="card border-dark mb-3">
                 <div class="card-body">
                     <h1 class="card-title">Édition du topo <span th:text="${topo.name}"></span></h1>
-                    <form action="editionTopo.html" th:action="@{/topo/edition/{id}(id=${id})}" th:object="${topo}" method="post">
+                    <form action="editionTopo.html" th:action="@{/topo/edition/{id}(id=*{id})}" th:object="${topo}" method="post">
+                        <div th:hidden="${user.id}"></div>
                         <div class="form-group row">
-                            <label for="name" class="col-6 col-form-label">Nom</label>
-                            <div class="col">
-                                <input type="text" th:field="*{name}" class="form-control" id="name"
-                                >
-                            </div>
+                            <label class="col-6 col-form-label">Nom</label>
+                            <input class="col-6 form-control" type="text" th:field="*{name}" required>
                         </div>
                         <div class="form-group row">
-                            <label for="description" class="col-6 col-form-label">Description</label>
-                            <div class="col">
-                                <input type="text" class="form-control" id="description"
-                                       th:field="*{description}">
-                            </div>
+                            <label class="col-6 col-form-label">Description</label>
+                            <input class="col-6 form-control" type="text" th:field="*{description}" required>
                         </div>
                         <div class="form-group row">
-                            <label for="place" class="col-6 col-form-label">Lieu</label>
-                            <div class="col">
-                                <input type="text" class="form-control" id="place"
-                                       th:field="*{place}">
-                            </div>
+                            <label class="col-6 col-form-label">Lieu</label>
+                            <input class="col-6 form-control" type="text"  th:field="*{place}" required>
                         </div>
                         <div class="form-group row">
-                            <label for="publicationDate" class="col-6 col-form-label">Date de publication</label>
-                            <div class="col">
-                                <input type="text" class="form-control" id="publicationDate"
-                                       th:field="*{publicationDate}">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="available" class="col-6 col-form-label">Disponibilité</label>
-                            <div class="col">
-                                <input type="text" class="form-control" id="available"
-                                       th:field="*{available}">
-                            </div>
+                            <label class="col-6 form-check-label">Disponibilité</label>
+                            <input class="col-6 form-check-input" type="checkbox" th:field="*{available}" >
                         </div>
                         <button type="submit" class="btn btn-primary">Modifier</button>
                     </form>

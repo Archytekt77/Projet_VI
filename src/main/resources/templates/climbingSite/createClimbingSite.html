@@ -21,19 +21,14 @@
             <div class="card border-dark mb-3">
                 <div class="card-body">
                     <h1 class="card-title">Nouveau site d'escalade</h1>
-                    <form action="createClimbingSite.html" th:action="@{/climbing-site/create}" th:object="${climbingSite}" method="post">
+                    <form th:action="@{/climbing-site/create}" th:object="${climbingSite}" method="post">
                         <div class="form-group row">
-                            <label for="name" class="col-sm-2 col-form-label">Nom du site d'escalade</label>
-                            <div class="col-sm-10">
-                                <input type="text" th:field="*{name}" class="form-control" id="name" placeholder="">
-                            </div>
+                            <label class="col-6 col-form-label" for="name">Nom du site d'escalade</label>
+                            <input class="col-6 form-control" type="text" id="name" th:field="*{name}" required>
                         </div>
                         <div class="form-group row">
-                            <label for="area" class="col-sm-2 col-form-label">Secteur</label>
-                            <div class="col-sm-10">
-                                <input type="text" th:field="*{area}" class="form-control" id="area"
-                                       placeholder="">
-                            </div>
+                            <label class="col-6 col-form-label" for="area">Secteur</label>
+                            <input class="col-6 form-control" type="text" id="area" th:field="*{area}" required>
                         </div>
                         <button type="submit" class="btn btn-primary">Ajouter</button>
                     </form>

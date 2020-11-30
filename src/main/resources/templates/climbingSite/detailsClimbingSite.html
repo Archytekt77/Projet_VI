@@ -15,31 +15,86 @@
 </header>
 
 <div class="container">
+
+    <!-- Afficher tableau des sites -->
     <div class="row">
         <div class="col-12">
             <div class="card border-dark mb-3">
                 <div class="card-body">
-                    <h1 class="card-title">Détails du site d'escalade</h1>
+                    <div class="row">
+                        <h1 class="card-title col-10">Détails du site d'escalade <span
+                                th:text="${climbingSite.name}"></span></h1>
+                        <p th:if="${climbingSite.official}"><img class="official-tag col-2"
+                                                                 src="../img/iconAmisDeEscalade2.png"
+                                                                 alt="tag officiel"/></p>
+                    </div>
                     <form th:object="${climbingSite}">
+                        <div th:hidden="*{id}"></div>
                         <div class="form-group row">
-                            <label for="name" class="col-sm-2 col-form-label">Nom du site d'escalade</label>
-                            <div class="col-sm-10">
-                                <input type="text" readonly class="form-control-plaintext" id="name"
-                                       th:text="*{name}">
-                            </div>
+                            <label class="col-6 col-form-label" for="name">Nom du site d'escalade</label>
+                            <input class="col-6 form-control-plaintext" type="text" id="name" th:field="*{name}"
+                                   readonly/>
                         </div>
                         <div class="form-group row">
-                            <label for="area" class="col-sm-2 col-form-label">Secteur</label>
-                            <div class="col-sm-10">
-                                <input type="text" readonly class="form-control-plaintext" id="area"
-                                       th:text="*{area}">
-                            </div>
+                            <label class="col-6 col-form-label" for="area">Secteur</label>
+                            <input class="col-6 form-control-plaintext" type="text" id="area" th:field="*{area}"
+                                   readonly/>
                         </div>
-                        <button type="button" class="btn btn-secondary"><a
-                                th:href="@{/climbing-site/edition(id=*{id})}">Éditer</a></button>
-                        <button type="button" class="btn btn-secondary"><a
-                                th:href="@{/climbing-site/delete(id=*{id})}">Supprimer</a></button>
+                        <div class="form-group row" th:if="${user != null}">
+                            <a role="button" class="btn btn-primary" th:href="@{/climbing-site/edition(id=*{id})}"
+                               th:if="${user.id == climbingSite.user.id} or ${not user.roles.?[name == 'ROLE_ADMIN'].isEmpty()}">Éditer</a>
+                            <a role="button" class="btn btn-primary" th:href="@{/climbing-site/delete(id=*{id})}"
+                               th:if="${user.id == climbingSite.user.id}">Supprimer</a>
+                        </div>
                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Laisser un commentaire-->
+    <div class="row" th:if="${user != null}">
+        <div class="col-12">
+            <div class="card border-dark mb-3">
+                <div class="card-body">
+                    <h1 class="card-title">Laisser un commentaire</h1>
+                    <form action="detailsClimbingSite.html"
+                          th:action="@{/climbing-site/details/{id}(id=${climbingSite.id})}"
+                          th:object="${comment}"
+                          method="post">
+                        <div class="form-group row">
+                            <label class="col-6 col-form-label" for="description" hidden></label>
+                            <input class="col-6 form-control" type="text" id="description" th:field="*{description}"
+                                   required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Afficher les commentaires-->
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-dark mb-3">
+                <div class="card-body">
+                    <h1 class="card-title">Commentaires</h1>
+                    <p class="card-text" th:if="${comments.isEmpty()}">Pas de commentaires</p>
+                    <div th:each="comment : ${comments}">
+                        <div class="card border-light mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title"
+                                    th:text="${comment.user.getName()} + ' le ' + ${#temporals.format(comment.createDate, 'dd LLL yyyy à HH:mm')}"></h5>
+                                <p class="card-text"
+                                   th:text="${comment.description} + ' modifié le ' + ${#temporals.format(comment.updateDate, 'dd LLL yyyy à HH:mm')}"></p>
+                                <div th:if="${user.id == comment.user.id} or ${not user.roles.?[name == 'ROLE_ADMIN'].isEmpty()}">
+                                    <a role="button" class="btn btn-primary">Modifier</a>
+                                    <a role="button" class="btn btn-primary">Supprimer</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -47,5 +102,6 @@
 </div>
 
 <div th:replace="fragments/general :: footer"></div>
+
 </body>
 </html>

@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <div th:replace="fragments/general :: head"></div>
 
@@ -20,42 +19,46 @@
             <div class="card border-dark mb-3">
                 <div class="card-body">
                     <h1 class="card-title">Détails du topo <span th:text="${topo.name}"></span></h1>
-
-                    <table></table>
-
                     <form th:object="${topo}">
                         <div th:hidden="*{id}"></div>
                         <div class="form-group row">
-                            <label for="description" class="col-6 col-form-label">Description</label>
-                            <div class="col">
-                                <input type="text" readonly class="form-control-plaintext" id="description" th:value="*{description}">
-                            </div>
+                            <label class="col-6 col-form-label" for="createdDate">Date de création</label>
+                            <input class="col-6 form-control-plaintext" type="text" id="createdDate"
+                                   th:value="*{#temporals.format(createDate, 'dd LLL yyyy à HH:mm')}" readonly>
                         </div>
                         <div class="form-group row">
-                            <label for="place" class="col-6 col-form-label">Lieu</label>
-                            <div class="col">
-                                <input type="text" readonly class="form-control-plaintext" id="place"
-                                       th:value="*{place}">
-                            </div>
+                            <label class="col-6 col-form-label" for="updateDate">Modifié le</label>
+                            <input class="col-6 form-control-plaintext" type="text" id="updateDate"
+                                   th:value="*{#temporals.format(updateDate,'dd LLL yyyy à HH:mm')}" readonly>
                         </div>
                         <div class="form-group row">
-                            <label for="publicationDate" class="col-6 col-form-label">Date de publication</label>
-                            <div class="col">
-                                <input type="text" readonly class="form-control-plaintext" id="publicationDate"
-                                       th:value="*{publicationDate}">
-                            </div>
+                            <label class="col-6 col-form-label" for="description">Description</label>
+                            <input class="col-6 form-control-plaintext" type="text" id="description"
+                                   th:value="*{description}" readonly>
                         </div>
                         <div class="form-group row">
-                            <label for="available" class="col-6 col-form-label">Disponibilité</label>
-                            <div class="col">
-                                <input type="text" readonly class="form-control-plaintext" id="available"
-                                       th:value="*{available}">
+                            <label class="col-6 col-form-label" for="place">Lieu</label>
+                            <input class="col-6 form-control-plaintext" type="text" id="place" th:value="*{place}"
+                                   readonly>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-6 col-form-label" for="available">Disponibilité</label>
+                            <input class="col-6 form-control-plaintext" type="text" id="available"
+                                   th:value="*{available}?'oui':'non'" readonly>
+                        </div>
+
+                        <div class="btn-group" role="group">
+                            <div th:if="${user.id == topo.user.id}">
+                                <a role="button" class="btn btn-primary" th:href="@{/topo/edition(id=*{id})}">Éditer</a>
+                                <a role="button" class="btn btn-primary"
+                                   th:href="@{/topo/delete(id=*{id})}">Supprimer</a>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-primary"><a
-                                th:href="@{/topo/edition(id=*{id})}">Éditer</a></button>
-                        <button type="button" class="btn btn-primary"><a
-                                th:href="@{/topo/delete(id=*{id})}">Supprimer</a></button>
+                        <div th:if="${user.id != topo.user.id} and ${topo.available == true}">
+                            <form action="detailsTopo.html" th:object="${topo}" th:action="@{/booking/create(id=*{id})}" method="post">
+                                <button type="submit" class="btn btn-primary">Réserver</button>
+                            </form>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -63,6 +66,6 @@
     </div>
 </div>
 
-    <div th:replace="fragments/general :: footer"></div>
+<div th:replace="fragments/general :: footer"></div>
 </body>
 </html>

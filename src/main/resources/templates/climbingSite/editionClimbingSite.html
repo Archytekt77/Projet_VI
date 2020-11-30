@@ -20,21 +20,22 @@
         <div class="col-12">
             <div class="card border-dark mb-3">
                 <div class="card-body">
-                    <h1 class="card-title">Édition du site d'escalade</h1>
-                    <form action="editionClimbingSite.html" th:action="@{/climbing-site/edition}" th:object="${climbingSite}" method="post">
-                        <div class="form-group row">
-                            <label for="name" class="col-sm-2 col-form-label">Nom du topo</label>
-                            <div class="col-sm-10">
-                                <input type="text" th:field="*{name}" class="form-control" id="name"
-                                >
+                    <h1 class="card-title">Édition du site d'escalade <span th:text="${climbingSite.name}"></span></h1>
+                    <form action="editionClimbingSite.html" th:action="@{/climbing-site/edition/{id}(id=*{id})}"
+                          th:object="${climbingSite}" method="post">
+                        <div th:if="${user.id == climbingSite.user.id}">
+                            <div class="form-group row">
+                                <label class="col-6 col-form-label">Nom</label>
+                                <input class="col-6 form-control" type="text" th:field="*{name}" required>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-6 col-form-label">Lieu</label>
+                                <input class="col-6 form-control" type="text" th:field="*{area}" required>
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label for="secteur" class="col-sm-2 col-form-label">Description du topo</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="secteur"
-                                       th:field="*{area}">
-                            </div>
+                        <div th:if="${not user.roles.?[name == 'ROLE_ADMIN'].isEmpty()}">
+                            <label class="col-6 col-form-label">Officiel</label>
+                            <input class="col-6 form-control" type="checkbox" th:field="*{official}">
                         </div>
                         <button type="submit" class="btn btn-primary">Modifier</button>
                     </form>

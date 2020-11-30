@@ -17,24 +17,22 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-auto">
+        <div class="col-12">
             <div class="card border-dark mb-3">
                 <div class="card-body">
-                    <h1 class="card-title">Édition de l'utilisateur <span th:text="${user.name}"></span></h1>
+                    <h1 class="card-title">Modification de votre compte <span th:text="${user.name}"></span></h1>
                     <form action="editionUser.html" th:action="@{/user/edition/{id}(id=${id})}" th:object="${user}" method="post">
                         <div class="form-group row">
-                            <label for="name" class="col-6 col-form-label">Nom</label>
-                            <div class="col">
-                                <input type="text" th:field="*{name}" class="form-control" id="name"
-                                >
-                            </div>
+                            <label class="col-6 col-form-label">Nom</label>
+                            <input class="col-6 form-control" type="text"  th:field="*{name}" required>
                         </div>
                         <div class="form-group row">
-                            <label for="email" class="col-6 col-form-label">Email</label>
-                            <div class="col">
-                                <input type="text" class="form-control" id="email"
-                                       th:field="*{email}">
-                            </div>
+                            <label class="col-6 col-form-label">Email</label>
+                            <input class="col-6 form-control" type="text" th:field="*{email}" required>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-6 col-form-label">Mot de passe</label>
+                            <input class="col-6 form-control" type="password" th:field="*{password}" required>
                         </div>
                         <button type="submit" class="btn btn-primary">Modifier</button>
                     </form>

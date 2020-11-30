@@ -8,7 +8,7 @@ import java.util.Collection;
 public class Services<T, S extends JpaRepository<T, Integer>> {
 
     @Autowired
-    private S repository;
+    public S repository;
 
 
     // CRUD
@@ -27,6 +27,7 @@ public class Services<T, S extends JpaRepository<T, Integer>> {
     public void delete(int id) {
         repository.deleteById(id);
     }
+
 
 
     // Getters and Setters

@@ -8,7 +8,10 @@ header{
     height: 80px;
 }
 
-
-a{
+a.btn{
     color: white;
+}
+
+p.comment-header{
+    font-weight: bold;
 }

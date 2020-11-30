@@ -16,25 +16,36 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-auto">
+        <div class="col-4">
             <div class="card border-dark mb-3">
                 <div class="card-body">
-                    <h1 class="card-title">Détails de l'utilisateur <span th:text="${user.name}"></span></h1>
+                    <h1 class="card-title">Gérer</h1>
+                    <div class="btn-group-vertical" role="group">
+                        <a role="button" class="btn btn-primary" th:href="@{/user/topo}">Vos Topos</a>
+                        <a role="button" class="btn btn-primary" th:href="@{/user/climbing-site}">Vos sites</a>
+                        <a role="button" class="btn btn-primary" th:href="@{/user/route}">Vos voies</a>
+                        <a role="button" class="btn btn-primary" th:href="@{user/booking}">Vos réservations</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                    <table></table>
-
+        <div class="col-8">
+            <div class="card border-dark mb-3">
+                <div class="card-body">
+                    <h1 class="card-title">Vos informations <span th:text="${user.name}"></span></h1>
                     <form th:object="${user}">
                         <div th:hidden="*{id}"></div>
                         <div class="form-group row">
-                            <label for="email" class="col-6 col-form-label">Email</label>
-                            <div class="col">
-                                <input type="text" readonly class="form-control-plaintext" id="email" th:value="*{email}">
-                            </div>
+                            <label class="col-6 col-form-label">Nom</label>
+                            <input class="col-6 form-control-plaintext" type="text" th:field="*{name}" readonly>
                         </div>
-                        <button type="button" class="btn btn-primary"><a
-                                th:href="@{/user/edition(id=*{id})}">Éditer</a></button>
-                        <button type="button" class="btn btn-primary"><a
-                                th:href="@{/user/delete(id=*{id})}">Supprimer</a></button>
+                        <div class="form-group row">
+                            <label class="col-6 col-form-label">Email</label>
+                            <input class="col-6 form-control-plaintext" type="text" th:field="*{email}" readonly>
+                        </div>
+                        <a role="button" class="btn btn-primary" th:href="@{/user/edition(id=*{id})}">Modifier vos informations</a>
+                        <a role="button" class="btn btn-primary" th:href="@{/user/delete(id=*{id})}">Supprimer votre compte</a>
                     </form>
                 </div>
             </div>

@@ -22,23 +22,16 @@
                     <h1 class="card-title">Création de votre profil</h1>
                     <form action="../home.html" th:action="@{/user/create}" th:object="${user}" method="post">
                         <div class="form-group row">
-                            <label for="Name" class="col-sm-2 col-form-label">Prénom</label>
-                            <div class="col-sm-10">
-                                <input type="text" th:field="*{name}" class="form-control" id="Name" placeholder="">
-                            </div>
+                            <label class="col-6 col-form-label">Prénom</label>
+                            <input class="col-6 form-control" type="text" th:field="*{name}" required>
                         </div>
                         <div class="form-group row">
-                            <label for="Email" class="col-sm-2 col-form-label">Email</label>
-                            <div class="col-sm-10">
-                                <input type="email" th:field="*{email}" class="form-control" id="Email" placeholder="">
-                            </div>
+                            <label class="col-6 col-form-label">Email</label>
+                            <input class="col-6 form-control" type="email" th:field="*{email}" required>
                         </div>
                         <div class="form-group row">
-                            <label for="Password" class="col-sm-2 col-form-label">Mot de passe</label>
-                            <div class="col-sm-10">
-                                <input type="password" th:field="*{password}" class="form-control" id="Password"
-                                       placeholder="">
-                            </div>
+                            <label class="col-6 col-form-label">Mot de passe</label>
+                            <input class="col-6 form-control" type="password" th:field="*{password}" required>
                         </div>
                         <button type="submit" class="btn btn-primary">Enregistrer</button>
                     </form>

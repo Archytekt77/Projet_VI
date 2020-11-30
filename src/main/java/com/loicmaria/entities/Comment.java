@@ -6,24 +6,23 @@ import org.springframework.data.annotation.CreatedDate;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
-@Table(name = "Routes")
-public class Route {
+@Table(name = "comment")
+public class Comment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    @Column(nullable = false)
-    @NotEmpty
-    private String name;
     @Column
     @NotEmpty
-    private String pitch;
+    private String description;
 
     @PrePersist
     protected void prePersist() {
         if (this.createDate == null) createDate = LocalDateTime.now();
+        if (this.updateDate == null) updateDate = LocalDateTime.now();
     }
     @CreatedDate
     @Column(nullable = false, updatable = false)
@@ -34,38 +33,35 @@ public class Route {
 
     @ManyToOne
     private User user;
+    @ManyToOne
+    private ClimbingSite climbingSite;
 
-    // Constructor
-    public Route() {
+    //Constructor
+    public Comment() {
     }
 
-    public Route(Integer id, String name, String pitch, LocalDateTime createDate, LocalDateTime updateDate, User user) {
+    public Comment(int id, String description, LocalDateTime createDate, LocalDateTime updateDate, User user,
+                   ClimbingSite climbingSite) {
         this.id = id;
-        this.name = name;
-        this.pitch = pitch;
+        this.description = description;
         this.createDate = createDate;
         this.updateDate = updateDate;
         this.user = user;
+        this.climbingSite = climbingSite;
     }
 
-    // Getters and Setters
-    public Integer getId() {
+    //Getters and Setters
+    public int getId() {
         return id;
     }
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
-    public String getName() {
-        return name;
+    public String getDescription() {
+        return description;
     }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public String getPitch() {
-        return pitch;
-    }
-    public void setPitch(String pitch) {
-        this.pitch = pitch;
+    public void setDescription(String description) {
+        this.description = description;
     }
     public LocalDateTime getCreateDate() {
         return createDate;
@@ -85,14 +81,21 @@ public class Route {
     public void setUser(User user) {
         this.user = user;
     }
+    public ClimbingSite getClimbingSite() {
+        return climbingSite;
+    }
+    public void setClimbingSite(ClimbingSite climbingSite) {
+        this.climbingSite = climbingSite;
+    }
 
     //toString
     @Override
     public String toString() {
-        return "Route{" +
+        return "Comment{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
-                ", pitch=" + pitch +
+                ", description='" + description + '\'' +
+                ", createDate=" + createDate +
+                ", updateDate=" + updateDate +
                 '}';
     }
 }

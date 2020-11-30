@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.loicmaria.repositories.UserRepository;
 
-@Service("userDetailsService")
+@Service
 @Transactional
 public class CustomUserDetailsService implements UserDetailsService {
 

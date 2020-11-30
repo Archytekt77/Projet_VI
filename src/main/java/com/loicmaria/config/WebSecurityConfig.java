@@ -1,6 +1,7 @@
 package com.loicmaria.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -18,6 +19,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true, proxyTargetClass = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+
 
     @Autowired
     private UserDetailsService customUserDetailsService;
@@ -41,9 +43,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .frameOptions().sameOrigin()
                     .and()
                 .authorizeRequests()
+
+                    .antMatchers("/admin/**").hasRole("ADMIN")
+                    .antMatchers("/topo/**","/profil").authenticated()
                     .antMatchers("/resources/**", "/static/**", "/assets/**", "css/**", "/error/**", "/templates/**").permitAll()
                     .antMatchers("/","/home").permitAll()
-                    .antMatchers("/admin/**").hasRole("ADMIN")
                     .and()
                 .formLogin()
                     .loginPage("/login")
@@ -53,7 +57,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .and()
                 .logout()
                     .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                    .logoutSuccessUrl("/home?logout")
+                    .logoutSuccessUrl("/home")
                     .permitAll()
                     .and()
                 .exceptionHandling()

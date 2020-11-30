@@ -1,6 +1,7 @@
 package com.loicmaria.web;
 
 import com.loicmaria.services.RouteServiceImpl;
+import com.loicmaria.services.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +17,8 @@ public class RouteController {
 
     @Autowired
     RouteServiceImpl routeService;
+    @Autowired
+    UserServiceImpl userService;
 
     @GetMapping("/get")
     public String getRoutes(Model model){
@@ -25,6 +28,7 @@ public class RouteController {
 
     @GetMapping("/details")
     public String getRouteById(@RequestParam(value = "id") int id, Model model){
+        model.addAttribute("user", userService.getLoggedUser());
         model.addAttribute("route", routeService.get(id));
         return "route/detailsRoute";
     }
@@ -37,22 +41,25 @@ public class RouteController {
 
     @PostMapping("/create")
     public String addRoute(@ModelAttribute Route route, Model model){
+        System.out.println(route);
         routeService.add(route);
-        model.addAttribute("route", routeService.getter());
+        model.addAttribute("routes", routeService.getter());
         return "route/getRoute";
     }
 
     @GetMapping("/edition")
     public String editionRoute(@RequestParam(value = "id") int id, Model model){
         model.addAttribute("route", routeService.get(id));
-        model.addAttribute("id", id);
+        model.addAttribute("user", userService.getLoggedUser());
         return "route/editionRoute";
     }
 
     @PostMapping("/edition/{id}")
-    public String updateRoute(@PathParam(value = "id") Integer id, Model model, Route route){
+    public String updateRoute(@PathVariable(value = "id") int id, Model model, Route route){
+        route.setUser(userService.getLoggedUser());
         routeService.update(route);
         model.addAttribute("route", routeService.get(id));
+        model.addAttribute("user", userService.getLoggedUser());
         return "route/detailsRoute";
     }
 

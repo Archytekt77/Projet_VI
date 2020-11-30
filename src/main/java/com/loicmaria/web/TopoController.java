@@ -1,6 +1,7 @@
 package com.loicmaria.web;
 
 import com.loicmaria.services.TopoServiceImpl;
+import com.loicmaria.services.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +15,8 @@ public class TopoController {
 
     @Autowired
     TopoServiceImpl topoService;
+    @Autowired
+    UserServiceImpl userService;
 
     @GetMapping("/get")
     public String getTopos(Model model){
@@ -23,6 +26,7 @@ public class TopoController {
 
     @GetMapping("/details")
     public String getToposById(@RequestParam(value = "id") int id, Model model){
+        model.addAttribute("user", userService.getLoggedUser());
         model.addAttribute("topo", topoService.get(id));
         return "topo/detailsTopo";
     }
@@ -43,14 +47,16 @@ public class TopoController {
     @GetMapping("/edition")
     public String editionTopo(@RequestParam(value = "id") int id, Model model){
         model.addAttribute("topo", topoService.get(id));
-        model.addAttribute("id", id);
+        model.addAttribute("user", userService.getLoggedUser());
         return "topo/editionTopo";
     }
 
     @PostMapping("/edition/{id}")
     public String updateTopo(@PathVariable(value = "id") int id, Model model, Topo topo){
+        topo.setUser(userService.getLoggedUser());
         topoService.update(topo);
         model.addAttribute("topo", topoService.get(id));
+        model.addAttribute("user", userService.getLoggedUser());
         return "topo/detailsTopo";
     }
 

@@ -4,22 +4,15 @@ import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "Routes")
-public class Route {
+@Table(name = "booking")
+public class Booking {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    @Column(nullable = false)
-    @NotEmpty
-    private String name;
-    @Column
-    @NotEmpty
-    private String pitch;
 
     @PrePersist
     protected void prePersist() {
@@ -32,40 +25,29 @@ public class Route {
     @Column
     private LocalDateTime updateDate;
 
-    @ManyToOne
+    @OneToOne
+    private Topo topo;
+    @OneToOne
     private User user;
 
-    // Constructor
-    public Route() {
-    }
 
-    public Route(Integer id, String name, String pitch, LocalDateTime createDate, LocalDateTime updateDate, User user) {
+    //Constructor
+    public Booking(){}
+
+    public Booking(int id, LocalDateTime createDate, LocalDateTime updateDate, Topo topo, User user) {
         this.id = id;
-        this.name = name;
-        this.pitch = pitch;
         this.createDate = createDate;
         this.updateDate = updateDate;
+        this.topo = topo;
         this.user = user;
     }
 
-    // Getters and Setters
-    public Integer getId() {
+    //Getters and Setters
+    public int getId() {
         return id;
     }
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
-    }
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public String getPitch() {
-        return pitch;
-    }
-    public void setPitch(String pitch) {
-        this.pitch = pitch;
     }
     public LocalDateTime getCreateDate() {
         return createDate;
@@ -79,6 +61,12 @@ public class Route {
     public void setUpdateDate(LocalDateTime updateDate) {
         this.updateDate = updateDate;
     }
+    public Topo getTopo() {
+        return topo;
+    }
+    public void setTopo(Topo topo) {
+        this.topo = topo;
+    }
     public User getUser() {
         return user;
     }
@@ -87,12 +75,15 @@ public class Route {
     }
 
     //toString
+
     @Override
     public String toString() {
-        return "Route{" +
+        return "Booking{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
-                ", pitch=" + pitch +
+                ", createDate=" + createDate +
+                ", updateDate=" + updateDate +
+                ", topo=" + topo +
+                ", user=" + user +
                 '}';
     }
 }

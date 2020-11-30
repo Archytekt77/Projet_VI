@@ -20,8 +20,8 @@
             <div class="card border-dark mb-3">
                 <div class="card-body">
                     <h1 class="card-title">Liste des Topos
-                    <button type="button" class="btn btn-primary"><a
-                            th:href="@{/topo/create}">Ajouter</a></button></h1>
+                    <a role="button" class="btn btn-primary" sec:authorize="isAuthenticated()"
+                            th:href="@{/topo/create}">Ajouter</a></h1>
                     <p class="card-text">
 
                     <table class="table table-dark">
@@ -40,8 +40,8 @@
                             <td th:text="${topo.name}"></td>
                             <td th:text="${topo.place}"></td>
                             <td class="justify-content-center">
-                                <button type="button" class="btn btn-primary"><a
-                                        th:href="@{/topo/details(id=${topo.id})}">Details</a></button>
+                                <a role="button" class="btn btn-primary"
+                                   th:href="@{/topo/details(id=${topo.id})}">Details</a>
                             </td>
                         </tr>
                         </tbody>

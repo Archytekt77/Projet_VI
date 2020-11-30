@@ -19,9 +19,7 @@
         <div class="col-12">
             <div class="card border-dark mb-3">
                 <div class="card-body">
-                    <h1 class="card-title">Liste des utilisateurs
-                        <button type="button" class="btn btn-primary"><a
-                                th:href="@{/user/create}">Ajouter</a></button></h1>
+                    <h1 class="card-title">Liste des utilisateurs</h1>
                     <p class="card-text">
 
                     <table class="table table-dark">
@@ -30,7 +28,7 @@
                             <th scope="col">#</th>
                             <th scope="col">Nom</th>
                             <th scope="col">Email</th>
-                            <th scope="col">Plus d'informations</th>
+                            <th scope="col">Admin</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -39,9 +37,13 @@
                             <td th:text="${iter.count}"></td>
                             <td th:text="${user.name}"></td>
                             <td th:text="${user.email}"></td>
+                            <td th:text="${not user.roles.?[name == 'ROLE_ADMIN'].isEmpty()}?'oui':'non'"></td>
                             <td class="justify-content-center">
-                                <button type="button" class="btn btn-primary"><a
-                                        th:href="@{/user/details(id=${user.id})}">Details</a></button>
+                                <form action="getUser.html" th:action="@{/admin/userList/{id}(id=*{id})}"
+                                      th:object="${user}" method="post">
+                                    <button type="submit" class="btn btn-primary"
+                                            th:text="${not user.roles.?[name == 'ROLE_ADMIN'].isEmpty()}?'Rétrograder':'Promouvoir'"></button>
+                                </form>
                             </td>
                         </tr>
                         </tbody>
