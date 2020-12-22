@@ -23,6 +23,13 @@ public class ClimbingSiteServiceImpl extends Services<ClimbingSite, ClimbingSite
         super.add(climbingSite);
     }
 
+    /*
+    @Override
+    public ClimbingSite update(ClimbingSite climbingSite){
+        climbingSite.setUser(climbingSite.getUser());
+        return repository.save(climbingSite);
+    }*/
+
     public Collection<ClimbingSite> findByUser_Id(int id) {
         return climbingSiteRepository.findByUser_Id(id);
     }

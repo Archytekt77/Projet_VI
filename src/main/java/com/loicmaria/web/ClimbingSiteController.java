@@ -2,7 +2,6 @@ package com.loicmaria.web;
 
 import com.loicmaria.entities.ClimbingSite;
 import com.loicmaria.entities.Comment;
-import com.loicmaria.entities.User;
 import com.loicmaria.services.ClimbingSiteServiceImpl;
 import com.loicmaria.services.CommentServiceImpl;
 import com.loicmaria.services.UserServiceImpl;
@@ -14,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 @Controller
+@ControllerAdvice
 @RequestMapping("/climbing-site")
 public class ClimbingSiteController {
 
@@ -24,83 +24,122 @@ public class ClimbingSiteController {
     @Autowired
     UserServiceImpl userService;
 
-    @GetMapping("/get")
-    public String getClimbingSites(Model model) {
+
+    @ModelAttribute
+    public void addAttributes(Model model){
+        model.addAttribute("user", userService.getLoggedUser());
         model.addAttribute("searchClimbingSite",new ClimbingSite());
-        model.addAttribute("climbingSites", climbingSiteService.getter());
+        model.addAttribute("climbingSite", new ClimbingSite());
+        model.addAttribute("climbingSitesList", climbingSiteService.getter());
+    }
+
+
+    @GetMapping("/get")
+    public String getClimbingSites() {
         return "climbingSite/getClimbingSite";
     }
 
     @PostMapping("/get/{name}/{area}")
-    public String getClimbingSitesBySearch(Model model, String name, String area) {
+    public String getClimbingSitesBySearch(String name, String area, Model model) {
         ClimbingSite climbingSite = new ClimbingSite();
         climbingSite.setName(name);
         climbingSite.setArea(area);
+
         model.addAttribute("searchClimbingSite",climbingSite);
-        model.addAttribute("climbingSites", climbingSiteService.findByNameAndArea(name, area));
+        model.addAttribute("climbingSitesList", climbingSiteService.findByNameAndArea(name, area));
         return "climbingSite/getClimbingSite";
     }
 
     @GetMapping("/details")
     public String getClimbingSitesById(@RequestParam(value = "id") int id, Model model) {
-        ClimbingSite climbingSite = climbingSiteService.get(id);
-        User user = userService.getLoggedUser();
-        System.out.println("Site = " + climbingSite + ", user = " + user);
+        model.addAttribute("newComment", new Comment());
+        model.addAttribute("editComment", null);
+        model.addAttribute("commentsList", commentService.findByClimbingSite_Id(id));
         model.addAttribute("climbingSite", climbingSiteService.get(id));
-        model.addAttribute("user", userService.getLoggedUser());
-        model.addAttribute("comment", new Comment());
-        model.addAttribute("comments", commentService.findByClimbingSite_Id(id));
-        return "climbingSite/detailsClimbingSite";
-    }
-
-    @PostMapping("/details/{id}")
-    public String addComment(@ModelAttribute Comment comment, @PathVariable(value = "id") int id, Model model) {
-        ClimbingSite climbingSite = climbingSiteService.get(id);
-        comment.setClimbingSite(climbingSite);
-        commentService.add(comment);
-        model.addAttribute("climbingSite", climbingSite);
-        model.addAttribute("user", userService.getLoggedUser());
-        model.addAttribute("comment", new Comment());
-        model.addAttribute("comments", commentService.findByClimbingSite_Id(id));
         return "climbingSite/detailsClimbingSite";
     }
 
     @GetMapping("/create")
-    public String createClimbingSite(Model model) {
-        model.addAttribute("climbingSite", new ClimbingSite());
+    public String createClimbingSite() {
         return "climbingSite/createClimbingSite";
     }
 
     @PostMapping("/create")
     public String addClimbingSite(@ModelAttribute ClimbingSite climbingSite, Model model) {
         climbingSiteService.add(climbingSite);
-        model.addAttribute("searchClimbingSite",new ClimbingSite());
-        model.addAttribute("climbingSites", climbingSiteService.getter());
+
+        model.addAttribute("climbingSitesList", climbingSiteService.getter());
         return "climbingSite/getClimbingSite";
     }
 
     @GetMapping("/edition")
     public String editionClimbingSite(@RequestParam(value = "id") int id, Model model) {
         model.addAttribute("climbingSite", climbingSiteService.get(id));
-        model.addAttribute("user", userService.getLoggedUser());
         return "climbingSite/editionClimbingSite";
     }
-
     @PostMapping("/edition/{id}")
-    public String updateClimbingSite(@PathVariable(value = "id") int id, Model model, ClimbingSite climbingSite) {
-        climbingSite.setUser(userService.getLoggedUser());
+    public String updateClimbingSite(@PathVariable(value = "id") int id, @ModelAttribute ClimbingSite climbingSite, Model model){
         climbingSiteService.update(climbingSite);
+
+        model.addAttribute("comments", commentService.findByClimbingSite_Id(id));
         model.addAttribute("climbingSite", climbingSiteService.get(id));
-        model.addAttribute("user", userService.getLoggedUser());
-        model.addAttribute("comment", new Comment());
-        model.addAttribute("comments", commentService.getter());
         return "climbingSite/detailsClimbingSite";
     }
 
-    @GetMapping("/delete")
-    public String deleteClimbingSite(@RequestParam(value = "id") int id, Model model) {
+
+    @PostMapping("/delete/{id}")
+    public String deleteClimbingSite(@PathVariable(value = "id") int id, Model model) {
         model.addAttribute("climbingSite", climbingSiteService.get(id));
+
         climbingSiteService.delete(id);
         return "climbingSite/deleteClimbingSite";
+    }
+
+
+    // Gestion de commentaires de la page détails
+
+    @PostMapping("/details/add-comment/{id}")
+    public String addComment(@PathVariable(value = "id") int id, @ModelAttribute Comment comment, Model model) {
+        commentService.add(comment,id);
+
+        model.addAttribute("newComment", new Comment());
+        model.addAttribute("editComment", null);
+        model.addAttribute("commentsList", commentService.findByClimbingSite_Id(id));
+        model.addAttribute("climbingSite", climbingSiteService.get(id));
+        return "climbingSite/detailsClimbingSite";
+    }
+
+
+    @GetMapping("/details/edit-comment")
+    public String editionComment(@RequestParam(value = "id") int id, @RequestParam(value = "comment-id") int commentId, Model model){
+
+        model.addAttribute("newComment", null);
+        model.addAttribute("editComment", commentService.get(commentId));
+        model.addAttribute("commentsList", commentService.findByClimbingSite_Id(id));
+        model.addAttribute("climbingSite", climbingSiteService.get(id));
+        return "climbingSite/detailsClimbingSite";
+    }
+
+    @PostMapping("/details/edit-comment/{id}")
+    public String updateComment(@PathVariable(value = "id") int id,
+                                @ModelAttribute Comment editComment, Model model){
+        commentService.update(editComment);
+
+        model.addAttribute("newComment", new Comment());
+        model.addAttribute("editComment", null);
+        model.addAttribute("commentsList", commentService.findByClimbingSite_Id(id));
+        model.addAttribute("climbingSite", climbingSiteService.get(id));
+        return "climbingSite/detailsClimbingSite";
+    }
+
+    @PostMapping("/details/delete-comment")
+    public String deleteComment(@RequestParam(value = "id") int id, @RequestParam(value = "comment-id") int commentId, Model model){
+        commentService.delete(commentId);
+
+        model.addAttribute("newComment", new Comment());
+        model.addAttribute("editComment", null);
+        model.addAttribute("commentsList", commentService.findByClimbingSite_Id(id));
+        model.addAttribute("climbingSite", climbingSiteService.get(id));
+        return "climbingSite/detailsClimbingSite";
     }
 }

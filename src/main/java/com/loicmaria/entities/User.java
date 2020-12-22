@@ -123,9 +123,6 @@ public class User {
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", roles=" + roles +
-                ", climbingSites=" + climbingSites +
-                ", routes=" + routes +
-                ", comments=" + comments +
                 '}';
     }
 }

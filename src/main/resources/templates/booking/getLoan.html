@@ -7,7 +7,7 @@
 <head>
     <div th:replace="fragments/general :: head"></div>
 
-    <title>Réservations demandes</title>
+    <title>Réservations prêts</title>
 </head>
 
 <body>
@@ -16,16 +16,14 @@
 </header>
 
 <div class="container">
-
-    <!-- Les demandes de l'utilisateur -->
     <div class="row">
         <div class="col-12">
             <div class="card border-dark mb-3">
                 <div class="card-body">
-                    <h1 class="card-title">Vos demandes</h1>
+                    <h1 class="card-title">Vos prêts</h1>
                     <p class="card-text">
 
-                    <!-- Tableau des demandes-->
+                        <!-- Tableau des prêts -->
                     <table class="table table-dark table-responsive-md">
                         <thead>
                         <tr>
@@ -34,7 +32,6 @@
                             <th scope="col">Lien</th>
                             <th scope="col">Réponse</th>
                             <th scope="col">Autre</th>
-
                         </tr>
                         </thead>
 
@@ -49,6 +46,18 @@
                                 <a role="button" class="btn btn-primary"
                                    th:href="@{/topo/details(id=${booking.topo.id})}">Accéder au topo</a>
                             </td>
+                            <td>
+                                <form action="getBooking.html"
+                                      th:action="@{/booking/edition_loan/{id}/{topo_id}(id=${booking.id}, topo_id=${booking.topo.id})}"
+                                      th:object="${booking}" method="post">
+                                    <select id="answer" name="answer">
+                                        <option value="Choose" disabled selected>Choisir</option>
+                                        <option value="accepted">Accepter</option>
+                                        <option value="refused">Refuser</option>
+                                    </select>
+                                    <button type="submit" class="btn btn-primary">Confirmer</button>
+                                </form>
+                            </td>
                         </tr>
 
                         <!-- En cours -->
@@ -61,12 +70,24 @@
                                 <a role="button" class="btn btn-primary"
                                    th:href="@{/topo/details(id=${booking.topo.id})}">Accéder au topo</a>
                             </td>
-                            <td>Accepté</td>
-                            <td th:text="${booking.topo.user.email}"></td>
+                            <td>Acceptée</td>
+                            <td class="justify-content-center">
+                                <div th:text="${booking.user.email}"></div>
+                                <form action="getBooking.html"
+                                      th:action="@{/booking/edition_loan/{id}/{topo_id}(id=${booking.id}, topo_id=${booking.topo.id})}"
+                                      th:object="${booking}" method="post">
+                                    <select id="answer2" name="answer">
+                                        <option value="Choose" disabled selected>Choisir</option>
+                                        <option value="finishedAndAvailable">Topo disponible</option>
+                                        <option value="finishedAndNotAvailable">Topo indisponible</option>
+                                    </select>
+                                    <button type="submit" class="btn btn-primary">Terminé</button>
+                                </form>
+                            </td>
                         </tr>
 
-                        <!-- Finis -->
-                        <th scope="row" th:unless="${finishedBookings.isEmpty()}">Finis</th>
+                        <!-- Fini -->
+                        <th scope="row" th:unless="${finishedBookings.isEmpty()}">Fini</th>
                         <tr th:each="booking, iter : ${finishedBookings}">
                             <th scope="row" th:hidden="${booking.id}"></th>
                             <th th:text="${iter.count}"></th>
@@ -78,16 +99,12 @@
                             <td th:text="${booking.answer} == 'refused'?'Refusé':'Accepté'"></td>
                         </tr>
                         </tr>
-
                         </tbody>
                     </table>
-
                 </div>
             </div>
         </div>
     </div>
-</div>
-
 </div>
 
 <div th:replace="fragments/general :: footer"></div>

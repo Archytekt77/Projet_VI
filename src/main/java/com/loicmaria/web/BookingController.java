@@ -20,22 +20,50 @@ public class BookingController {
     @Autowired
     TopoServiceImpl topoService;
 
+    @ModelAttribute
+    public void addAttributes(Model model){
+        model.addAttribute("user", userService.getLoggedUser());
+    }
+
+    @PostMapping("/create/{id}")
+    public String addBooking(@PathVariable(value = "id") int id, Model model){
+        Booking booking = new Booking();
+        bookingService.add(booking, id);
+
+        model.addAttribute("topo", topoService.get(id));
+        return "topo/detailsTopo";
+    }
+
     @GetMapping("/get")
     public String getBookings(Model model){
-        model.addAttribute("bookings", bookingService.getter());
+        int userId = userService.getLoggedUser().getId();
+
+        model.addAttribute("nullBookings",bookingService.findByUser_IdAndStatus(userId, null));
+        model.addAttribute("inProgressBookings", bookingService.findByUser_IdAndStatus(userId, "in progress"));
+        model.addAttribute("finishedBookings", bookingService.findByUser_IdAndStatus(userId, "finished"));
         return "booking/getBooking";
     }
 
-    @PostMapping("/create")
-    public String addBooking(@RequestParam(value = "id") int id, Model model){
-        System.out.println(id);
-        Booking booking = new Booking();
-        System.out.println("1er : " + booking);
-        bookingService.add(booking, id);
-        System.out.println("2nd : " + booking);
-        model.addAttribute("user", userService.getLoggedUser());
-        model.addAttribute("topo", topoService.get(id));
-        return "topo/detailsTopo";
+    @GetMapping("/get_loan")
+    public String getLoan(Model model){
+        int userId = userService.getLoggedUser().getId();
+
+        model.addAttribute("nullBookings",bookingService.findByTopo_User_IdAndStatus(userId, null));
+        model.addAttribute("inProgressBookings", bookingService.findByTopo_User_IdAndStatus(userId, "in progress"));
+        model.addAttribute("finishedBookings", bookingService.findByTopo_User_IdAndStatus(userId, "finished"));
+        return "booking/getLoan";
+    }
+
+    @PostMapping("/edition_loan/{id}/{topo_id}")
+    public String editionLoan(@PathVariable(value = "id") int id, @PathVariable(value = "topo_id") int id2, String answer, Model model){
+        int userId = userService.getLoggedUser().getId();
+        Booking booking = bookingService.get(id);
+        bookingService.update(booking,answer, id2);
+
+        model.addAttribute("nullBookings",bookingService.findByTopo_User_IdAndStatus(userId, null));
+        model.addAttribute("inProgressBookings", bookingService.findByTopo_User_IdAndStatus(userId, "in progress"));
+        model.addAttribute("finishedBookings", bookingService.findByTopo_User_IdAndStatus(userId, "finished"));
+        return "booking/getLoan";
     }
 
 }

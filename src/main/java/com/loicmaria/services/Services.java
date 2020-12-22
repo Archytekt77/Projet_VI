@@ -1,5 +1,6 @@
 package com.loicmaria.services;
 
+import com.loicmaria.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -12,22 +13,47 @@ public class Services<T, S extends JpaRepository<T, Integer>> {
 
 
     // CRUD
+    /**
+     * Retourne une liste d'objet de la base de donnée faisant appelle .
+     * @return Une liste d'objet.
+     */
     public Collection<T> getter() {
         return repository.findAll();
     }
+
+    /**
+     * Retourne un objet par son ID.
+     * @param id L'ID de l'objet recherché.
+     * @return L'objet trouvé par son ID.
+     */
     public T get(int id) {
         return repository.findById(id).get();
     }
+
+    /**
+     * Ajoute un objet
+     * @param val
+     */
     public void add(T val) {
         repository.save(val);
     }
+
+    /**
+     *
+     * @param val
+     * @return
+     */
     public T update(T val) {
-       return repository.save(val);
+        return repository.save(val);
     }
+
+    /**
+     *
+     * @param id
+     */
     public void delete(int id) {
         repository.deleteById(id);
     }
-
 
 
     // Getters and Setters

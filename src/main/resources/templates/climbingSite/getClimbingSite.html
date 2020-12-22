@@ -33,10 +33,7 @@
                             <label class="sr-only">Secteur</label>
                             <input class="form-control" type="text" th:field="*{area}" placeholder="Secteur" required>
                         </div>
-                        <div class="btn-group mb-2">
-                            <button type="submit" class="btn btn-primary">Chercher</button>
-                            <button type="reset" class="btn btn-primary">Réinitialiser</button>
-                        </div>
+                            <button type="submit" class="btn btn-success mb-2">Chercher</button>
                     </form>
                 </div>
             </div>
@@ -49,11 +46,11 @@
             <div class="card border-dark mb-3">
                 <div class="card-body">
                     <h1 class="card-title">Liste des sites d'escalade
-                        <a role="button" class="btn btn-primary" sec:authorize="isAuthenticated()"
+                        <a role="button" class="btn btn-secondary" sec:authorize="isAuthenticated()"
                            th:href="@{/climbing-site/create}">Ajouter</a></h1>
 
                     <p class="card-text">
-                    <table class="table table-dark">
+                    <table class="table table-dark table-responsive-md">
                         <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -63,13 +60,13 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr th:each="climbingSite, iter: ${climbingSites}">
+                        <tr th:each="climbingSite, iter: ${climbingSitesList}">
                             <th scope="row" th:hidden="${climbingSite.id}"></th>
-                            <th th:text="${iter.count}"></th>
+                            <th scope="row" th:text="${iter.count}"></th>
                             <td th:text="${climbingSite.name}"></td>
                             <td th:text="${climbingSite.area}"></td>
                             <td>
-                                <a role="button" class="btn btn-secondary"
+                                <a role="button" class="btn btn-primary"
                                    th:href="@{/climbing-site/details(id=${climbingSite.id})}">Details</a>
                             </td>
                         </tr>

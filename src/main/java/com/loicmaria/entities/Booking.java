@@ -6,17 +6,46 @@ import org.springframework.data.annotation.CreatedDate;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "booking")
+/**
+ * <b>Classe représentant une réservation créé par un membre du site.</b>
+ * <p>
+ *     Une réservation est caractérisé par :
+ *     <ul>
+ *         <li>Un ID unique, attribué automatiquement et définitivement.</li>
+ *         <li>Un statut. Null, en cours ou fini.</li>
+ *         <li>Une réponse à la demande de réservation. Acceptée ou refusée.</li>
+ *         <li>Une date de création, attribué automatiquement et définitivement</li>
+ *         <li>Une date de mise à jour, attribué automatiquement.</li>
+ *         <li>Un topo de la réservation en question.</li>
+ *         <li>Un utilisateur, celui qui fait la demande.</li>
+ *     </ul>
+ * </p>
+ *
+ * @see Topo
+ * @see User
+ *
+ * @author Loïc MARIA
+ * @version 1.0
+ */
+@Entity(name = "Booking")
+@Table(name = "Booking")
 public class Booking {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    @Column
+    private String status;
+    @Column
+    private String answer;
 
     @PrePersist
     protected void prePersist() {
-        if (this.createDate == null) createDate = LocalDateTime.now();
+        if (this.createDate == null){
+            createDate = LocalDateTime.now();
+            updateDate = null;
+        }
     }
     @CreatedDate
     @Column(nullable = false, updatable = false)
@@ -34,8 +63,10 @@ public class Booking {
     //Constructor
     public Booking(){}
 
-    public Booking(int id, LocalDateTime createDate, LocalDateTime updateDate, Topo topo, User user) {
+    public Booking(int id, String answer, String status, LocalDateTime createDate, LocalDateTime updateDate, Topo topo, User user) {
         this.id = id;
+        this.answer = answer;
+        this.status = status;
         this.createDate = createDate;
         this.updateDate = updateDate;
         this.topo = topo;
@@ -46,14 +77,20 @@ public class Booking {
     public int getId() {
         return id;
     }
-    public void setId(int id) {
-        this.id = id;
+    public String getAnswer() {
+        return answer;
+    }
+    public void setAnswer(String answer) {
+        this.answer = answer;
+    }
+    public String getStatus() {
+        return status;
+    }
+    public void setStatus(String status) {
+        this.status = status;
     }
     public LocalDateTime getCreateDate() {
         return createDate;
-    }
-    public void setCreateDate(LocalDateTime createDate) {
-        this.createDate = createDate;
     }
     public LocalDateTime getUpdateDate() {
         return updateDate;
@@ -80,6 +117,8 @@ public class Booking {
     public String toString() {
         return "Booking{" +
                 "id=" + id +
+                ", answer=" + answer +
+                ", status=" + status +
                 ", createDate=" + createDate +
                 ", updateDate=" + updateDate +
                 ", topo=" + topo +

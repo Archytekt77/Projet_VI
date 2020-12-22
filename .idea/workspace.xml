@@ -23,63 +23,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ea0de22-d5b1-418f-b20c-89a4ab52b808" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/Booking.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/Comment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/repositories/BookingRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/repositories/CommentRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/BookingServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/CommentServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/AdminController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/BookingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/booking/getBooking.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/approveClimbingSite.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/booking/getLoan.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/config/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/config/WebSecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/ClimbingSite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/ClimbingSite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/Privilege.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/Route.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/Booking.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/Topo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/Topo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/repositories/ClimbingSiteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/repositories/ClimbingSiteRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/repositories/RoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/repositories/RoleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/repositories/RouteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/repositories/RouteRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/repositories/TopoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/repositories/TopoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/security/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/security/CustomUserDetailsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/repositories/BookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/repositories/BookingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/BookingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/BookingServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/ClimbingSiteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/ClimbingSiteServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/RoleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/RouteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/RouteServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/CommentServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/Services.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/Services.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/TopoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/TopoServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/BookingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/BookingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/ClimbingSiteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/ClimbingSiteController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/RouteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/RouteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/LoggingController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/TopoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/TopoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/climbingSite/createClimbingSite.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/climbingSite/createClimbingSite.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/getUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/getUser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/booking/getBooking.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/booking/getBooking.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/climbingSite/deleteClimbingSite.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/climbingSite/deleteClimbingSite.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/climbingSite/detailsClimbingSite.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/climbingSite/detailsClimbingSite.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/climbingSite/editionClimbingSite.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/climbingSite/editionClimbingSite.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/climbingSite/getClimbingSite.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/climbingSite/getClimbingSite.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/general.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/general.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/profil.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/route/createRoute.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/route/createRoute.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/route/detailsRoute.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/route/detailsRoute.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/route/editionRoute.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/route/editionRoute.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/route/getRoute.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/route/getRoute.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/topo/createTopo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/topo/createTopo.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/topo/detailsTopo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/topo/detailsTopo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/topo/editionTopo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/topo/editionTopo.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/topo/getTopo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/topo/getTopo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/createUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/createUser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/deleteUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/deleteUser.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/detailsUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/detailsUser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/editionUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/editionUser.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/getUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/getUser.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
     </list>
@@ -108,9 +84,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -157,6 +133,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -196,19 +173,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -342,7 +306,14 @@
       <workItem from="1605620879115" duration="9609000" />
       <workItem from="1605881671971" duration="1322000" />
       <workItem from="1606125892663" duration="3570000" />
-      <workItem from="1606300228846" duration="8768000" />
+      <workItem from="1606300228846" duration="41372000" />
+      <workItem from="1607089675464" duration="41322000" />
+      <workItem from="1607504985527" duration="608000" />
+      <workItem from="1607565324565" duration="1294000" />
+      <workItem from="1607896329482" duration="7519000" />
+      <workItem from="1607940761181" duration="3195000" />
+      <workItem from="1607947364274" duration="35590000" />
+      <workItem from="1608543384944" duration="10942000" />
     </task>
     <servers />
   </component>
@@ -365,83 +336,79 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="-1061" y="411" width="612" height="217" key="#Assign_Data_Sources" timestamp="1608676960723">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1061" y="411" width="612" height="217" key="#Assign_Data_Sources/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1608676960723" />
+    <state x="859" y="411" key="#Assign_Data_Sources/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607189934984" />
     <state x="586" y="198" key="#Inspections" timestamp="1602016685299">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="586" y="198" key="#Inspections/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1602016685299" />
-    <state x="552" y="178" key="#Notifications" timestamp="1599645240856">
+    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1608644713191">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="178" key="#Notifications/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599645240856" />
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599492875382">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599492875382" />
-    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser" timestamp="1606265558295">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606265558295" />
+    <state x="765" y="204" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608644713191" />
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1604431751940">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604431751940" />
-    <state width="1877" height="241" key="GridCell.Tab.0.bottom" timestamp="1606765328444">
+    <state x="707" y="229" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1608644949725">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="241" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606765328444" />
+    <state x="707" y="229" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608644949725" />
+    <state width="1877" height="107" key="GridCell.Tab.0.bottom" timestamp="1608676981375">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="107" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1608676981375" />
+    <state width="1877" height="107" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608647618068" />
     <state width="1877" height="159" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1605051270289" />
-    <state width="1877" height="241" key="GridCell.Tab.0.center" timestamp="1606765328444">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="107" key="GridCell.Tab.0.center" timestamp="1608676981375">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="241" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606765328444" />
+    <state width="1877" height="107" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1608676981375" />
+    <state width="1877" height="107" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608647618067" />
     <state width="1877" height="159" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1605051270288" />
-    <state width="1877" height="241" key="GridCell.Tab.0.left" timestamp="1606765328444">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="107" key="GridCell.Tab.0.left" timestamp="1608676981374">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="241" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606765328444" />
+    <state width="1877" height="107" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1608676981374" />
+    <state width="1877" height="107" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608647618067" />
     <state width="1877" height="159" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1605051270288" />
-    <state width="1877" height="241" key="GridCell.Tab.0.right" timestamp="1606765328444">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1877" height="107" key="GridCell.Tab.0.right" timestamp="1608676981375">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="241" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1606765328444" />
+    <state width="1877" height="107" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1608676981375" />
+    <state width="1877" height="107" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608647618068" />
     <state width="1877" height="159" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1605051270289" />
     <state width="1293" height="163" key="GridCell.Tab.1.bottom" timestamp="1600796893863">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1293" height="163" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600796893863" />
-    <state width="1619" height="291" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598402128581" />
     <state width="1293" height="163" key="GridCell.Tab.1.center" timestamp="1600796893863">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1293" height="163" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600796893863" />
-    <state width="1619" height="291" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598402128581" />
     <state width="1293" height="163" key="GridCell.Tab.1.left" timestamp="1600796893863">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1293" height="163" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600796893863" />
-    <state width="1619" height="291" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598402128581" />
     <state width="1293" height="163" key="GridCell.Tab.1.right" timestamp="1600796893863">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1293" height="163" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600796893863" />
-    <state width="1619" height="291" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598402128581" />
-    <state x="461" y="165" key="SettingsEditor" timestamp="1599492898442">
+    <state x="591" y="-25" width="974" height="1047" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1608222825219">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1599492898442" />
-    <state x="-7" y="0" width="974" height="1047" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1605051267622">
+    <state x="591" y="-25" width="974" height="1047" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1608222825219" />
+    <state x="681" y="282" key="run.anything.popup" timestamp="1607213036408">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="-7" y="0" width="974" height="1047" maximized="true" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1605046599270" />
-    <state x="581" y="300" key="com.intellij.ide.util.TipDialog" timestamp="1598603855193">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="681" y="282" key="run.anything.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1607213036408" />
+    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606851965975">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="581" y="300" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1598437050048" />
-    <state x="581" y="300" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598603855193" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1605036605485">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1605036605485" />
+    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1606851965975" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

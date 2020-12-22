@@ -1,5 +1,6 @@
 package com.loicmaria.web;
 
+import com.loicmaria.entities.ClimbingSite;
 import com.loicmaria.entities.Role;
 import com.loicmaria.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +26,6 @@ public class UserController {
     ClimbingSiteServiceImpl climbingSiteService;
     @Autowired
     RouteServiceImpl routeService;
-    @Autowired
-    BookingServiceImpl bookingService;
 
 
     @GetMapping("/details")
@@ -82,6 +81,7 @@ public class UserController {
 
     @GetMapping("/climbing-site")
     public String getClimbingSiteByUser(Model model){
+        model.addAttribute("searchClimbingSite",new ClimbingSite());
         model.addAttribute("climbingSites", climbingSiteService.findByUser_Id(userService.getLoggedUser().getId()));
         return "climbingSite/getClimbingSite";
     }
@@ -90,12 +90,5 @@ public class UserController {
         model.addAttribute("routes", routeService.findByUser_Id(userService.getLoggedUser().getId()));
         return "route/getRoute";
     }
-
-    @GetMapping("/booking")
-    public String getBookingByUser(Model model){
-        model.addAttribute("bookings",bookingService.findByUser_Id(userService.getLoggedUser().getId()));
-        return "booking/getBooking";
-    }
-
 
 }

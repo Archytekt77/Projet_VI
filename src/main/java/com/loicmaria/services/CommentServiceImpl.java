@@ -1,6 +1,7 @@
 package com.loicmaria.services;
 
 
+import com.loicmaria.entities.ClimbingSite;
 import com.loicmaria.entities.Comment;
 import com.loicmaria.entities.Topo;
 import com.loicmaria.entities.User;
@@ -14,16 +15,19 @@ import java.util.Collection;
 public class CommentServiceImpl extends Services<Comment, CommentRepository> {
 
     @Autowired
+    CommentRepository commentRepository;
+    @Autowired
     UserServiceImpl userService;
     @Autowired
-    CommentRepository commentRepository;
+    ClimbingSiteServiceImpl climbingSiteService;
 
-    @Override
-    public void add(Comment val){
-        User user = this.userService.getLoggedUser();
-        val.setUser(user);
-        super.add(val);
+
+    public void add(Comment comment, int id){
+        comment.setUser(this.userService.getLoggedUser());
+        comment.setClimbingSite(this.climbingSiteService.get(id));
+        repository.save(comment);
     }
+
 
     public Collection<Comment> findByClimbingSite_Id(int id) {
         return commentRepository.findByClimbingSite_Id(id);

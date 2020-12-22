@@ -18,6 +18,11 @@ public class TopoController {
     @Autowired
     UserServiceImpl userService;
 
+    @ModelAttribute
+    public void addAttributes(Model model){
+        model.addAttribute("user", userService.getLoggedUser());
+    }
+
     @GetMapping("/get")
     public String getTopos(Model model){
         model.addAttribute("topos", topoService.getter());
@@ -26,7 +31,6 @@ public class TopoController {
 
     @GetMapping("/details")
     public String getToposById(@RequestParam(value = "id") int id, Model model){
-        model.addAttribute("user", userService.getLoggedUser());
         model.addAttribute("topo", topoService.get(id));
         return "topo/detailsTopo";
     }
@@ -47,7 +51,6 @@ public class TopoController {
     @GetMapping("/edition")
     public String editionTopo(@RequestParam(value = "id") int id, Model model){
         model.addAttribute("topo", topoService.get(id));
-        model.addAttribute("user", userService.getLoggedUser());
         return "topo/editionTopo";
     }
 
@@ -56,7 +59,6 @@ public class TopoController {
         topo.setUser(userService.getLoggedUser());
         topoService.update(topo);
         model.addAttribute("topo", topoService.get(id));
-        model.addAttribute("user", userService.getLoggedUser());
         return "topo/detailsTopo";
     }
 

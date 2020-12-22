@@ -50,6 +50,7 @@ public class UserServiceImpl extends Services<User, UserRepository> {
         return null;
     }
 
+
     public boolean isAdmin(User user){
         return user.getRoles().stream().anyMatch(o -> o.getName().equals("ROLE_ADMIN"));
     }

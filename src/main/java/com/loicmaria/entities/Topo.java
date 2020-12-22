@@ -102,8 +102,6 @@ public class Topo {
                 ", available=" + available +
                 ", createDate=" + createDate +
                 ", updateDate=" + updateDate +
-                ", climbingSites=" + climbingSites +
-                ", user=" + user +
                 '}';
     }
 }

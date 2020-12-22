@@ -22,83 +22,154 @@
             <div class="card border-dark mb-3">
                 <div class="card-body">
                     <div class="row">
-                        <h1 class="card-title col-10">Détails du site d'escalade <span
-                                th:text="${climbingSite.name}"></span></h1>
+                        <h1 class="card-title col-10">Détails du site d'escalade</h1>
                         <p th:if="${climbingSite.official}"><img class="official-tag col-2"
                                                                  src="../img/iconAmisDeEscalade2.png"
                                                                  alt="tag officiel"/></p>
                     </div>
-                    <form th:object="${climbingSite}">
-                        <div th:hidden="*{id}"></div>
-                        <div class="form-group row">
-                            <label class="col-6 col-form-label" for="name">Nom du site d'escalade</label>
-                            <input class="col-6 form-control-plaintext" type="text" id="name" th:field="*{name}"
-                                   readonly/>
+
+
+                    <!-- Tableau des détails-->
+                    <table class="table table-dark table-responsive-md" th:object="${climbingSite}">
+                        <thead>
+                        <tr>
+                            <th th:hidden="*{id}"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">Date de création</th>
+                            <td th:text="*{#temporals.format(createDate, 'dd LLL yyyy à HH:mm')}"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Modifié le</th>
+                            <td th:text="*{#temporals.format(updateDate,'dd LLL yyyy à HH:mm')}"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Nom</th>
+                            <td th:text="*{name}"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Secteur</th>
+                            <td th:text="*{area}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Boutons d'actions -->
+                    <div th:if="${user != null}" class="btn-group" role="group">
+                        <div th:if="${user.id == climbingSite.user.id}">
+                            <a role="button" class="btn btn-primary"
+                               th:href="@{/climbing-site/edition(id=${climbingSite.id})}">Éditer</a>
+                            <form action="detailsClimbingSite.html"
+                                  th:action="@{/climbing-site/delete/{id}(id=${climbingSite.id})}"
+                                  th:object="${climbingSite}"
+                                  method="post">
+                                <button type="submit" class="btn btn-danger">Supprimer</button>
+                            </form>
                         </div>
-                        <div class="form-group row">
-                            <label class="col-6 col-form-label" for="area">Secteur</label>
-                            <input class="col-6 form-control-plaintext" type="text" id="area" th:field="*{area}"
-                                   readonly/>
+                        <div th:if="${not user.roles.?[name == 'ROLE_ADMIN'].isEmpty()}">
+                            <a role="button" class="btn btn-primary" th:href="@{/admin/approve(id=${climbingSite.id})}"
+                               th:text="${climbingSite.official}?'Désapprouver':'Approuver'"></a>
                         </div>
-                        <div class="form-group row" th:if="${user != null}">
-                            <a role="button" class="btn btn-primary" th:href="@{/climbing-site/edition(id=*{id})}"
-                               th:if="${user.id == climbingSite.user.id} or ${not user.roles.?[name == 'ROLE_ADMIN'].isEmpty()}">Éditer</a>
-                            <a role="button" class="btn btn-primary" th:href="@{/climbing-site/delete(id=*{id})}"
-                               th:if="${user.id == climbingSite.user.id}">Supprimer</a>
-                        </div>
-                    </form>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
 
-    <!--Laisser un commentaire-->
-    <div class="row" th:if="${user != null}">
+    <!-- Laisser un commentaire -->
+    <div class="row" th:if="${user != null and newComment != null}">
         <div class="col-12">
             <div class="card border-dark mb-3">
                 <div class="card-body">
                     <h1 class="card-title">Laisser un commentaire</h1>
                     <form action="detailsClimbingSite.html"
-                          th:action="@{/climbing-site/details/{id}(id=${climbingSite.id})}"
-                          th:object="${comment}"
+                          th:action="@{/climbing-site/details/add-comment/{id}(id=${climbingSite.id})}"
+                          th:object="${newComment}"
                           method="post">
                         <div class="form-group row">
                             <label class="col-6 col-form-label" for="description" hidden></label>
                             <input class="col-6 form-control" type="text" id="description" th:field="*{description}"
                                    required>
                         </div>
-                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                        <button type="submit" class="btn btn-success">Envoyer</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 
-    <!--Afficher les commentaires-->
+    <!-- Modification de commentaire -->
+    <div class="row" th:if="${editComment != null}">
+        <div class="col-12">
+            <div class="card border-dark mb-3">
+                <div class="card-body">
+                    <h1 class="card-title">Modifification de votre commentaire</h1>
+                    <form action="detailsClimbingSite.html"
+                          th:action="@{/climbing-site/details/edit-comment/{id}(id=${climbingSite.id})}"
+                          th:object="${editComment}"
+                          method="post">
+                        <input type="hidden" th:field="*{id}">
+                        <input type="hidden" th:field="*{user}">
+                        <input type="hidden" th:field="*{climbingSite}">
+                        <div class="form-group row">
+                            <label class="col-6 col-form-label" for="editDescription" hidden></label>
+                            <input class="col-6 form-control" type="text" id="editDescription" th:field="*{description}"
+                                   required>
+                        </div>
+                        <button type="submit" class="btn btn-success">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Afficher les commentaires -->
     <div class="row">
         <div class="col-12">
             <div class="card border-dark mb-3">
                 <div class="card-body">
                     <h1 class="card-title">Commentaires</h1>
-                    <p class="card-text" th:if="${comments.isEmpty()}">Pas de commentaires</p>
-                    <div th:each="comment : ${comments}">
+                    <p class="card-text" th:if="${commentsList.isEmpty()}">Pas de commentaires</p>
+
+                    <!-- Commentaire != null -->
+                    <div th:each="comment : ${commentsList}">
                         <div class="card border-light mb-3">
                             <div class="card-body">
-                                <h5 class="card-title"
-                                    th:text="${comment.user.getName()} + ' le ' + ${#temporals.format(comment.createDate, 'dd LLL yyyy à HH:mm')}"></h5>
-                                <p class="card-text"
-                                   th:text="${comment.description} + ' modifié le ' + ${#temporals.format(comment.updateDate, 'dd LLL yyyy à HH:mm')}"></p>
-                                <div th:if="${user.id == comment.user.id} or ${not user.roles.?[name == 'ROLE_ADMIN'].isEmpty()}">
-                                    <a role="button" class="btn btn-primary">Modifier</a>
-                                    <a role="button" class="btn btn-primary">Supprimer</a>
+                                <h2 class="card-title"
+                                    th:text="${comment.user.getName()} + ' le ' + ${#temporals.format(comment.createDate, 'dd LLL yyyy à HH:mm')}"></h2>
+                                <p class="card-text" th:text="${comment.description}">
+                                    <!--<div th:if="${comment.updateDate != null}">
+                                        <span th:text="' modifié le ' + ${#temporals.format(comment.updateDate, 'dd LLL yyyy à HH:mm')}"></span>
+                                    </div>-->
+                                    <span th:if="${comment.updateDate != null}"
+                                          th:text="' modifié le ' + ${#temporals.format(comment.updateDate, 'dd LLL yyyy à HH:mm')}"></span>
+                                </p>
+
+                                <div th:if="${user != null}">
+                                    <div class="btn-group" role="group"
+                                         th:if="${user.id == comment.user.id} or ${not user.roles.?[name == 'ROLE_ADMIN'].isEmpty()}">
+                                        <a role="button" class="btn btn-primary" th:href="@{/climbing-site/details/edit-comment(id=${climbingSite.id},comment-id=${comment.id})}">Modifier</a>
+                                        <form action="detailsClimbingSite.html"
+                                              th:action="@{/climbing-site/details/delete-comment(id=${climbingSite.id},comment-id=${comment.id})}"
+                                              th:object="${editComment}"
+                                              method="post">
+                                            <button type="submit" class="btn btn-danger">Supprimer</button>
+                                        </form>
+                                    </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
     </div>
+
 </div>
 
 <div th:replace="fragments/general :: footer"></div>

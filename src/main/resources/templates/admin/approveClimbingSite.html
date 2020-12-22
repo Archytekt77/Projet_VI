@@ -7,7 +7,7 @@
 <head>
     <div th:replace="fragments/general :: head"></div>
 
-    <title>Édition site</title>
+    <title>Approuver site</title>
 </head>
 
 <body>
@@ -21,18 +21,17 @@
             <div class="card border-dark mb-3">
                 <div class="card-body">
                     <h1 class="card-title">Édition du site d'escalade <span th:text="${climbingSite.name}"></span></h1>
-                    <form action="editionClimbingSite.html" th:action="@{/climbing-site/edition/{id}(id=*{id})}"
+                    <form th:action="@{/admin/approve/{id}(id=${climbingSite.id})}"
                           th:object="${climbingSite}" method="post">
-                        <input type="hidden" th:field="*{user}">
+                        <div th:hidden="*{id}"></div>
+                        <div th:hidden="*{user}"></div>
+                        <div th:hidden="*{name}"></div>
+                        <div th:hidden="*{area}"></div>
                         <div class="form-group row">
-                            <label class="col-6 col-form-label">Nom</label>
-                            <input class="col-6 form-control" type="text" th:field="*{name}" required>
+                            <label class="col-6 col-form-label">Officiel</label>
+                            <input class="col-6 form-control" type="checkbox" th:field="*{official}">
                         </div>
-                        <div class="form-group row">
-                            <label class="col-6 col-form-label">Lieu</label>
-                            <input class="col-6 form-control" type="text" th:field="*{area}" required>
-                        </div>
-                        <button type="submit" class="btn btn-success">Modifier</button>
+                        <button type="submit" class="btn btn-primary">Modifier</button>
                     </form>
                 </div>
             </div>
