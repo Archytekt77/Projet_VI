@@ -8,6 +8,28 @@ import javax.validation.constraints.NotEmpty;
 import java.time.LocalDateTime;
 import java.util.Collection;
 
+
+/**
+ * <b>Classe représentant un site d'escalade créé par un membre du site.</b>
+ * <p>
+ *     Un site d'escalade est caractérisé par :
+ *     <ul>
+ *         <li>Un ID unique, attribué automatiquement et définitivement.</li>
+ *         <li>Un nom. Celui du site.</li>
+ *         <li>Une zone. </li>
+ *         <li>Une date de création, attribué automatiquement et définitivement</li>
+ *         <li>Une date de mise à jour, attribué automatiquement.</li>
+ *         <li>Un topo de la réservation en question.</li>
+ *         <li>Un utilisateur, celui qui fait la demande.</li>
+ *     </ul>
+ * </p>
+ *
+ * @see Topo
+ * @see User
+ *
+ * @author Loïc MARIA
+ * @version 1.0
+ */
 @Entity
 @Table(name = "climbingSites")
 public class ClimbingSite {
@@ -124,8 +146,9 @@ public class ClimbingSite {
                 ", name='" + name + '\'' +
                 ", area='" + area + '\'' +
                 ", official=" + official +
-                ", routes=" + routes +
-                ", comments=" + comments +
+                ", createDate=" + createDate +
+                ", updateDate=" + updateDate +
+                ", user=" + user.getId() +
                 '}';
     }
 }

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:replace="fragments/general :: head"></div>
+
+    <title>Détails topo</title>
+</head>
+
+<body>
+<header>
+    <div th:replace="fragments/general :: nav"></div>
+</header>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="card border-dark mb-3">
+                <div class="card-body">
+                    <h1 class="card-title">Détails du Topo</h1>
+
+                    <!-- Tableau des détails-->
+                    <table class="table table-dark table-responsive-md" th:object="${topo}">
+                        <thead>
+                        <tr>
+                            <th th:hidden="*{id}"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th>Date de création</th>
+                            <td th:text="*{#temporals.format(createDate, 'dd LLL yyyy à HH:mm')}"></td>
+                        </tr>
+                        <tr>
+                            <th>Modifié le</th>
+                            <td th:text="*{#temporals.format(updateDate,'dd LLL yyyy à HH:mm')}"></td>
+                        </tr>
+                        <tr>
+                            <th>Nom</th>
+                            <td th:text="*{name}"></td>
+                        </tr>
+                        <tr>
+                            <th>Description</th>
+                            <td th:text="*{description}"></td>
+                        </tr>
+                        <tr>
+                            <th>Lieu</th>
+                            <td th:text="*{place}"></td>
+                        </tr>
+                        <tr>
+                            <th>Disponibilité</th>
+                            <td th:text="*{available}?'oui':'non'"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+
+                    <!-- Boutons d'actions -->
+                    <div class="btn-group" role="group" th:if="${user.id == topo.user.id}">
+                        <a role="button" class="btn btn-primary" th:href="@{/topo/edition(id=${topo.id})}">Éditer</a>
+                        <a role="button" class="btn btn-danger" th:href="@{/topo/delete(id=${topo.id})}">Supprimer</a>
+                    </div>
+
+                    <div th:if="${user.id != topo.user.id} and ${topo.available == true}">
+                        <form th:object="${topo}" th:action="@{/booking/create/{id}(id=*{id})}" method="post">
+                            <button type="submit" class="btn btn-primary">Réserver</button>
+                        </form>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="fragments/general :: footer"></div>
+</body>
+</html>

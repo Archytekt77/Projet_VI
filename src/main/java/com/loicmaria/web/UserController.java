@@ -41,9 +41,9 @@ public class UserController {
     }
 
     @PostMapping("/create")
-    public String addUser(@ModelAttribute User user, Model model){
+    public String addUser(@ModelAttribute User user){
+        System.out.println(user);
         userService.add(user);
-        model.addAttribute("users", userService.getter());
         return "login";
     }
 
@@ -75,19 +75,19 @@ public class UserController {
     //  Topo, Climbing Site and route
     @GetMapping("/topo")
     public String getToposByUser(Model model){
-        model.addAttribute("topos", topoService.findByUser_Id(userService.getLoggedUser().getId()));
+        model.addAttribute("toposList", topoService.findByUser_Id(userService.getLoggedUser().getId()));
         return "topo/getTopo";
     }
 
     @GetMapping("/climbing-site")
     public String getClimbingSiteByUser(Model model){
         model.addAttribute("searchClimbingSite",new ClimbingSite());
-        model.addAttribute("climbingSites", climbingSiteService.findByUser_Id(userService.getLoggedUser().getId()));
+        model.addAttribute("climbingSitesList", climbingSiteService.findByUser_Id(userService.getLoggedUser().getId()));
         return "climbingSite/getClimbingSite";
     }
     @GetMapping("/route")
     public String getRouteByUser(Model model){
-        model.addAttribute("routes", routeService.findByUser_Id(userService.getLoggedUser().getId()));
+        model.addAttribute("routesList", routeService.findByUser_Id(userService.getLoggedUser().getId()));
         return "route/getRoute";
     }
 

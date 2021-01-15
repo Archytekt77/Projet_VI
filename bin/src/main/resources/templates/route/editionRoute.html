@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <div th:replace="fragments/general :: head"></div>
+
+    <title>Édition voie</title>
+</head>
+
+<body>
+<header>
+    <div th:replace="fragments/general :: nav"></div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-dark mb-3">
+                <div class="card-body">
+                    <h1 class="card-title">Édition de la voie</h1>
+                    <form action="editionRoute.html" th:action="@{/route/edition/{id}(id=*{id})}" th:object="${route}" method="post">
+                        <div class="form-group row">
+                            <label class="col-6 col-form-label">Nom de la voie</label>
+                            <input class="col-6 form-control" type="text" th:field="*{name}" required>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-6 col-form-label">Nombre de longueurs</label>
+                            <input class="col-6 form-control" type="text"  th:field="*{pitch}" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Modifier</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="fragments/general :: footer"></div>
+</body>
+</html>

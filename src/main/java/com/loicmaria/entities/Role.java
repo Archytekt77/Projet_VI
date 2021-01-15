@@ -3,6 +3,20 @@ package com.loicmaria.entities;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 
+/**
+ * <b>Classe représentant un rôle, qui est prédéfinit à la création d'un membre en
+ * membre simple mais pouvant être changé.</b>
+ * <p>
+ *     Il existe 2 rôles, ils sont caractérisés par :
+ *     <ul>
+ *         <li>Un ID unique, attribué automatiquement et définitivement.</li>
+ *         <li>Un nom, actuellement il y a administrateur et simple membre</li>
+ *     </ul>
+ * </p>
+ *
+ * @author Loïc MARIA
+ * @version 1.0
+ */
 @Entity
 @Table(name = "roles")
 public class Role {

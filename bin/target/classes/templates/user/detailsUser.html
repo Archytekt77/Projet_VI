@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <div th:replace="fragments/general :: head"></div>
+
+    <title>Détails utilisateur</title>
+</head>
+
+<body>
+<header>
+    <div th:replace="fragments/general :: nav"></div>
+</header>
+
+<div class="container">
+    <div class="row justify-content-center">
+
+        <!-- Informations utilisateur -->
+        <div class="col-12">
+            <div class="card border-dark mb-3">
+                <div class="card-body">
+                    <h1 class="card-title">Vos informations</h1>
+
+                    <!-- Tableau des détails -->
+                    <table class="table table-dark table-responsive-md" th:object="${user}">
+                        <thead>
+                        <tr>
+                            <th th:hidden="*{id}"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th>Nom</th>
+                            <td th:text="*{name}"></td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td th:text="*{email}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Boutons d'actions -->
+                    <div class="btn-group" role="group">
+                        <a role="button" class="btn btn-primary" th:href="@{/user/edition(id=${user.id})}">Modifier vos
+                            informations</a>
+                        <a role="button" class="btn btn-danger" th:href="@{/user/delete(id=${user.id})}">Supprimer votre
+                            compte</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div th:replace="fragments/general :: footer"></div>
+</body>
+</html>

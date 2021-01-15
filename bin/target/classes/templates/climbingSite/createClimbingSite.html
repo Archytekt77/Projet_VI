@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <div th:replace="fragments/general :: head"></div>
+
+    <title>Nouveau site</title>
+</head>
+
+<body>
+<header>
+    <div th:replace="fragments/general :: nav"></div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-dark mb-3">
+                <div class="card-body">
+                    <h1 class="card-title">Nouveau site d'escalade</h1>
+                    <form th:action="@{/climbing-site/create}" th:object="${climbingSite}" method="post">
+                        <div class="form-group row">
+                            <label class="col-6 col-form-label" for="name">Nom du site d'escalade</label>
+                            <input class="col-6 form-control" type="text" id="name" th:field="*{name}" required>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-6 col-form-label" for="area">Secteur</label>
+                            <input class="col-6 form-control" type="text" id="area" th:field="*{area}" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Ajouter</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="fragments/general :: footer"></div>
+</body>
+</html>

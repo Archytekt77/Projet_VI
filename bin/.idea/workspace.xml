@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3ea0de22-d5b1-418f-b20c-89a4ab52b808" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/ClimbingSite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/ClimbingSite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/Route.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/Topo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/Topo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/repositories/RouteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/repositories/RouteRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/BookingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/BookingServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/ClimbingSiteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/ClimbingSiteServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/CommentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/RoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/RouteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/RouteServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/Services.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/Services.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/TopoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/TopoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/ClimbingSiteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/ClimbingSiteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/RouteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/RouteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/TopoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/TopoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/getUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/getUser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/climbingSite/detailsClimbingSite.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/climbingSite/detailsClimbingSite.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/general.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/general.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/route/createRoute.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/route/createRoute.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/route/getRoute.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/route/getRoute.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/topo/getTopo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/topo/getTopo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/user/createUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/user/createUser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/main.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Users\Archytekt\AppData\Local\JetBrains\Toolbox\apps\IDEA-C\ch-0\202.6948.69\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1TG6lufTrDkWT1odbjXhbqhrLFN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="aws" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.loicmaria.services" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\workspace\intelliJ\P6-LOIC-MARIA\src\main\resources\templates\booking" />
+      <recent name="C:\workspace\intelliJ\P6-LOIC-MARIA\src\main\resources\templates" />
+      <recent name="C:\workspace\intelliJ\P6-LOIC-MARIA\src\main\resources\templates\admin" />
+      <recent name="C:\workspace\intelliJ\P6-LOIC-MARIA\src\main\resources\templates\user" />
+      <recent name="C:\workspace\intelliJ\P6-LOIC-MARIA\src\main\resources\templates\topo" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.StartWebApplication">
+    <configuration name="StartWebApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.loicmaria.StartWebApplication" />
+      <module name="P6 - LOIC MARIA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.loicmaria.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="templates.user in P6 - LOIC MARIA" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="P6 - LOIC MARIA" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="templates.user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="templates.user" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StartWebApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="P6 - LOIC MARIA" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="java.com.mkyong.StartWebApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StartWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="P6 - LOIC MARIA" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.loicmaria.StartWebApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.StartWebApplication" />
+        <item itemvalue="JUnit.templates.user in P6 - LOIC MARIA" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3ea0de22-d5b1-418f-b20c-89a4ab52b808" name="Default Changelist" comment="" />
+      <created>1574098259041</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1574098259041</updated>
+      <workItem from="1574098261252" duration="1748000" />
+      <workItem from="1574296367854" duration="24000" />
+      <workItem from="1574298013925" duration="51000" />
+      <workItem from="1574298138374" duration="92000" />
+      <workItem from="1574381741926" duration="6096000" />
+      <workItem from="1574505060942" duration="42295000" />
+      <workItem from="1574924745157" duration="38294000" />
+      <workItem from="1575892216254" duration="1547000" />
+      <workItem from="1576321032869" duration="12091000" />
+      <workItem from="1577446923891" duration="5041000" />
+      <workItem from="1577482139273" duration="2842000" />
+      <workItem from="1577713992950" duration="21414000" />
+      <workItem from="1578150783303" duration="11689000" />
+      <workItem from="1578234868557" duration="1081000" />
+      <workItem from="1578569053718" duration="3950000" />
+      <workItem from="1578746769506" duration="5110000" />
+      <workItem from="1579081889899" duration="1206000" />
+      <workItem from="1579340632341" duration="3806000" />
+      <workItem from="1579455279454" duration="1041000" />
+      <workItem from="1580308165126" duration="197000" />
+      <workItem from="1580308934950" duration="5290000" />
+      <workItem from="1580736142207" duration="11235000" />
+      <workItem from="1581502932049" duration="4036000" />
+      <workItem from="1582023242719" duration="10103000" />
+      <workItem from="1582204594471" duration="13996000" />
+      <workItem from="1582534263184" duration="5988000" />
+      <workItem from="1582712811371" duration="4124000" />
+      <workItem from="1582810025179" duration="2606000" />
+      <workItem from="1583251599001" duration="3410000" />
+      <workItem from="1583312638969" duration="5583000" />
+      <workItem from="1583337909655" duration="10000" />
+      <workItem from="1583338118291" duration="1819000" />
+      <workItem from="1583419372808" duration="600000" />
+      <workItem from="1583756652565" duration="4223000" />
+      <workItem from="1583880423982" duration="7186000" />
+      <workItem from="1583917385713" duration="6758000" />
+      <workItem from="1583969045262" duration="15663000" />
+      <workItem from="1584370897196" duration="17784000" />
+      <workItem from="1584896860120" duration="1833000" />
+      <workItem from="1585131085548" duration="2494000" />
+      <workItem from="1585211791090" duration="2984000" />
+      <workItem from="1585573471878" duration="4774000" />
+      <workItem from="1585649112290" duration="18594000" />
+      <workItem from="1586945600573" duration="3212000" />
+      <workItem from="1587132587396" duration="10325000" />
+      <workItem from="1588092283083" duration="24527000" />
+      <workItem from="1589298324557" duration="9558000" />
+      <workItem from="1589364470895" duration="3266000" />
+      <workItem from="1589900543324" duration="15645000" />
+      <workItem from="1589962746489" duration="4302000" />
+      <workItem from="1590140390129" duration="7227000" />
+      <workItem from="1590445287652" duration="9249000" />
+      <workItem from="1591176015271" duration="3684000" />
+      <workItem from="1591693372330" duration="4554000" />
+      <workItem from="1592315185668" duration="1289000" />
+      <workItem from="1592587590147" duration="15473000" />
+      <workItem from="1593440632400" duration="2498000" />
+      <workItem from="1593589248078" duration="14951000" />
+      <workItem from="1594203042389" duration="11782000" />
+      <workItem from="1594637186359" duration="6011000" />
+      <workItem from="1595024193881" duration="9817000" />
+      <workItem from="1595590325849" duration="608000" />
+      <workItem from="1595765065520" duration="7794000" />
+      <workItem from="1595952242028" duration="9510000" />
+      <workItem from="1596556392345" duration="26137000" />
+      <workItem from="1597067996464" duration="13482000" />
+      <workItem from="1597674190833" duration="12877000" />
+      <workItem from="1598315786935" duration="6075000" />
+      <workItem from="1598437046635" duration="1349000" />
+      <workItem from="1598603796474" duration="1259000" />
+      <workItem from="1599781138569" duration="1421000" />
+      <workItem from="1600207599044" duration="7803000" />
+      <workItem from="1600787803722" duration="25163000" />
+      <workItem from="1601123372052" duration="14101000" />
+      <workItem from="1601650725376" duration="1159000" />
+      <workItem from="1601970387247" duration="24651000" />
+      <workItem from="1602504754775" duration="1207000" />
+      <workItem from="1602842597540" duration="1199000" />
+      <workItem from="1603722064569" duration="608000" />
+      <workItem from="1603805395656" duration="4773000" />
+      <workItem from="1604322141016" duration="1301000" />
+      <workItem from="1604413151798" duration="9557000" />
+      <workItem from="1604585377182" duration="602000" />
+      <workItem from="1604677443407" duration="621000" />
+      <workItem from="1604918277047" duration="15188000" />
+      <workItem from="1605191471935" duration="2977000" />
+      <workItem from="1605556518979" duration="1518000" />
+      <workItem from="1605620879115" duration="9609000" />
+      <workItem from="1605881671971" duration="1322000" />
+      <workItem from="1606125892663" duration="3570000" />
+      <workItem from="1606300228846" duration="41372000" />
+      <workItem from="1607089675464" duration="41322000" />
+      <workItem from="1607504985527" duration="608000" />
+      <workItem from="1607565324565" duration="1294000" />
+      <workItem from="1607896329482" duration="7519000" />
+      <workItem from="1607940761181" duration="3195000" />
+      <workItem from="1607947364274" duration="35590000" />
+      <workItem from="1608543384944" duration="10942000" />
+      <workItem from="1608679035750" duration="108000" />
+      <workItem from="1609171865491" duration="5281000" />
+      <workItem from="1609231971019" duration="12892000" />
+      <workItem from="1609669488359" duration="5549000" />
+      <workItem from="1609760794251" duration="1746000" />
+      <workItem from="1610021858451" duration="607000" />
+      <workItem from="1610322496168" duration="15632000" />
+      <workItem from="1610720071205" duration="4704000" />
+      <workItem from="1610725372613" duration="516000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

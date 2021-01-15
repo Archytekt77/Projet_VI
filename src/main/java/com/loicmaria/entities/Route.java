@@ -7,6 +7,27 @@ import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.time.LocalDateTime;
 
+/**
+ * <b>Classe représentant un commentaire créé par un membre du site, attaché à un site d'escalade.</b>
+ * <p>
+ *     Un commentaire est caractérisé par :
+ *     <ul>
+ *         <li>Un ID unique, attribué automatiquement et définitivement.</li>
+ *         <li>Une description. Écrit par un membre du site, pourvant être modifié par le membre
+ *         lui même ou un administrateur.</li>
+ *         <li>Une date de création, attribué automatiquement et définitivement</li>
+ *         <li>Une date de mise à jour, attribué automatiquement.</li>
+ *         <li>Un utilisateur, celui qui l'écrit.</li>
+ *         <li>Un site d'escalade auquel il est attaché.</li>
+ *     </ul>
+ * </p>
+ *
+ * @see ClimbingSite
+ * @see User
+ *
+ * @author Loïc MARIA
+ * @version 1.0
+ */
 @Entity
 @Table(name = "Routes")
 public class Route {
@@ -33,18 +54,21 @@ public class Route {
     private LocalDateTime updateDate;
 
     @ManyToOne
+    private ClimbingSite climbingSite;
+    @ManyToOne
     private User user;
 
     // Constructor
     public Route() {
     }
 
-    public Route(Integer id, String name, String pitch, LocalDateTime createDate, LocalDateTime updateDate, User user) {
+    public Route(Integer id, String name, String pitch, LocalDateTime createDate, LocalDateTime updateDate, ClimbingSite climbingSite, User user) {
         this.id = id;
         this.name = name;
         this.pitch = pitch;
         this.createDate = createDate;
         this.updateDate = updateDate;
+        this.climbingSite = climbingSite;
         this.user = user;
     }
 
@@ -79,6 +103,12 @@ public class Route {
     public void setUpdateDate(LocalDateTime updateDate) {
         this.updateDate = updateDate;
     }
+    public ClimbingSite getClimbingSite() {
+        return climbingSite;
+    }
+    public void setClimbingSite(ClimbingSite climbingSite) {
+        this.climbingSite = climbingSite;
+    }
     public User getUser() {
         return user;
     }
@@ -87,12 +117,16 @@ public class Route {
     }
 
     //toString
+
     @Override
     public String toString() {
         return "Route{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", pitch=" + pitch +
+                ", pitch='" + pitch + '\'' +
+                ", createDate=" + createDate +
+                ", updateDate=" + updateDate +
+                ", user=" + user.getId() +
                 '}';
     }
 }

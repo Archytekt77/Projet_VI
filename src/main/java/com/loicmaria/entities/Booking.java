@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 /**
- * <b>Classe représentant une réservation créé par un membre du site.</b>
+ * <b>Classe représentant une réservation de Topo créé par un membre du site.</b>
  * <p>
  *     Une réservation est caractérisé par :
  *     <ul>
@@ -112,17 +112,16 @@ public class Booking {
     }
 
     //toString
-
     @Override
     public String toString() {
         return "Booking{" +
                 "id=" + id +
-                ", answer=" + answer +
-                ", status=" + status +
+                ", status='" + status + '\'' +
+                ", answer='" + answer + '\'' +
                 ", createDate=" + createDate +
                 ", updateDate=" + updateDate +
-                ", topo=" + topo +
-                ", user=" + user +
+                ", topo=" + topo.getId() +
+                ", user=" + user.getId() +
                 '}';
     }
 }

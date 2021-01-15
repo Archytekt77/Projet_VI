@@ -6,8 +6,28 @@ import org.springframework.data.annotation.CreatedDate;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.time.LocalDateTime;
-import java.util.Date;
 
+/**
+ * <b>Classe représentant un commentaire créé par un membre du site, attaché à un site d'escalade.</b>
+ * <p>
+ *     Un commentaire est caractérisé par :
+ *     <ul>
+ *         <li>Un ID unique, attribué automatiquement et définitivement.</li>
+ *         <li>Une description. Écrit par un membre du site, pourvant être modifié par le membre
+ *         lui même ou un administrateur.</li>
+ *         <li>Une date de création, attribué automatiquement et définitivement</li>
+ *         <li>Une date de mise à jour, attribué automatiquement.</li>
+ *         <li>Un utilisateur, celui qui l'écrit.</li>
+ *         <li>Un site d'escalade auquel il est attaché.</li>
+ *     </ul>
+ * </p>
+ *
+ * @see ClimbingSite
+ * @see User
+ *
+ * @author Loïc MARIA
+ * @version 1.0
+ */
 @Entity
 @Table(name = "comment")
 public class Comment {
@@ -96,6 +116,8 @@ public class Comment {
                 ", description='" + description + '\'' +
                 ", createDate=" + createDate +
                 ", updateDate=" + updateDate +
+                ", user=" + user.getId() +
+                ", climbingSite=" + climbingSite.getId() +
                 '}';
     }
 }

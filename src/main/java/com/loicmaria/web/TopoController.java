@@ -25,7 +25,7 @@ public class TopoController {
 
     @GetMapping("/get")
     public String getTopos(Model model){
-        model.addAttribute("topos", topoService.getter());
+        model.addAttribute("toposList", topoService.getter());
         return "topo/getTopo";
     }
 
@@ -44,7 +44,7 @@ public class TopoController {
     @PostMapping("/create")
     public String addTopo(@ModelAttribute Topo topo, Model model){
         topoService.add(topo);
-        model.addAttribute("topos", topoService.getter());
+        model.addAttribute("toposList", topoService.getter());
         return "topo/getTopo";
     }
 
@@ -56,7 +56,6 @@ public class TopoController {
 
     @PostMapping("/edition/{id}")
     public String updateTopo(@PathVariable(value = "id") int id, Model model, Topo topo){
-        topo.setUser(userService.getLoggedUser());
         topoService.update(topo);
         model.addAttribute("topo", topoService.get(id));
         return "topo/detailsTopo";

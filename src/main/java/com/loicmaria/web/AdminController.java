@@ -4,7 +4,6 @@ import com.loicmaria.entities.ClimbingSite;
 import com.loicmaria.entities.Comment;
 import com.loicmaria.services.ClimbingSiteServiceImpl;
 import com.loicmaria.services.CommentServiceImpl;
-import com.loicmaria.services.RoleServiceImpl;
 import com.loicmaria.services.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,8 +19,6 @@ public class AdminController {
     @Autowired
     UserServiceImpl userService;
     @Autowired
-    RoleServiceImpl roleService;
-    @Autowired
     ClimbingSiteServiceImpl climbingSiteService;
     @Autowired
     CommentServiceImpl commentService;
@@ -34,7 +31,7 @@ public class AdminController {
     @GetMapping("/userList")
     public String getUsers(Model model){
         if (userService.isAdmin(userService.getLoggedUser())){
-            model.addAttribute("users", userService.getter());
+            model.addAttribute("usersList", userService.getter());
             return "admin/getUser";
         }else
             return "/home";
@@ -44,7 +41,7 @@ public class AdminController {
     public String updateUser(@PathVariable(value = "id") int id, Model model){
         if (userService.isAdmin(userService.getLoggedUser())){
             userService.changeRole(userService.get(id));
-            model.addAttribute("users", userService.getter());
+            model.addAttribute("usersList", userService.getter());
             return "admin/getUser";
         }else
             return "/home";

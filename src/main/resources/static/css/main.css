@@ -1,22 +1,57 @@
-body {
+/**************** General ****************/
+
+body
+{
     color:black;
     background-color:white;
     background-repeat:no-repeat;
 }
 
-header{
+header
+{
     height: 80px;
 }
 
-a.btn{
+
+a.btn
+{
     color: white;
 }
 
-p.comment-header{
-    font-weight: bold;
+div.form-group.row
+{
+    margin: 0 0 15px;
 }
 
-h2{
+/*
+p.comment-header
+{
+    font-weight: bold;
+}*/
+
+
+/**************** Climbing site ****************/
+
+/** Details climbing site **/
+img.official-tag
+{
+    width: 30%;
+    float: right;
+}
+
+div.card-title-climbing-site
+{
+    margin: 0;
+}
+
+div.btn-climbing-site
+{
+    display: flex;
+}
+
+/* Comment */
+h2.card-title-comment
+{
     font-size: medium;
     text-align: center;
 }

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <div th:replace="fragments/general :: head"></div>
+
+    <title>Détails Voie</title>
+</head>
+
+<body>
+<header>
+    <div th:replace="fragments/general :: nav"></div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-dark mb-3">
+                <div class="card-body">
+                    <h1 class="card-title">Détails de la voie</h1>
+
+                    <!-- Tableau des détails-->
+                    <table class="table table-dark table-responsive-md" th:object="${route}">
+                        <thead>
+                        <tr>
+                            <th th:hidden="*{id}"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th>Date de création</th>
+                            <td th:text="*{#temporals.format(createDate, 'dd LLL yyyy à HH:mm')}"></td>
+                        </tr>
+                        <tr>
+                            <th>Modifié le</th>
+                            <td th:text="*{#temporals.format(updateDate,'dd LLL yyyy à HH:mm')}"></td>
+                        </tr>
+                        <tr>
+                            <th>Nom de la voie</th>
+                            <td th:text="*{name}"></td>
+                        </tr>
+                        <tr>
+                            <th>Nombre de voies</th>
+                            <td th:text="*{pitch}"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Boutons d'actions-->
+                    <div class="btn-group" role="group" th:if="${user != null} and ${user.id == route.user.id}" >
+                        <a role="button" class="btn btn-primary" th:href="@{/route/edition(id=${route.id})}">Éditer</a>
+                        <a role="button" class="btn btn-danger" th:href="@{/route/delete(id=${route.id})}">Supprimer</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="fragments/general :: footer"></div>
+</body>
+</html>

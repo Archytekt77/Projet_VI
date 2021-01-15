@@ -8,6 +8,27 @@ import javax.validation.constraints.NotEmpty;
 import java.time.LocalDateTime;
 import java.util.Collection;
 
+/**
+ * <b>Classe représentant un Topo créé par un membre du site, attaché à un site d'escalade.</b>
+ * <p>
+ *     Un commentaire est caractérisé par :
+ *     <ul>
+ *         <li>Un ID unique, attribué automatiquement et définitivement.</li>
+ *         <li>Une description. Écrit par un membre du site, pourvant être modifié par le membre
+ *         lui même ou un administrateur.</li>
+ *         <li>Une date de création, attribué automatiquement et définitivement</li>
+ *         <li>Une date de mise à jour, attribué automatiquement.</li>
+ *         <li>Un utilisateur, celui qui l'écrit.</li>
+ *         <li>Un site d'escalade auquel il est attaché.</li>
+ *     </ul>
+ * </p>
+ *
+ * @see ClimbingSite
+ * @see User
+ *
+ * @author Loïc MARIA
+ * @version 1.0
+ */
 @Entity
 @Table(name = "topos")
 public class Topo {
@@ -38,8 +59,6 @@ public class Topo {
     @Column
     private LocalDateTime updateDate;
 
-    @OneToMany
-    private Collection<ClimbingSite> climbingSites;
     @ManyToOne
     private User user;
 
@@ -48,7 +67,7 @@ public class Topo {
     }
 
     public Topo(int id, String name, String description, String place, Boolean available, LocalDateTime createDate,
-                LocalDateTime updateDate, Collection<ClimbingSite> climbingSites, User user){
+                LocalDateTime updateDate, User user){
         this.id = id;
         this.name = name;
         this.description = description;
@@ -56,7 +75,6 @@ public class Topo {
         this.available = available;
         this.createDate = createDate;
         this.updateDate = updateDate;
-        this.climbingSites = climbingSites;
         this.user = user;
     }
 
@@ -83,8 +101,6 @@ public class Topo {
     public void setUpdateDate(LocalDateTime updateDate) {
         this.updateDate = updateDate;
     }
-    public Collection<ClimbingSite> getClimbingSites() { return climbingSites; }
-    public void setClimbingSites(Collection<ClimbingSite> climbingSites) { this.climbingSites = climbingSites; }
     public User getUser() {
         return user;
     }
@@ -92,6 +108,7 @@ public class Topo {
         this.user = user;
     }
 
+    //toString
     @Override
     public String toString() {
         return "Topo{" +
@@ -102,6 +119,7 @@ public class Topo {
                 ", available=" + available +
                 ", createDate=" + createDate +
                 ", updateDate=" + updateDate +
+                ", user=" + user.getId() +
                 '}';
     }
 }

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <div th:replace="fragments/general :: head"></div>
+
+    <title>Réservations prêts</title>
+</head>
+
+<body>
+<header>
+    <div th:replace="fragments/general :: nav"></div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-dark mb-3">
+                <div class="card-body">
+                    <h1 class="card-title">Vos prêts</h1>
+                    <p class="card-text">
+
+                        <!-- Tableau des prêts -->
+                    <table class="table table-dark table-responsive-md">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Topo</th>
+                            <th scope="col">Lien</th>
+                            <th scope="col">Réponse</th>
+                            <th scope="col">Autre</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        <!-- En attente de réponse -->
+                        <th scope="row" th:unless="${nullBookings.isEmpty()}">En attente de réponse</th>
+                        <tr th:each="booking, iter : ${nullBookings}">
+                            <th scope="row" th:hidden="${booking.id}"></th>
+                            <th th:text="${iter.count}"></th>
+                            <td th:text="${booking.topo.name}"></td>
+                            <td class="justify-content-center">
+                                <a role="button" class="btn btn-primary"
+                                   th:href="@{/topo/details(id=${booking.topo.id})}">Accéder au topo</a>
+                            </td>
+                            <td>
+                                <form action="getBooking.html"
+                                      th:action="@{/booking/edition_loan/{id}/{topo_id}(id=${booking.id}, topo_id=${booking.topo.id})}"
+                                      th:object="${booking}" method="post">
+                                    <select id="answer" name="answer">
+                                        <option value="Choose" disabled selected>Choisir</option>
+                                        <option value="accepted">Accepter</option>
+                                        <option value="refused">Refuser</option>
+                                    </select>
+                                    <button type="submit" class="btn btn-primary">Confirmer</button>
+                                </form>
+                            </td>
+                        </tr>
+
+                        <!-- En cours -->
+                        <th scope="row" th:unless="${inProgressBookings.isEmpty()}">En cours</th>
+                        <tr th:each="booking, iter : ${inProgressBookings}">
+                            <th scope="row" th:hidden="${booking.id}"></th>
+                            <th th:text="${iter.count}"></th>
+                            <td th:text="${booking.topo.name}"></td>
+                            <td class="justify-content-center">
+                                <a role="button" class="btn btn-primary"
+                                   th:href="@{/topo/details(id=${booking.topo.id})}">Accéder au topo</a>
+                            </td>
+                            <td>Acceptée</td>
+                            <td class="justify-content-center">
+                                <div th:text="${booking.user.email}"></div>
+                                <form action="getBooking.html"
+                                      th:action="@{/booking/edition_loan/{id}/{topo_id}(id=${booking.id}, topo_id=${booking.topo.id})}"
+                                      th:object="${booking}" method="post">
+                                    <select id="answer2" name="answer">
+                                        <option value="Choose" disabled selected>Choisir</option>
+                                        <option value="finishedAndAvailable">Topo disponible</option>
+                                        <option value="finishedAndNotAvailable">Topo indisponible</option>
+                                    </select>
+                                    <button type="submit" class="btn btn-primary">Terminé</button>
+                                </form>
+                            </td>
+                        </tr>
+
+                        <!-- Fini -->
+                        <th scope="row" th:unless="${finishedBookings.isEmpty()}">Fini</th>
+                        <tr th:each="booking, iter : ${finishedBookings}">
+                            <th scope="row" th:hidden="${booking.id}"></th>
+                            <th th:text="${iter.count}"></th>
+                            <td th:text="${booking.topo.name}"></td>
+                            <td class="justify-content-center">
+                                <a role="button" class="btn btn-primary"
+                                   th:href="@{/topo/details(id=${booking.topo.id})}">Accéder au topo</a>
+                            </td>
+                            <td th:text="${booking.answer} == 'refused'?'Refusé':'Accepté'"></td>
+                        </tr>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div th:replace="fragments/general :: footer"></div>
+
+</body>
+</html>

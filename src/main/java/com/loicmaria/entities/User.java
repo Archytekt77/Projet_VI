@@ -7,6 +7,26 @@ import javax.validation.constraints.NotEmpty;
 import java.util.Collection;
 import java.util.List;
 
+/**
+ * <b>Classe représentant un utilisateur.</b>
+ * <p>Un utilisateur est caractérisé par :
+ *     <ul>
+ *         <li>Un ID unique, attribué automatiquement et définitivement.</li>
+ *         <li>Un nom, que l'utilisateur définit lui même et pouvant être changé.</li>
+ *         <li>Un email, donné par l'utilisateur permettant </li>
+ *         <li>Une date de création, attribué automatiquement et définitivement</li>
+ *         <li>Une date de mise à jour, attribué automatiquement.</li>
+ *         <li>Un utilisateur, celui qui l'écrit.</li>
+ *         <li>Un site d'escalade auquel il est attaché.</li>
+ *     </ul>
+ * </p>
+ *
+ * @see ClimbingSite
+ * @see User
+ *
+ * @author Loïc MARIA
+ * @version 1.0
+ */
 @Entity
 @Table(name = "users")
 public class User {
@@ -14,14 +34,14 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    @Column(nullable = false)
+    @Column
     @NotEmpty
     private String name;
-    @Column(nullable = false, unique = true)
+    @Column(unique = true)
     @NotEmpty
     @Email(message = "{errors.invalid_email}")
     private String email;
-    @Column(nullable = false)
+    @Column
     @NotEmpty
     @Size(min = 4)
     private String password;

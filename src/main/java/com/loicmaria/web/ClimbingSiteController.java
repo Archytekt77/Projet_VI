@@ -39,6 +39,7 @@ public class ClimbingSiteController {
         return "climbingSite/getClimbingSite";
     }
 
+
     @PostMapping("/get/{name}/{area}")
     public String getClimbingSitesBySearch(String name, String area, Model model) {
         ClimbingSite climbingSite = new ClimbingSite();
@@ -123,7 +124,7 @@ public class ClimbingSiteController {
     @PostMapping("/details/edit-comment/{id}")
     public String updateComment(@PathVariable(value = "id") int id,
                                 @ModelAttribute Comment editComment, Model model){
-        commentService.update(editComment);
+        commentService.update(editComment, id);
 
         model.addAttribute("newComment", new Comment());
         model.addAttribute("editComment", null);
