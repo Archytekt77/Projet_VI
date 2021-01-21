@@ -22,7 +22,7 @@ import java.time.LocalDateTime;
  * </p>
  *
  * @see Topo
- * @see User
+ * @see UserAccount
  *
  * @author Loïc MARIA
  * @version 1.0
@@ -57,20 +57,20 @@ public class Booking {
     @OneToOne
     private Topo topo;
     @OneToOne
-    private User user;
+    private UserAccount userAccount;
 
 
     //Constructor
     public Booking(){}
 
-    public Booking(int id, String answer, String status, LocalDateTime createDate, LocalDateTime updateDate, Topo topo, User user) {
+    public Booking(int id, String answer, String status, LocalDateTime createDate, LocalDateTime updateDate, Topo topo, UserAccount userAccount) {
         this.id = id;
         this.answer = answer;
         this.status = status;
         this.createDate = createDate;
         this.updateDate = updateDate;
         this.topo = topo;
-        this.user = user;
+        this.userAccount = userAccount;
     }
 
     //Getters and Setters
@@ -104,11 +104,11 @@ public class Booking {
     public void setTopo(Topo topo) {
         this.topo = topo;
     }
-    public User getUser() {
-        return user;
+    public UserAccount getUserAccount() {
+        return userAccount;
     }
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserAccount(UserAccount UserAccount) {
+        this.userAccount = userAccount;
     }
 
     //toString
@@ -121,7 +121,7 @@ public class Booking {
                 ", createDate=" + createDate +
                 ", updateDate=" + updateDate +
                 ", topo=" + topo.getId() +
-                ", user=" + user.getId() +
+                ", UserAccount=" + userAccount.getId() +
                 '}';
     }
 }

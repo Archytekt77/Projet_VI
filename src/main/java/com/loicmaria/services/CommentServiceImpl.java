@@ -27,7 +27,7 @@ public class CommentServiceImpl extends Services<Comment, CommentRepository> {
     @Autowired
     CommentRepository commentRepository;
     @Autowired
-    UserServiceImpl userService;
+    UserAccountServiceImpl userAccountService;
     @Autowired
     ClimbingSiteServiceImpl climbingSiteService;
 
@@ -40,7 +40,7 @@ public class CommentServiceImpl extends Services<Comment, CommentRepository> {
      * @param id L'ID du site d'escalade.
      */
     public void add(Comment comment, int id){
-        comment.setUser(this.userService.getLoggedUser());
+        comment.setUserAccount(this.userAccountService.getLoggedUserAccount());
         comment.setClimbingSite(this.climbingSiteService.get(id));
         repository.save(comment);
     }
@@ -54,7 +54,7 @@ public class CommentServiceImpl extends Services<Comment, CommentRepository> {
      * @return Le commentaire modifié.
      */
     public Comment update(Comment comment, int id){
-        comment.setUser(comment.getUser());
+        comment.setUserAccount(comment.getUserAccount());
         comment.setClimbingSite(this.climbingSiteService.get(id));
         return repository.save(comment);
     }

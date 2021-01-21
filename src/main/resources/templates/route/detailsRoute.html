@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <div th:replace="fragments/general :: head"></div>
 
@@ -30,26 +29,30 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <th>Date de création</th>
-                            <td th:text="*{#temporals.format(createDate, 'dd LLL yyyy à HH:mm')}"></td>
+                            <th scope="row">Ajouté par / le</th>
+                            <td th:text="*{userAccount.name + ' / ' + #temporals.format(createDate, 'dd LLL yyyy à HH:mm')}"></td>
                         </tr>
                         <tr>
-                            <th>Modifié le</th>
-                            <td th:text="*{#temporals.format(updateDate,'dd LLL yyyy à HH:mm')}"></td>
-                        </tr>
-                        <tr>
-                            <th>Nom de la voie</th>
+                            <th scope="row">Nom de la voie</th>
                             <td th:text="*{name}"></td>
                         </tr>
                         <tr>
-                            <th>Nombre de voies</th>
+                            <th scope="row">Cotation</th>
+                            <td th:text="*{grade}"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Nombre de longueurs</th>
                             <td th:text="*{pitch}"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Site d'escalade associé</th>
+                            <td th:text="*{climbingSite == null}?'Aucun':*{climbingSite.name}"></td>
                         </tr>
                         </tbody>
                     </table>
 
                     <!-- Boutons d'actions-->
-                    <div class="btn-group" role="group" th:if="${user != null} and ${user.id == route.user.id}" >
+                    <div class="btn-group" role="group" th:if="${user != null} and ${user.id == route.userAccount.id}" >
                         <a role="button" class="btn btn-primary" th:href="@{/route/edition(id=${route.id})}">Éditer</a>
                         <a role="button" class="btn btn-danger" th:href="@{/route/delete(id=${route.id})}">Supprimer</a>
                     </div>

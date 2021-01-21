@@ -19,7 +19,9 @@
         <div class="col-12">
             <div class="card border-dark mb-3">
                 <div class="card-body">
-                    <h1 class="card-title">Liste des voies</h1>
+                    <h1 class="card-title">Liste des voies
+                    <a role="button" class="btn btn-secondary" sec:authorize="isAuthenticated()"
+                       th:href="@{/route/create}">Ajouter</a></h1>
                     <p class="card-text">
 
                     <table class="table table-dark table-responsive-md">

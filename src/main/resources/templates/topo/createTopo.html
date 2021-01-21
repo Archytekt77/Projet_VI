@@ -23,12 +23,12 @@
                     <h1 class="card-title">Nouveau Topo</h1>
                     <form th:action="@{/topo/create}" th:object="${topo}" method="post">
                         <div class="form-group row">
-                            <label class="col-6 col-form-label">Nom</label>
-                            <input class="col-6 form-control" type="text" th:field="*{name}" required>
+                            <label class="col-6 col-form-label" for="name">Nom</label>
+                            <input class="col-6 form-control" type="text" id="name" th:field="*{name}" required>
                         </div>
                         <div class="form-group row">
-                            <label class="col-6 col-form-label">Description</label>
-                            <input class="col-6 form-control" type="text" th:field="*{description}" required>
+                            <label class="col-6 col-form-label" for="description">Description</label>
+                            <textarea class="col-6 form-control" id="description" rows="3" type="text" th:field="*{description}" required></textarea>
                         </div>
                         <div class="form-group row">
                             <label class="col-6 col-form-label">Lieu</label>

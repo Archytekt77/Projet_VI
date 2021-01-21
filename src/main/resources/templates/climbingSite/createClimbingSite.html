@@ -23,13 +23,119 @@
                     <h1 class="card-title">Nouveau site d'escalade</h1>
                     <form th:action="@{/climbing-site/create}" th:object="${climbingSite}" method="post">
                         <div class="form-group row">
-                            <label class="col-6 col-form-label" for="name">Nom du site d'escalade</label>
+                            <label class="col-6 col-form-label" for="name">Nom</label>
                             <input class="col-6 form-control" type="text" id="name" th:field="*{name}" required>
                         </div>
                         <div class="form-group row">
                             <label class="col-6 col-form-label" for="area">Secteur</label>
                             <input class="col-6 form-control" type="text" id="area" th:field="*{area}" required>
                         </div>
+                        <div class="form-group row">
+                            <label class="col-6 col-form-label">Type</label>
+                            <select th:field="*{type}">
+                                <option th:value="'Inconnu'" selected>Inconnu</option>
+                                <option th:value="'Falaise'">Falaise</option>
+                                <option th:value="'Bloc'">Bloc</option>
+                                <option th:value="'Falaise et Bloc'">Falaise et bloc</option>
+                            </select>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-6 col-form-label" for="climbingHeight">Hauteur en mètre</label>
+                            <input class="col-6 form-control" type="number" id="climbingHeight" th:field="*{climbingHeight}">
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-6 col-form-label">Orientation</label>
+                            <select th:field="*{orientation}">
+                                <option th:value="'Inconnu'" selected>Inconnu</option>
+                                <option th:value="'Toute direction'">Toute direction</option>
+                                <option th:value="'Nord'">Nord</option>
+                                <option th:value="'Nord-Est'">Nord-Est</option>
+                                <option th:value="'Est'">Est</option>
+                                <option th:value="'Sud-Est'">Sud-Est</option>
+                                <option th:value="'Sud'">Sud</option>
+                                <option th:value="'Sud-Ouest'">Sud-Ouest</option>
+                                <option th:value="'Ouest'">Ouest</option>
+                                <option th:value="'Nord-Ouest'">Nord-Ouest</option>
+                            </select>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-6 col-form-label" for="route">Nombre de voies</label>
+                            <input class="col-6 form-control" type="number" id="route" th:field="*{route}">
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-6 col-form-label">Cotation minimum</label>
+                            <select th:field="*{minGrade}">
+                                <option th:value="'3'">3</option>
+                                <option th:value="'3a'">3a</option>
+                                <option th:value="'3b'">3b</option>
+                                <option th:value="'3c'">3c</option>
+                                <option th:value="'4'">4</option>
+                                <option th:value="'4a'">4a</option>
+                                <option th:value="'4b'">4b</option>
+                                <option th:value="'4c'">4c</option>
+                                <option th:value="'5'">5</option>
+                                <option th:value="'5a'">5a</option>
+                                <option th:value="'5b'">5b</option>
+                                <option th:value="'5c'">5c</option>
+                                <option th:value="'6'">6</option>
+                                <option th:value="'6a'">6a</option>
+                                <option th:value="'6b'">6b</option>
+                                <option th:value="'6c'">6c</option>
+                                <option th:value="'7'">7</option>
+                                <option th:value="'7a'">7a</option>
+                                <option th:value="'7b'">7b</option>
+                                <option th:value="'7c'">7c</option>
+                                <option th:value="'8'">8</option>
+                                <option th:value="'8a'">8a</option>
+                                <option th:value="'8b'">8b</option>
+                                <option th:value="'8c'">8c</option>
+                                <option th:value="'9'">9</option>
+                                <option th:value="'9a'">9a</option>
+                                <option th:value="'9b'">9b</option>
+                                <option th:value="'9c'">9c</option>
+                            </select>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-6 col-form-label">Cotation maximum</label>
+                            <select th:field="*{maxGrade}">
+                                <option th:value="'3'">3</option>
+                                <option th:value="'3a'">3a</option>
+                                <option th:value="'3b'">3b</option>
+                                <option th:value="'3c'">3c</option>
+                                <option th:value="'4'">4</option>
+                                <option th:value="'4a'">4a</option>
+                                <option th:value="'4b'">4b</option>
+                                <option th:value="'4c'">4c</option>
+                                <option th:value="'5'">5</option>
+                                <option th:value="'5a'">5a</option>
+                                <option th:value="'5b'">5b</option>
+                                <option th:value="'5c'">5c</option>
+                                <option th:value="'6'">6</option>
+                                <option th:value="'6a'">6a</option>
+                                <option th:value="'6b'">6b</option>
+                                <option th:value="'6c'">6c</option>
+                                <option th:value="'7'">7</option>
+                                <option th:value="'7a'">7a</option>
+                                <option th:value="'7b'">7b</option>
+                                <option th:value="'7c'">7c</option>
+                                <option th:value="'8'">8</option>
+                                <option th:value="'8a'">8a</option>
+                                <option th:value="'8b'">8b</option>
+                                <option th:value="'8c'">8c</option>
+                                <option th:value="'9'">9</option>
+                                <option th:value="'9a'">9a</option>
+                                <option th:value="'9b'">9b</option>
+                                <option th:value="'9c'">9c</option>
+                            </select>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-6 col-form-label">Topo relié</label>
+                            <select th:field="*{topo}">
+                                <option th:value="null" selected>Aucun</option>
+                                <option th:each="topo : ${toposList}" th:value="${topo.id}" th:text="${topo.name}"></option>
+                            </select>
+                        </div>
+
                         <button type="submit" class="btn btn-primary">Ajouter</button>
                     </form>
                 </div>

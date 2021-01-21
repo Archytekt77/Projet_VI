@@ -72,7 +72,7 @@
                             </td>
                             <td>Acceptée</td>
                             <td class="justify-content-center">
-                                <div th:text="${booking.user.email}"></div>
+                                <div th:text="${booking.userAccount.email}"></div>
                                 <form action="getBooking.html"
                                       th:action="@{/booking/edition_loan/{id}/{topo_id}(id=${booking.id}, topo_id=${booking.topo.id})}"
                                       th:object="${booking}" method="post">

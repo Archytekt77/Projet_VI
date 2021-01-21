@@ -16,20 +16,26 @@ import java.util.List;
  *         <li>Un email, donné par l'utilisateur permettant </li>
  *         <li>Une date de création, attribué automatiquement et définitivement</li>
  *         <li>Une date de mise à jour, attribué automatiquement.</li>
- *         <li>Un utilisateur, celui qui l'écrit.</li>
- *         <li>Un site d'escalade auquel il est attaché.</li>
+ *         <li>Une liste de rôles. Membre et parfois admin en plus.</li>
+ *         <li>Une liste de Topos. Les Topos qu'il a ajouté lui même.</li>
+ *         <li>Une liste de sites. Les sites qu'il a ajouté lui même.</li>
+ *         <li>Une liste de voies. Les voies qu'il a ajouté lui même.</li>
+ *         <li>Une liste de commentaires. Les commentaires qu'il a ajouté lui même.</li>
  *     </ul>
  * </p>
  *
+ * @see Role
+ * @see Topo
  * @see ClimbingSite
- * @see User
+ * @see Route
+ * @see Comment
  *
  * @author Loïc MARIA
  * @version 1.0
  */
 @Entity
-@Table(name = "users")
-public class User {
+@Table(name = "usersAccount")
+public class UserAccount {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -46,26 +52,27 @@ public class User {
     @Size(min = 4)
     private String password;
 
+
     @ManyToMany(cascade = CascadeType.MERGE)
     @JoinTable
-            (name = "user_role", joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
+            (name = "user_account_role", joinColumns = {@JoinColumn(name = "user_account_id", referencedColumnName = "id")},
                     inverseJoinColumns = {@JoinColumn(name = "role_id", referencedColumnName = "id")})
     private List<Role> roles;
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "userAccount")
     private Collection<Topo> topos;
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "userAccount")
     private Collection<ClimbingSite> climbingSites;
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "userAccount")
     private Collection<Route> routes;
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "userAccount")
     private Collection<Comment> comments;
 
 
     //Constructor
-    public User() {
+    public UserAccount() {
     }
 
-    public User(int id, String name, String email, String password, List<Role> roles, Collection<Topo> topos,
+    public UserAccount(int id, String name, String email, String password, List<Role> roles, Collection<Topo> topos,
                 Collection<ClimbingSite> climbingSites, Collection<Route> routes, Collection<Comment> comments) {
         this.id = id;
         this.name = name;

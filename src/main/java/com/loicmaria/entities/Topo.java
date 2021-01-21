@@ -24,7 +24,7 @@ import java.util.Collection;
  * </p>
  *
  * @see ClimbingSite
- * @see User
+ * @see UserAccount
  *
  * @author Loïc MARIA
  * @version 1.0
@@ -39,7 +39,7 @@ public class Topo {
     @Column(nullable = false)
     @NotEmpty
     private String name;
-    @Column
+    @Column(length = 500)
     @NotEmpty
     private String description;
     @Column
@@ -59,15 +59,17 @@ public class Topo {
     @Column
     private LocalDateTime updateDate;
 
+    @OneToMany
+    private Collection<ClimbingSite> climbingSites;
     @ManyToOne
-    private User user;
+    private UserAccount userAccount;
 
     //Constructor
     public Topo() {
     }
 
     public Topo(int id, String name, String description, String place, Boolean available, LocalDateTime createDate,
-                LocalDateTime updateDate, User user){
+                LocalDateTime updateDate, Collection<ClimbingSite> climbingSites, UserAccount userAccount){
         this.id = id;
         this.name = name;
         this.description = description;
@@ -75,7 +77,8 @@ public class Topo {
         this.available = available;
         this.createDate = createDate;
         this.updateDate = updateDate;
-        this.user = user;
+        this.climbingSites = climbingSites;
+        this.userAccount = userAccount;
     }
 
     // Getters and Setters
@@ -101,11 +104,17 @@ public class Topo {
     public void setUpdateDate(LocalDateTime updateDate) {
         this.updateDate = updateDate;
     }
-    public User getUser() {
-        return user;
+    public Collection<ClimbingSite> getClimbingSites() {
+        return climbingSites;
     }
-    public void setUser(User user) {
-        this.user = user;
+    public void setClimbingSites(Collection<ClimbingSite> climbingSites) {
+        this.climbingSites = climbingSites;
+    }
+    public UserAccount getUserAccount() {
+        return userAccount;
+    }
+    public void setUserAccount(UserAccount userAccount) {
+        this.userAccount = userAccount;
     }
 
     //toString
@@ -119,7 +128,7 @@ public class Topo {
                 ", available=" + available +
                 ", createDate=" + createDate +
                 ", updateDate=" + updateDate +
-                ", user=" + user.getId() +
+                ", UserAccount=" + userAccount.getId() +
                 '}';
     }
 }

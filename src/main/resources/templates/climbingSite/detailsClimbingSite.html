@@ -38,12 +38,8 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <th scope="row">Date de création</th>
-                            <td th:text="*{#temporals.format(createDate, 'dd LLL yyyy à HH:mm')}"></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Modifié le</th>
-                            <td th:text="*{#temporals.format(updateDate,'dd LLL yyyy à HH:mm')}"></td>
+                            <th scope="row">Ajouté par / le</th>
+                            <td th:text="*{userAccount.name + ' / ' + #temporals.format(createDate, 'dd LLL yyyy à HH:mm')}"></td>
                         </tr>
                         <tr>
                             <th scope="row">Nom</th>
@@ -54,25 +50,42 @@
                             <td th:text="*{area}"></td>
                         </tr>
                         <tr>
+                            <th scope="row">Type</th>
+                            <td th:text="${climbingSite.type}"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Hauteur</th>
+                            <td th:text="${climbingSite.climbingHeight + 'm'}"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Orientation</th>
+                            <td th:text="${climbingSite.orientation}"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Nombre de voies</th>
+                            <td th:text="${climbingSite.route}"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Cotation des voies</th>
+                            <td th:text="${'De ' + climbingSite.minGrade + ' à ' + climbingSite.maxGrade}"></td>
+                        </tr>
+                        <tr>
                             <th scope="row">Voies associées</th>
                             <td>
                                 <a role="button" class="btn btn-primary"
-                                   th:href="@{/route/get(id=${climbingSite.id})}">Ici</a>
+                                   th:href="@{/climbing-site/route(id=${climbingSite.id})}">Ici</a>
                             </td>
                         </tr>
-                        <tr sec:authorize="isAuthenticated()">
-                            <th scope="row">Ajouter une voie</th>
-                            <td>
-                                <a role="button" class="btn btn-primary"
-                                   th:href="@{/route/create(id=${climbingSite.id})}">Ici</a>
-                            </td>
+                        <tr>
+                            <th scope="row">Topo associé</th>
+                            <td th:text="*{topo == null}?'Aucun':*{topo.name}"></td>
                         </tr>
                         </tbody>
                     </table>
 
                     <!-- Boutons d'actions -->
                     <div th:if="${user != null}" class="btn-group" role="group">
-                        <div class="btn-climbing-site" th:if="${user.id == climbingSite.user.id}">
+                        <div class="btn-climbing-site" th:if="${user.id == climbingSite.userAccount.id}">
                             <a role="button" class="btn btn-primary"
                                th:href="@{/climbing-site/edition(id=${climbingSite.id})}">Éditer</a>
                             <form action="detailsClimbingSite.html"
@@ -126,7 +139,7 @@
                           th:object="${editComment}"
                           method="post">
                         <input type="hidden" th:field="*{id}">
-                        <input type="hidden" th:field="*{user}">
+                        <input type="hidden" th:field="*{userAccount}">
                         <div class="form-group row">
                             <label class="col-6 col-form-label" for="editDescription" hidden></label>
                             <input class="col-6 form-control" type="text" id="editDescription" th:field="*{description}"
@@ -140,7 +153,7 @@
     </div>
 
     <!-- Afficher les commentaires -->
-    <div class="row">
+    <div class="row comments">
         <div class="col-12">
             <div class="card border-dark mb-3">
                 <div class="card-body">
@@ -152,7 +165,7 @@
                         <div class="card border-light mb-3">
                             <div class="card-body">
                                 <h2 class="card-title card-title-comment"
-                                    th:text="${comment.user.getName()} + ' le ' + ${#temporals.format(comment.createDate, 'dd LLL yyyy à HH:mm')}"></h2>
+                                    th:text="${comment.userAccount.getName()} + ' le ' + ${#temporals.format(comment.createDate, 'dd LLL yyyy à HH:mm')}"></h2>
                                 <p class="card-text" th:text="${comment.description}">
                                     <span th:if="${comment.updateDate != null}"
                                           th:text="' modifié le ' + ${#temporals.format(comment.updateDate, 'dd LLL yyyy à HH:mm')}"></span>
@@ -160,7 +173,7 @@
 
                                 <div th:if="${user != null}">
                                     <div class="btn-group" role="group"
-                                         th:if="${user.id == comment.user.id} or ${not user.roles.?[name == 'ROLE_ADMIN'].isEmpty()}">
+                                         th:if="${user.id == comment.userAccount.id} or ${not user.roles.?[name == 'ROLE_ADMIN'].isEmpty()}">
                                         <a role="button" class="btn btn-primary"
                                            th:href="@{/climbing-site/details/edit-comment(id=${climbingSite.id},comment-id=${comment.id})}">Modifier</a>
                                         <form action="detailsClimbingSite.html"

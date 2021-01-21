@@ -23,7 +23,7 @@ import java.time.LocalDateTime;
  * </p>
  *
  * @see ClimbingSite
- * @see User
+ * @see UserAccount
  *
  * @author Loïc MARIA
  * @version 1.0
@@ -52,7 +52,7 @@ public class Comment {
     private LocalDateTime updateDate;
 
     @ManyToOne
-    private User user;
+    private UserAccount userAccount;
     @ManyToOne
     private ClimbingSite climbingSite;
 
@@ -60,13 +60,13 @@ public class Comment {
     public Comment() {
     }
 
-    public Comment(int id, String description, LocalDateTime createDate, LocalDateTime updateDate, User user,
+    public Comment(int id, String description, LocalDateTime createDate, LocalDateTime updateDate, UserAccount userAccount,
                    ClimbingSite climbingSite) {
         this.id = id;
         this.description = description;
         this.createDate = createDate;
         this.updateDate = updateDate;
-        this.user = user;
+        this.userAccount = userAccount;
         this.climbingSite = climbingSite;
     }
 
@@ -95,11 +95,11 @@ public class Comment {
     public void setUpdateDate(LocalDateTime updateDate) {
         this.updateDate = updateDate;
     }
-    public User getUser() {
-        return user;
+    public UserAccount getUserAccount() {
+        return userAccount;
     }
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserAccount(UserAccount userAccount) {
+        this.userAccount = userAccount;
     }
     public ClimbingSite getClimbingSite() {
         return climbingSite;
@@ -116,7 +116,7 @@ public class Comment {
                 ", description='" + description + '\'' +
                 ", createDate=" + createDate +
                 ", updateDate=" + updateDate +
-                ", user=" + user.getId() +
+                ", UserAccount=" + userAccount.getId() +
                 ", climbingSite=" + climbingSite.getId() +
                 '}';
     }

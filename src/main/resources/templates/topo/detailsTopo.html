@@ -29,40 +29,43 @@
                         </thead>
                         <tbody>
                         <tr>
-                            <th>Date de création</th>
-                            <td th:text="*{#temporals.format(createDate, 'dd LLL yyyy à HH:mm')}"></td>
+                            <th scope="row">Ajouté par / le</th>
+                            <td th:text="*{userAccount.name + ' / ' + #temporals.format(createDate, 'dd LLL yyyy à HH:mm')}"></td>
                         </tr>
                         <tr>
-                            <th>Modifié le</th>
-                            <td th:text="*{#temporals.format(updateDate,'dd LLL yyyy à HH:mm')}"></td>
-                        </tr>
-                        <tr>
-                            <th>Nom</th>
+                            <th scope="row">Nom</th>
                             <td th:text="*{name}"></td>
                         </tr>
                         <tr>
-                            <th>Description</th>
-                            <td th:text="*{description}"></td>
+                            <th scope="row">Description</th>
+                            <td class="topoDescription" th:text="*{description}"></td>
                         </tr>
                         <tr>
-                            <th>Lieu</th>
+                            <th scope="row">Lieu</th>
                             <td th:text="*{place}"></td>
                         </tr>
                         <tr>
-                            <th>Disponibilité</th>
+                            <th scope="row">Disponibilité</th>
                             <td th:text="*{available}?'oui':'non'"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Sites d'escalade associés</th>
+                            <td>
+                                <a role="button" class="btn btn-primary"
+                                   th:href="@{/topo/climbing-site(id=${topo.id})}">Ici</a>
+                            </td>
                         </tr>
                         </tbody>
                     </table>
 
 
                     <!-- Boutons d'actions -->
-                    <div class="btn-group" role="group" th:if="${user.id == topo.user.id}">
+                    <div class="btn-group" role="group" th:if="${user.id == topo.userAccount.id}">
                         <a role="button" class="btn btn-primary" th:href="@{/topo/edition(id=${topo.id})}">Éditer</a>
                         <a role="button" class="btn btn-danger" th:href="@{/topo/delete(id=${topo.id})}">Supprimer</a>
                     </div>
 
-                    <div th:if="${user.id != topo.user.id} and ${topo.available == true}">
+                    <div th:if="${user.id != topo.userAccount.id} and ${topo.available == true}">
                         <form th:object="${topo}" th:action="@{/booking/create/{id}(id=*{id})}" method="post">
                             <button type="submit" class="btn btn-primary">Réserver</button>
                         </form>

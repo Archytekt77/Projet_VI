@@ -26,7 +26,7 @@ public class BookingServiceImpl extends Services<Booking, BookingRepository> {
     @Autowired
     TopoServiceImpl topoService;
     @Autowired
-    UserServiceImpl userService;
+    UserAccountServiceImpl userAccountService;
 
 
     /**
@@ -37,7 +37,7 @@ public class BookingServiceImpl extends Services<Booking, BookingRepository> {
      */
     public void add(Booking booking, int topoId) {
         booking.setTopo(topoService.get(topoId));
-        booking.setUser(this.userService.getLoggedUser());
+        booking.setUserAccount(this.userAccountService.getLoggedUserAccount());
         repository.save(booking);
     }
 
@@ -84,8 +84,8 @@ public class BookingServiceImpl extends Services<Booking, BookingRepository> {
      * @param status Le statut de la réservation.
      * @return Une liste de réservation.
      */
-    public Collection<Booking> findByTopo_User_IdAndStatus(int id, String status) {
-        return repository.findByTopo_User_IdAndStatus(id, status);
+    public Collection<Booking> findByTopo_UserAccount_IdAndStatus(int id, String status) {
+        return repository.findByTopo_UserAccount_IdAndStatus(id, status);
     }
 
     /**
@@ -95,7 +95,7 @@ public class BookingServiceImpl extends Services<Booking, BookingRepository> {
      * @param status Le status de la réservation.
      * @return Une liste de réservation.
      */
-    public Collection<Booking> findByUser_IdAndStatus(int id, String status) {
-        return repository.findByUser_IdAndStatus(id, status);
+    public Collection<Booking> findByUserAccount_IdAndStatus(int id, String status) {
+        return repository.findByUserAccount_IdAndStatus(id, status);
     }
 }

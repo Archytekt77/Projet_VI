@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"
       xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+      xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <div th:replace="fragments/general :: head"></div>
@@ -21,14 +20,56 @@
             <div class="card border-dark mb-3">
                 <div class="card-body">
                     <h1 class="card-title">Édition de la voie</h1>
-                    <form action="editionRoute.html" th:action="@{/route/edition/{id}(id=*{id})}" th:object="${route}" method="post">
+                    <form action="editionRoute.html"
+                          th:action="@{/route/edition{id}(id=*{id})}"
+                          th:object="${route}" method="post">
                         <div class="form-group row">
-                            <label class="col-6 col-form-label">Nom de la voie</label>
-                            <input class="col-6 form-control" type="text" th:field="*{name}" required>
+                            <label class="col-6 col-form-label" for="name">Nom</label>
+                            <input class="col-6 form-control" type="text" id="name" th:field="*{name}" required>
                         </div>
                         <div class="form-group row">
-                            <label class="col-6 col-form-label">Nombre de longueurs</label>
-                            <input class="col-6 form-control" type="text"  th:field="*{pitch}" required>
+                            <label class="col-6 col-form-label">Cotation</label>
+                            <select th:field="*{grade}">
+                                <option th:value="'3'">3</option>
+                                <option th:value="'3a'">3a</option>
+                                <option th:value="'3b'">3b</option>
+                                <option th:value="'3c'">3c</option>
+                                <option th:value="'4'">4</option>
+                                <option th:value="'4a'">4a</option>
+                                <option th:value="'4b'">4b</option>
+                                <option th:value="'4c'">4c</option>
+                                <option th:value="'5'">5</option>
+                                <option th:value="'5a'">5a</option>
+                                <option th:value="'5b'">5b</option>
+                                <option th:value="'5c'">5c</option>
+                                <option th:value="'6'">6</option>
+                                <option th:value="'6a'">6a</option>
+                                <option th:value="'6b'">6b</option>
+                                <option th:value="'6c'">6c</option>
+                                <option th:value="'7'">7</option>
+                                <option th:value="'7a'">7a</option>
+                                <option th:value="'7b'">7b</option>
+                                <option th:value="'7c'">7c</option>
+                                <option th:value="'8'">8</option>
+                                <option th:value="'8a'">8a</option>
+                                <option th:value="'8b'">8b</option>
+                                <option th:value="'8c'">8c</option>
+                                <option th:value="'9'">9</option>
+                                <option th:value="'9a'">9a</option>
+                                <option th:value="'9b'">9b</option>
+                                <option th:value="'9c'">9c</option>
+                            </select>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-6 col-form-label" for="pitch">Nombre de longueurs</label>
+                            <input class="col-6 form-control" type="number" id="pitch" th:field="*{pitch}">
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-6 col-form-label">Site d'escalade associé</label>
+                            <select th:field="*{climbingSite}">
+                                <option th:value="null">Aucun</option>
+                                <option th:each="climbingSite : ${climbingSitesList}" th:value="${climbingSite.id}" th:text="${climbingSite.name}"></option>
+                            </select>
                         </div>
                         <button type="submit" class="btn btn-primary">Modifier</button>
                     </form>

@@ -1,4 +1,8 @@
 /**************** General ****************/
+html{
+    position: relative;
+    min-height: 100%;
+}
 
 body
 {
@@ -12,6 +16,16 @@ header
     height: 80px;
 }
 
+.footer{
+    background:#000000;
+    position: absolute;
+    bottom: 0;
+    width:100%;
+    padding-top:50px;
+    height:60px;
+    color: #FFFFFF;
+}
+
 
 a.btn
 {
@@ -23,11 +37,20 @@ div.form-group.row
     margin: 0 0 15px;
 }
 
-/*
-p.comment-header
-{
-    font-weight: bold;
-}*/
+h2{
+    font-size: medium;
+    text-align: center;
+}
+
+/**************** Topo ****************/
+
+/** Create Topo **/
+
+td.topoDescription{
+    text-align: justify;
+    overflow: auto;
+    word-break: break-all;
+}
 
 
 /**************** Climbing site ****************/
@@ -50,6 +73,10 @@ div.btn-climbing-site
 }
 
 /* Comment */
+div.comments{
+    margin-bottom: 100px;
+}
+
 h2.card-title-comment
 {
     font-size: medium;

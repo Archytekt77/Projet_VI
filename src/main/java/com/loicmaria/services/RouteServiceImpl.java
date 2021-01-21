@@ -26,34 +26,30 @@ public class RouteServiceImpl extends Services<Route, RouteRepository> {
     @Autowired
     RouteRepository routeRepository;
     @Autowired
-    UserServiceImpl userService;
+    UserAccountServiceImpl userAccountService;
     @Autowired
     ClimbingSiteServiceImpl climbingSiteService;
 
     /**
      * <b>Ajout de la voie dans la base de donnée.</b>
-     * Ajoute l'utilisateur connecté et l'ID du site d'escalade
-     * dont la voie appartient.
+     * Ajoute l'utilisateur connecté.
      * @param route La voie à modifier.
      */
-    public void add(Route route, int id){
-        route.setUser(this.userService.getLoggedUser());
-        route.setClimbingSite(this.climbingSiteService.get(id));
-        System.out.println(route.getClimbingSite());
+    @Override
+    public void add(Route route){
+        route.setUserAccount(this.userAccountService.getLoggedUserAccount());
         repository.save(route);
     }
 
     /**
      * <b>Mise à jour de la voie dans la base de donnée.</b>
-     * Ajoute l'utilisateur connecté et l'ID du site d'escalade
-     * dont la voie appartient.
+     * Ajoute l'utilisateur connecté.
      * @param route La voie à modifier.
-     * @param id L'ID du site d'escalade
      * @return La voie modifiée.
      */
-    public Route update(Route route, int id){
-        route.setUser(this.userService.getLoggedUser());
-        route.setClimbingSite(this.climbingSiteService.get(id));
+    @Override
+    public Route update(Route route){
+        route.setUserAccount(this.userAccountService.getLoggedUserAccount());
         return repository.save(route);
     }
 
@@ -64,8 +60,8 @@ public class RouteServiceImpl extends Services<Route, RouteRepository> {
      * @param id L'ID de l'utilisateur connecté.
      * @return Une liste de voies.
      */
-    public Collection<Route> findByUser_Id(int id) {
-        return routeRepository.findByUser_Id(id);
+    public Collection<Route> findByUserAccount_Id(int id) {
+        return routeRepository.findByUserAccount_Id(id);
     }
 
     /**

@@ -31,7 +31,7 @@ import java.util.Collection;
  * @see RoleServiceImpl
  * @see RouteServiceImpl
  * @see TopoServiceImpl
- * @see UserServiceImpl
+ * @see UserAccountServiceImpl
  *
  * @author Loïc MARIA
  * @version 1.0
@@ -41,7 +41,6 @@ public class Services<T, S extends JpaRepository<T, Integer>> {
 
     @Autowired
     public S repository;
-
 
     // CRUD
     /**

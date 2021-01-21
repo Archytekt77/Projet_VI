@@ -2,7 +2,8 @@ package com.loicmaria.security;
 
 import java.util.Collection;
 
-import com.loicmaria.entities.User;
+import com.loicmaria.entities.UserAccount;
+import com.loicmaria.repositories.UserAccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
@@ -12,28 +13,25 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.loicmaria.repositories.UserRepository;
 
 @Service
 @Transactional
 public class CustomUserDetailsService implements UserDetailsService {
 
     @Autowired
-    private UserRepository userRepository;
+    private UserAccountRepository userAccountRepository;
 
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-        System.out.println("username = " + userName);
-        User user = userRepository.findByEmail(userName)
+        UserAccount userAccount = userAccountRepository.findByEmail(userName)
                 .orElseThrow(() -> new UsernameNotFoundException("Email " + userName + " not found"));
-        System.out.println("user =" + user);
-        return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(),
-                getAuthorities(user));
+        return new org.springframework.security.core.userdetails.User(userAccount.getEmail(), userAccount.getPassword(),
+                getAuthorities(userAccount));
     }
 
-    private static Collection<? extends GrantedAuthority> getAuthorities(User user) {
-        String[] userRoles = user.getRoles().stream().map((role) -> role.getName()).toArray(String[]::new);
-        Collection<GrantedAuthority> authorities = AuthorityUtils.createAuthorityList(userRoles);
+    private static Collection<? extends GrantedAuthority> getAuthorities(UserAccount userAccount) {
+        String[] userAccountRoles = userAccount.getRoles().stream().map((role) -> role.getName()).toArray(String[]::new);
+        Collection<GrantedAuthority> authorities = AuthorityUtils.createAuthorityList(userAccountRoles);
         return authorities;
     }
 }

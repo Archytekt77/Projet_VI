@@ -8,22 +8,23 @@ import javax.validation.constraints.NotEmpty;
 import java.time.LocalDateTime;
 
 /**
- * <b>Classe représentant un commentaire créé par un membre du site, attaché à un site d'escalade.</b>
+ * <b>Classe représentant une voie créé par un membre du site, attaché à un site d'escalade.</b>
  * <p>
  *     Un commentaire est caractérisé par :
  *     <ul>
  *         <li>Un ID unique, attribué automatiquement et définitivement.</li>
- *         <li>Une description. Écrit par un membre du site, pourvant être modifié par le membre
- *         lui même ou un administrateur.</li>
+ *         <li>Un nom. La nom de la voie.</li>
+ *         <li>Une cotation. La cotation de la voie.</li>
+ *         <li>Un nombre de longueur. Le nombre de longueur qui compose la voie.</li>
  *         <li>Une date de création, attribué automatiquement et définitivement</li>
  *         <li>Une date de mise à jour, attribué automatiquement.</li>
- *         <li>Un utilisateur, celui qui l'écrit.</li>
+ *         <li>Un utilisateur, celui qui a ajouté la voie à la base de donnée.</li>
  *         <li>Un site d'escalade auquel il est attaché.</li>
  *     </ul>
  * </p>
  *
  * @see ClimbingSite
- * @see User
+ * @see UserAccount
  *
  * @author Loïc MARIA
  * @version 1.0
@@ -39,8 +40,9 @@ public class Route {
     @NotEmpty
     private String name;
     @Column
-    @NotEmpty
-    private String pitch;
+    private String grade;
+    @Column
+    private int pitch;
 
     @PrePersist
     protected void prePersist() {
@@ -56,27 +58,29 @@ public class Route {
     @ManyToOne
     private ClimbingSite climbingSite;
     @ManyToOne
-    private User user;
+    private UserAccount userAccount;
 
     // Constructor
     public Route() {
     }
 
-    public Route(Integer id, String name, String pitch, LocalDateTime createDate, LocalDateTime updateDate, ClimbingSite climbingSite, User user) {
+    public Route(Integer id, String name, String grade, int pitch, LocalDateTime createDate,
+                 LocalDateTime updateDate, ClimbingSite climbingSite, UserAccount userAccount) {
         this.id = id;
         this.name = name;
+        this.grade = grade;
         this.pitch = pitch;
         this.createDate = createDate;
         this.updateDate = updateDate;
         this.climbingSite = climbingSite;
-        this.user = user;
+        this.userAccount = userAccount;
     }
 
     // Getters and Setters
     public Integer getId() {
         return id;
     }
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
     public String getName() {
@@ -85,10 +89,16 @@ public class Route {
     public void setName(String name) {
         this.name = name;
     }
-    public String getPitch() {
+    public String getGrade() {
+        return grade;
+    }
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+    public int getPitch() {
         return pitch;
     }
-    public void setPitch(String pitch) {
+    public void setPitch(int pitch) {
         this.pitch = pitch;
     }
     public LocalDateTime getCreateDate() {
@@ -109,11 +119,11 @@ public class Route {
     public void setClimbingSite(ClimbingSite climbingSite) {
         this.climbingSite = climbingSite;
     }
-    public User getUser() {
-        return user;
+    public UserAccount getUserAccount() {
+        return userAccount;
     }
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserAccount(UserAccount userAccount) {
+        this.userAccount = userAccount;
     }
 
     //toString
@@ -123,10 +133,11 @@ public class Route {
         return "Route{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", grade='" + grade + '\'' +
                 ", pitch='" + pitch + '\'' +
-                ", createDate=" + createDate +
-                ", updateDate=" + updateDate +
-                ", user=" + user.getId() +
+                ", createDate=" + createDate + '\'' +
+                ", updateDate=" + updateDate + '\'' +
+                ", UserAccount=" + userAccount.getId() +
                 '}';
     }
 }

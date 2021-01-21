@@ -24,7 +24,7 @@
                     <form th:action="@{/admin/approve/{id}(id=${climbingSite.id})}"
                           th:object="${climbingSite}" method="post">
                         <div th:hidden="*{id}"></div>
-                        <div th:hidden="*{user}"></div>
+                        <div th:hidden="*{userAccount}"></div>
                         <div th:hidden="*{name}"></div>
                         <div th:hidden="*{area}"></div>
                         <div class="form-group row">

@@ -2,7 +2,6 @@ package com.loicmaria.services;
 
 
 import com.loicmaria.entities.ClimbingSite;
-import com.loicmaria.entities.Topo;
 import com.loicmaria.repositories.ClimbingSiteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,7 +26,7 @@ public class ClimbingSiteServiceImpl extends Services<ClimbingSite, ClimbingSite
     @Autowired
     ClimbingSiteRepository climbingSiteRepository;
     @Autowired
-    UserServiceImpl userService;
+    UserAccountServiceImpl userAccountService;
 
     /**
      * <b>Ajout du site d'escalade dans la base de donnée.</b>
@@ -36,7 +35,7 @@ public class ClimbingSiteServiceImpl extends Services<ClimbingSite, ClimbingSite
      */
     @Override
     public void add(ClimbingSite climbingSite){
-        climbingSite.setUser(this.userService.getLoggedUser());
+        climbingSite.setUserAccount(this.userAccountService.getLoggedUserAccount());
         super.add(climbingSite);
     }
 
@@ -48,7 +47,7 @@ public class ClimbingSiteServiceImpl extends Services<ClimbingSite, ClimbingSite
      */
     @Override
     public ClimbingSite update(ClimbingSite climbingSite){
-        climbingSite.setUser(this.userService.getLoggedUser());
+        climbingSite.setUserAccount(this.userAccountService.getLoggedUserAccount());
         return repository.save(climbingSite);
     }
 
@@ -57,10 +56,19 @@ public class ClimbingSiteServiceImpl extends Services<ClimbingSite, ClimbingSite
      * <b>Retourne une liste de sites d'escalade de l'utilisateur connecté.</b>
      * Permet de trouver tous les sites qu'il a lui même créés.
      * @param id L'ID de l'utilisateur connecté.
-     * @return Une liste de site d'escalade.
+     * @return Une liste de sites d'escalade.
      */
-    public Collection<ClimbingSite> findByUser_Id(int id) {
-        return climbingSiteRepository.findByUser_Id(id);
+    public Collection<ClimbingSite> findByUserAccount_Id(int id) {
+        return climbingSiteRepository.findByUserAccount_Id(id);
+    }
+
+    /**
+     * <b>Retourne une liste de sites d'escalade en fonction de l'Id du Topo</b>
+     * @param id L'ID du Topo.
+     * @return Une liste de sites d'escalade.
+     */
+    public Collection<ClimbingSite> findByTopo_Id(int id){
+        return climbingSiteRepository.findByTopo_Id(id);
     }
 
     /**

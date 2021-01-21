@@ -13,7 +13,7 @@ import java.util.Collection;
 public class TopoServiceImpl extends Services<Topo, TopoRepository> {
 
     @Autowired
-    UserServiceImpl userService;
+    UserAccountServiceImpl userAccountService;
     @Autowired
     TopoRepository topoRepository;
 
@@ -24,7 +24,7 @@ public class TopoServiceImpl extends Services<Topo, TopoRepository> {
      */
     @Override
     public void add(Topo topo){
-        topo.setUser(this.userService.getLoggedUser());
+        topo.setUserAccount(this.userAccountService.getLoggedUserAccount());
         super.add(topo);
     }
 
@@ -36,7 +36,7 @@ public class TopoServiceImpl extends Services<Topo, TopoRepository> {
      */
     @Override
     public Topo update(Topo topo){
-        topo.setUser(this.userService.getLoggedUser());
+        topo.setUserAccount(this.userAccountService.getLoggedUserAccount());
         return repository.save(topo);
     }
 
@@ -46,8 +46,8 @@ public class TopoServiceImpl extends Services<Topo, TopoRepository> {
      * @param id L'ID de l'utilisateur connecté.
      * @return Une liste de Topo.
      */
-    public Collection<Topo> findByUser_Id(int id) {
-        return topoRepository.findByUser_Id(id);
+    public Collection<Topo> findByUserAccount_Id(int id) {
+        return topoRepository.findByUserAccount_Id(id);
     }
 
 }
