@@ -36,8 +36,12 @@ public class BookingServiceImpl extends Services<Booking, BookingRepository> {
      * @param topoId L'ID du Topo qui est ajouté dans la réservation.
      */
     public void add(Booking booking, int topoId) {
+        System.out.println(this.userAccountService.getLoggedUserAccount());
         booking.setTopo(topoService.get(topoId));
+        System.out.println(booking.getUserAccount());
         booking.setUserAccount(this.userAccountService.getLoggedUserAccount());
+        System.out.println("la : " + this.userAccountService.getLoggedUserAccount());
+        System.out.println("ici : " + booking.getUserAccount());
         repository.save(booking);
     }
 

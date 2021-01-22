@@ -1,11 +1,36 @@
-# Spring Boot Hello World Example – Thymeleaf
+# Créez un site communautaire autour de l'escalade
 
-Article link : https://www.mkyong.com/spring-boot/spring-boot-hello-world-example-thymeleaf/
+##Contexte
+Vous êtes freelance et vous menez différents projets informatiques de développement d’applications web en Java EE. Vous êtes contacté via Malt par “Les Amis de l’escalade” :
 
-## 1. How to start
-```
-$ git clone [https://github.com/mkyong/spring-boot.git](https://github.com/mkyong/spring-boot.git)
-$ cd web-thymeleaf
-$ mvn spring-boot:run
+Bonjour, nous sommes une association qui réunit les passionnés d’escalade dans toute la France. Nous recherchons un développeur Java EE pour créer un site communautaire autour de cette discipline. Votre profil et vos expériences ont retenu notre attention. Seriez-vous intéressé par une mission de ce type (contrat en auto-entrepreneur) ?
 
-```
+Vous convenez d’un premier rendez-vous en visioconférence. Ce point vous permet de mieux comprendre leurs attentes et de vous entendre sur la partie contractuelle.
+
+Vous décidez d’accepter la mission et une fois les détails administratifs réglés, vous vous penchez sur la conception de l’application web.
+
+Par souci du détail, vous réalisez quelques recherches sur l’escalade pour vous familiariser avec le vocabulaire de la discipline.
+
+[Projet 6 - OC](https://openclassrooms.com/fr/paths/88/projects/128/assignment)
+
+##Requirements
+
+* Java
+* Apache Maven
+* Apache Tomcat
+* MySQL workbench
+
+
+##How to start
+###Installation
+
+* Clone the repository
+
+`git clone https://github.com/Archytekt77/Projet_VI.git`
+
+* Open MySQL workbench, click on `Server` and `Data import`
+    * Click on `Server`
+    * Click on `Data import`
+    * Import from Dump Project Folder : C:..\P6-LOIC-MARIA\dumps\Dump20210122.sql
+    
+* cd C:..\P6-LOIC-MARIA\

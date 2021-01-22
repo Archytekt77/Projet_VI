@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_TEST_SOURCES" value="false" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="ALL" />
   </component>
@@ -23,64 +26,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3ea0de22-d5b1-418f-b20c-89a4ab52b808" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/UserAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/dumps/Dump20210122.sql/climbing_app_booking.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dumps/Dump20210122.sql/climbing_app_climbing_sites.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dumps/Dump20210122.sql/climbing_app_climbing_sites_routes.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dumps/Dump20210122.sql/climbing_app_comment.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dumps/Dump20210122.sql/climbing_app_hibernate_sequence.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dumps/Dump20210122.sql/climbing_app_roles.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dumps/Dump20210122.sql/climbing_app_routes.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dumps/Dump20210122.sql/climbing_app_routines.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dumps/Dump20210122.sql/climbing_app_topos.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dumps/Dump20210122.sql/climbing_app_topos_climbing_sites.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dumps/Dump20210122.sql/climbing_app_user_account_role.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dumps/Dump20210122.sql/climbing_app_users_account.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/StartWebApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/StartWebApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/Booking.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/ClimbingSite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/ClimbingSite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/Route.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/Topo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/Topo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/entities/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/repositories/BookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/repositories/BookingRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/repositories/ClimbingSiteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/repositories/ClimbingSiteRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/repositories/RouteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/repositories/RouteRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/repositories/TopoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/repositories/TopoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/repositories/UserAccountRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/security/AuthenticatedUser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/security/CustomUserDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/security/CustomUserDetailsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/BookingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/BookingServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/ClimbingSiteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/ClimbingSiteServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/CommentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/RoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/RoleServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/RouteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/RouteServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/Services.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/Services.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/TopoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/TopoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/services/UserAccountServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/BookingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/BookingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/ClimbingSiteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/ClimbingSiteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/RouteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/RouteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/TopoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/TopoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/loicmaria/web/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/error/403.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/error/403.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin/approveClimbingSite.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin/approveClimbingSite.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/booking/getBooking.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/booking/getBooking.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/booking/getLoan.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/booking/getLoan.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/climbingSite/createClimbingSite.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/climbingSite/createClimbingSite.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/climbingSite/detailsClimbingSite.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/climbingSite/detailsClimbingSite.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/climbingSite/editionClimbingSite.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/climbingSite/editionClimbingSite.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/error.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/general.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/general.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/logout.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/route/createRoute.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/route/createRoute.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/route/detailsRoute.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/route/detailsRoute.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/route/editionRoute.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/route/editionRoute.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/route/getRoute.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/route/getRoute.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/test2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/topo/createTopo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/topo/createTopo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/topo/detailsTopo.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/topo/detailsTopo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/error/403.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/error/403.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/error.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/templates/logout.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +160,7 @@
       <module name="P6 - LOIC MARIA" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.loicmaria.*" />
+          <option name="PATTERN" value="com.loicmaria.StartWebApplication" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -367,7 +332,7 @@
       <workItem from="1610322496168" duration="15632000" />
       <workItem from="1610720071205" duration="4704000" />
       <workItem from="1610725372613" duration="516000" />
-      <workItem from="1610726433061" duration="91391000" />
+      <workItem from="1610726433061" duration="104585000" />
     </task>
     <servers />
   </component>

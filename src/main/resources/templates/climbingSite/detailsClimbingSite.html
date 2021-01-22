@@ -118,8 +118,8 @@
                           method="post">
                         <div class="form-group row">
                             <label class="col-6 col-form-label" for="description" hidden></label>
-                            <input class="col-6 form-control" type="text" id="description" th:field="*{description}"
-                                   required>
+                            <textarea class="col-6 form-control" type="text" id="description" rows="2" th:field="*{description}"
+                                      required></textarea>
                         </div>
                         <button type="submit" class="btn btn-success">Envoyer</button>
                     </form>
@@ -142,8 +142,8 @@
                         <input type="hidden" th:field="*{userAccount}">
                         <div class="form-group row">
                             <label class="col-6 col-form-label" for="editDescription" hidden></label>
-                            <input class="col-6 form-control" type="text" id="editDescription" th:field="*{description}"
-                                   required>
+                            <textarea class="col-6 form-control" type="text" id="editDescription" rows="2" th:field="*{description}"
+                                      required></textarea>
                         </div>
                         <button type="submit" class="btn btn-success">Envoyer</button>
                     </form>

@@ -21,7 +21,7 @@
                 <div class="card-body">
                     <h1 class="card-title">Édition de la voie</h1>
                     <form action="editionRoute.html"
-                          th:action="@{/route/edition{id}(id=*{id})}"
+                          th:action="@{/route/edition/{id}(id=*{id})}"
                           th:object="${route}" method="post">
                         <div class="form-group row">
                             <label class="col-6 col-form-label" for="name">Nom</label>

@@ -77,6 +77,9 @@ public class Booking {
     public int getId() {
         return id;
     }
+    public void setId(int id) {
+        this.id = id;
+    }
     public String getAnswer() {
         return answer;
     }
@@ -91,6 +94,9 @@ public class Booking {
     }
     public LocalDateTime getCreateDate() {
         return createDate;
+    }
+    public void setCreateDate(LocalDateTime createDate) {
+        this.createDate = createDate;
     }
     public LocalDateTime getUpdateDate() {
         return updateDate;
