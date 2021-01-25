@@ -31,6 +31,19 @@ Par souci du détail, vous réalisez quelques recherches sur l’escalade pour v
 * Open MySQL workbench, click on `Server` and `Data import`
     * Click on `Server`
     * Click on `Data import`
-    * Import from Dump Project Folder : C:..\P6-LOIC-MARIA\dumps\Dump20210122.sql
-    
-* cd C:..\P6-LOIC-MARIA\
+    * Import from Dump Project Folder : C:...\P6-LOIC-MARIA\dumps\Dump20210122.sql
+  
+* Open Projet_VI with git and use the command line `mvn spring-boot:run`
+
+
+###Use the application
+
+* Open your browser and type `localhost:8080`
+
+* You can use 3 profiles :
+
+User | Password | Role
+-----|----------|-----
+admin@gmail.com| admin | admin
+utilisateur1@gmail.com | utilisateur1 | user
+utilisateur2@gmail.com | utilisateur2 | user

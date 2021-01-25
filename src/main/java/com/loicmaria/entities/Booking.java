@@ -56,7 +56,7 @@ public class Booking {
 
     @OneToOne
     private Topo topo;
-    @OneToOne
+    @ManyToOne
     private UserAccount userAccount;
 
 
@@ -113,9 +113,10 @@ public class Booking {
     public UserAccount getUserAccount() {
         return userAccount;
     }
-    public void setUserAccount(UserAccount UserAccount) {
+    public void setUserAccount(UserAccount userAccount) {
         this.userAccount = userAccount;
     }
+
 
     //toString
     @Override

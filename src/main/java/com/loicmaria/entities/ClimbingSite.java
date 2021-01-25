@@ -82,7 +82,7 @@ public class ClimbingSite {
 
     @ManyToOne
     private Topo topo;
-    @OneToMany
+    @OneToMany(mappedBy = "climbingSite")
     private Collection< Route > routes;
     @ManyToOne
     private UserAccount userAccount;

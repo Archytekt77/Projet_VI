@@ -40,7 +40,7 @@ CREATE TABLE `users_account` (
 
 LOCK TABLES `users_account` WRITE;
 /*!40000 ALTER TABLE `users_account` DISABLE KEYS */;
-INSERT INTO `users_account` VALUES (1,'admin@gmail.com','Admin','$2a$10$tL0ykZljmtHjXL1jZiJNbesm4mZma2ARYV8HefhT2j5Itu9dAvc.i'),(2,'marc.dupont@gmail.com','Marc','$2a$10$SFqhtfmuRhEc1iYnoov/W.ze89i91u4T20/vF377zpd8ck4hKzhhG'),(3,'isabelle.charles@gmail.com','Isabelle','$2a$10$j3H0HQldSwKJxnF4..OG.u2zTE3CZM53DmwnmuC2UNW71q.u5ZYpC');
+INSERT INTO `users_account` VALUES (1,'admin@gmail.com','Admin','$2a$10$tL0ykZljmtHjXL1jZiJNbesm4mZma2ARYV8HefhT2j5Itu9dAvc.i'),(2,'utilisateur1@gmail.com','Utilisateur 1','$2a$10$HPZ3tiuwAS5S..0JJ1AUWu5CvGrM2C8myVCaV1IWjIR2heK2Yi6FS'),(3,'utilisateur2@gmail.com','Utilisateur 2','$2a$10$iiQa3g9mWt8JFbb5bgYFGehOzKaz95RjjRbEQ2MVfynJ3NjbKcQSO');
 /*!40000 ALTER TABLE `users_account` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-01-22 15:39:37
+-- Dump completed on 2021-01-25 16:46:06

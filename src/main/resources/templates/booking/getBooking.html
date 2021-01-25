@@ -78,10 +78,9 @@
                             <td th:text="${booking.answer} == 'refused'?'Refusé':'Accepté'"></td>
                         </tr>
                         </tr>
-
                         </tbody>
                     </table>
-
+                    <div th:if="${nullBookings.isEmpty() and inProgressBookings.isEmpty() and finishedBookings.isEmpty()}" th:text="'Vous n\'avez fait aucune réservation'"></div>
                 </div>
             </div>
         </div>

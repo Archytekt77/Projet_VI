@@ -11,6 +11,10 @@ body
     background-repeat:no-repeat;
 }
 
+body.home{
+    background: url(../img/accueil.jpg) no-repeat fixed;
+}
+
 header
 {
     height: 80px;
@@ -54,6 +58,11 @@ td.topoDescription{
 
 
 /**************** Climbing site ****************/
+
+/** Get climbing site **/
+div.margin-bottom{
+    margin-bottom: 100px;
+}
 
 /** Details climbing site **/
 img.official-tag

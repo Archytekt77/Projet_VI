@@ -101,6 +101,7 @@
                         </tr>
                         </tbody>
                     </table>
+                    <div th:if="${nullBookings.isEmpty() and inProgressBookings.isEmpty() and finishedBookings.isEmpty()}" th:text="'Vous n\'avez aucune demande de réservation'"></div>
                 </div>
             </div>
         </div>

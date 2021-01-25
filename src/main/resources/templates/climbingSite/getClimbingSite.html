@@ -41,7 +41,7 @@
     </div>
 
     <!--Afficher les sites-->
-    <div class="row">
+    <div class="row margin-bottom">
         <div class="col-12">
             <div class="card border-dark mb-3">
                 <div class="card-body">
@@ -72,6 +72,7 @@
                         </tr>
                         </tbody>
                     </table>
+                    <div th:if="${climbingSitesList.isEmpty()}" th:text="'Aucun site'"></div>
                 </div>
             </div>
         </div>

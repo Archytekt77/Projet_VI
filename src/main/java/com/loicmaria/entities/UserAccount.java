@@ -66,6 +66,8 @@ public class UserAccount {
     private Collection<Route> routes;
     @OneToMany(mappedBy = "userAccount")
     private Collection<Comment> comments;
+    @OneToMany(mappedBy = "userAccount")
+    private Collection<Booking> bookings;
 
 
     //Constructor
@@ -73,7 +75,7 @@ public class UserAccount {
     }
 
     public UserAccount(int id, String name, String email, String password, List<Role> roles, Collection<Topo> topos,
-                Collection<ClimbingSite> climbingSites, Collection<Route> routes, Collection<Comment> comments) {
+                Collection<ClimbingSite> climbingSites, Collection<Route> routes, Collection<Comment> comments, Collection<Booking> bookings) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -83,6 +85,7 @@ public class UserAccount {
         this.climbingSites = climbingSites;
         this.routes = routes;
         this.comments = comments;
+        this.bookings = bookings;
     }
 
     // Getters and Setters
@@ -139,6 +142,12 @@ public class UserAccount {
     }
     public void setComments(Collection<Comment> comments) {
         this.comments = comments;
+    }
+    public Collection<Booking> getBookings() {
+        return bookings;
+    }
+    public void setBookings(Collection<Booking> bookings) {
+        this.bookings = bookings;
     }
 
     //toString
