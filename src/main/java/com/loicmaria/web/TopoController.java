@@ -2,7 +2,6 @@ package com.loicmaria.web;
 
 
 import com.loicmaria.services.ClimbingSiteServiceImpl;
-import com.loicmaria.services.RoleServiceImpl;
 import com.loicmaria.services.TopoServiceImpl;
 import com.loicmaria.services.UserAccountServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +23,6 @@ public class TopoController {
     UserAccountServiceImpl userAccountService;
     @Autowired
     ClimbingSiteServiceImpl climbingSiteService;
-    @Autowired
-    RoleServiceImpl roleService;
 
     /**
      * Ajoute au model l'utilisateur connecté à toutes les requêtes envoyées au contrôleur.

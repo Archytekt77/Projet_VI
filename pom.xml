@@ -5,8 +5,8 @@
 
     <artifactId>web-thymeleaf</artifactId>
     <packaging>jar</packaging>
-    <name>Spring Boot Web Thymeleaf Example</name>
-    <description>Spring Boot Web Thymeleaf Example</description>
+    <name>Projet VI</name>
+    <description>Spring Boot Web Thymeleaf</description>
     <version>1.0</version>
 
     <parent>
@@ -36,15 +36,7 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-rest</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -95,13 +87,6 @@
             <groupId>org.thymeleaf.extras</groupId>
             <artifactId>thymeleaf-extras-java8time</artifactId>
             <version>3.0.1.RELEASE</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>2.12.1</version>
         </dependency>
 
 

@@ -55,6 +55,7 @@ public class BookingServiceImpl extends Services<Booking, BookingRepository> {
             case "accepted":{
                 booking.setAnswer("accepted");
                 booking.setStatus("in progress");
+                topoService.get(topoId).setAvailable(false);
                 break;
             }
             case "refused":{

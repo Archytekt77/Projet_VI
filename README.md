@@ -17,7 +17,6 @@ Par souci du détail, vous réalisez quelques recherches sur l’escalade pour v
 
 * Java
 * Apache Maven
-* Apache Tomcat
 * MySQL workbench
 
 
