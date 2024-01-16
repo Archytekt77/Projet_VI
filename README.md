@@ -1,6 +1,6 @@
 # Créez un site communautaire autour de l'escalade
 
-##Contexte
+## Contexte
 Vous êtes freelance et vous menez différents projets informatiques de développement d’applications web en Java EE. Vous êtes contacté via Malt par “Les Amis de l’escalade” :
 
 Bonjour, nous sommes une association qui réunit les passionnés d’escalade dans toute la France. Nous recherchons un développeur Java EE pour créer un site communautaire autour de cette discipline. Votre profil et vos expériences ont retenu notre attention. Seriez-vous intéressé par une mission de ce type (contrat en auto-entrepreneur) ?
@@ -13,15 +13,15 @@ Par souci du détail, vous réalisez quelques recherches sur l’escalade pour v
 
 [Projet 6 - OC](https://openclassrooms.com/fr/paths/88/projects/128/assignment)
 
-##Requirements
+## Requirements
 
 * Java
 * Apache Maven
 * MySQL workbench
 
 
-##How to start
-###Installation
+## How to start
+### Installation
 
 * Clone the repository
 
@@ -35,7 +35,7 @@ Par souci du détail, vous réalisez quelques recherches sur l’escalade pour v
 * Open Projet_VI with git and use the command line `mvn spring-boot:run`
 
 
-###Use the application
+### Use the application
 
 * Open your browser and type `localhost:8080`
 
